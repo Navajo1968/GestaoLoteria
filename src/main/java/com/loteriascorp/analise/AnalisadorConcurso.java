@@ -28,6 +28,109 @@ public class AnalisadorConcurso {
         carregarConcurso();
     }
     
+    
+    private void analisarFrequenciaHistorica() {
+        String sql = """
+            SELECT num, COUNT(*) as frequencia
+            FROM (
+                SELECT num1 as num FROM tb_historico_jogos WHERE id_loterias = ? AND num_concurso < ?
+                UNION ALL SELECT num2 UNION ALL SELECT num3 
+                UNION ALL SELECT num4 UNION ALL SELECT num5
+                UNION ALL SELECT num6 UNION ALL SELECT num7
+                UNION ALL SELECT num8 UNION ALL SELECT num9
+                UNION ALL SELECT num10 UNION ALL SELECT num11
+                UNION ALL SELECT num12 UNION ALL SELECT num13
+                UNION ALL SELECT num14 UNION ALL SELECT num15
+            ) nums
+            GROUP BY num
+            ORDER BY num
+        """;
+        
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, idLoteria);
+            stmt.setInt(2, numeroConcurso);
+            
+            Map<Integer, Integer> frequencias = new HashMap<>();
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    frequencias.put(rs.getInt("num"), rs.getInt("frequencia"));
+                }
+            }
+            
+            // Calcula a frequência média dos números do concurso atual
+            double freqMedia = numerosSorteados.stream()
+                .mapToDouble(num -> frequencias.getOrDefault(num, 0))
+                .average()
+                .orElse(0.0);
+            
+            metricas.put("frequencia_media", freqMedia);
+            
+            // Identifica números quentes (alta frequência) e frios (baixa frequência)
+            long numerosQuentes = numerosSorteados.stream()
+                .filter(num -> frequencias.getOrDefault(num, 0) > freqMedia)
+                .count();
+                
+            metricas.put("numeros_quentes", (double) numerosQuentes);
+            metricas.put("numeros_frios", (double) (15 - numerosQuentes));
+        } catch (SQLException e) {
+            logger.error("Erro ao analisar frequências históricas: ", e);
+        }
+    }
+    
+    private void analisarPadroesIntervalo() {
+        // Calcula intervalos entre números consecutivos
+        List<Integer> intervalos = new ArrayList<>();
+        for (int i = 1; i < numerosSorteados.size(); i++) {
+            intervalos.add(numerosSorteados.get(i) - numerosSorteados.get(i-1));
+        }
+        
+        // Média dos intervalos
+        double mediaIntervalos = intervalos.stream()
+            .mapToDouble(Integer::doubleValue)
+            .average()
+            .orElse(0.0);
+            
+        // Desvio padrão dos intervalos
+        double desvioPadrao = Math.sqrt(
+            intervalos.stream()
+                .mapToDouble(i -> Math.pow(i - mediaIntervalos, 2))
+                .average()
+                .orElse(0.0)
+        );
+        
+        metricas.put("media_intervalos", mediaIntervalos);
+        metricas.put("desvio_padrao_intervalos", desvioPadrao);
+    }
+    
+    private void analisarClusters() {
+        // Identifica grupos de números próximos
+        List<Integer> ordenados = new ArrayList<>(numerosSorteados);
+        Collections.sort(ordenados);
+        
+        int clusters = 1;
+        int maiorCluster = 1;
+        int clusterAtual = 1;
+        
+        for (int i = 1; i < ordenados.size(); i++) {
+            if (ordenados.get(i) - ordenados.get(i-1) <= 2) {
+                clusterAtual++;
+                if (clusterAtual > maiorCluster) {
+                    maiorCluster = clusterAtual;
+                }
+            } else {
+                if (clusterAtual > 1) {
+                    clusters++;
+                }
+                clusterAtual = 1;
+            }
+        }
+        
+        metricas.put("quantidade_clusters", (double) clusters);
+        metricas.put("maior_cluster", (double) maiorCluster);
+    }
+    
     private void carregarConcurso() {
         String sql = """
             SELECT num1, num2, num3, num4, num5, num6, num7, num8, num9, 
@@ -70,6 +173,11 @@ public class AnalisadorConcurso {
         analisarSequencias();
         analisarSoma();
         analisarMedianaEModa();
+        
+        // Novas análises
+        analisarFrequenciaHistorica();
+        analisarPadroesIntervalo();
+        analisarClusters();
         
         // Análise comparativa com histórico
         analisarComparativoHistorico();
