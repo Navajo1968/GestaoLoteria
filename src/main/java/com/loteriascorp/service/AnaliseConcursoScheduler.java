@@ -38,7 +38,7 @@ public class AnaliseConcursoScheduler {
             FROM tb_historico_jogos hj
             LEFT JOIN tb_analise_concursos ac 
                 ON hj.id_loterias = ac.id_loterias 
-                AND hj.num_concurso = ac.num_concurso
+                AND hj.num_concurso = ac.nr_concurso
             WHERE ac.id_loterias IS NULL
             ORDER BY hj.id_loterias, hj.num_concurso
         """;

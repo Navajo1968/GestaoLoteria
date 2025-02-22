@@ -33,7 +33,7 @@ public class AnalisadorConcurso {
             SELECT num1, num2, num3, num4, num5, num6, num7, num8, num9, 
                    num10, num11, num12, num13, num14, num15
             FROM tb_historico_jogos 
-            WHERE id_loterias = ? AND nr_concurso = ?
+            WHERE id_loterias = ? AND num_concurso = ?
         """;
         
         try (Connection conn = Database.getConnection();
@@ -181,8 +181,8 @@ public class AnalisadorConcurso {
             SELECT num1, num2, num3, num4, num5, num6, num7, num8, num9, 
                    num10, num11, num12, num13, num14, num15
             FROM tb_historico_jogos 
-            WHERE id_loterias = ? AND nr_concurso < ?
-            ORDER BY nr_concurso DESC
+            WHERE id_loterias = ? AND num_concurso < ?
+            ORDER BY num_concurso DESC
             LIMIT ?
         """;
         
@@ -242,7 +242,7 @@ public class AnalisadorConcurso {
     private void salvarAnalise() {
         String sql = """
             INSERT INTO tb_analise_concursos 
-            (id_loterias, nr_concurso, tipo_metrica, valor, dt_analise)
+            (id_loterias, num_concurso, tipo_metrica, valor, dt_analise)
             VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
         """;
         
