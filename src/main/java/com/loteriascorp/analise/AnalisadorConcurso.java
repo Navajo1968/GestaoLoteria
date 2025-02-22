@@ -242,7 +242,7 @@ public class AnalisadorConcurso {
     private void salvarAnalise() {
         String sql = """
             INSERT INTO tb_analise_concursos 
-            (id_loterias, num_concurso, tipo_metrica, valor, dt_analise)
+            (id_loterias, nr_concurso, tipo_metrica, valor, dt_analise)
             VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
         """;
         

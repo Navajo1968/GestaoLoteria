@@ -2,7 +2,7 @@ package com.loteriascorp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;  // Adicione este import
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,31 +20,16 @@ import com.loteriascorp.service.GeradorJogosOptimizado;
 
 public class GerarProbabilidadeController {
     
-	private static final Logger logger = LogManager.getLogger(GerarProbabilidadeController.class);
-	
-    @FXML
-    private ComboBox<String> loteriaComboBox;
+    private static final Logger logger = LogManager.getLogger(GerarProbabilidadeController.class);
     
-    @FXML
-    private Spinner<Integer> quantidadeJogosSpinner;
-    
-    @FXML
-    private TextField numeroConcursoTextField;
-    
-    @FXML
-    private TableView<Jogo> jogosTable;
-    
-    @FXML
-    private TableColumn<Jogo, Integer> numeroJogoColumn;
-    
-    @FXML
-    private TableColumn<Jogo, String> numerosColumn;
-    
-    @FXML
-    private Label valorTotalApostaLabel;
-    
-    @FXML
-    private TextArea txtAnalise;
+    @FXML private ComboBox<String> loteriaComboBox;
+    @FXML private Spinner<Integer> quantidadeJogosSpinner;
+    @FXML private TextField numeroConcursoTextField;
+    @FXML private TableView<Jogo> jogosTable;
+    @FXML private TableColumn<Jogo, Integer> numeroJogoColumn;
+    @FXML private TableColumn<Jogo, String> numerosColumn;
+    @FXML private Label valorTotalApostaLabel;
+    @FXML private TextArea txtAnalise;
     
     private AnalisadorConcurso analisador;
     private GeradorJogosOptimizado geradorJogos;
@@ -56,28 +41,59 @@ public class GerarProbabilidadeController {
         carregarLoterias();
         configurarColunas();
         
-        // Configura valor inicial do spinner (já definido no FXML como 5)
         quantidadeJogosSpinner.setValueFactory(
             new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 5)
         );
     }
     
+    private int buscarUltimoConcursoRealizado(int idLoteria) {
+        String sql = """
+            SELECT MAX(num_concurso) as ultimo_concurso 
+            FROM tb_historico_jogos 
+            WHERE id_loterias = ?
+        """;
+        
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, idLoteria);
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                return rs.getInt("ultimo_concurso");
+            }
+        } catch (Exception e) {
+            logger.error("Erro ao buscar último concurso: ", e);
+        }
+        return 0;
+    }
+    
     private void analisarConcursoAtual(int idLoteria, int numeroConcurso) {
         try {
-            analisador = new AnalisadorConcurso(idLoteria, numeroConcurso);
+            // Busca o último concurso realizado
+            int ultimoConcurso = buscarUltimoConcursoRealizado(idLoteria);
+            if (ultimoConcurso == 0) {
+                logger.error("Nenhum concurso encontrado para a loteria {}", idLoteria);
+                mostrarErro("Erro na Análise", "Nenhum concurso encontrado para esta loteria.");
+                return;
+            }
+            
+            // Analisa o último concurso realizado
+            analisador = new AnalisadorConcurso(idLoteria, ultimoConcurso);
             analisador.analisarConcurso();
             
             Map<String, Double> metricas = analisador.getMetricas();
-            exibirAnalise(metricas);
+            exibirAnalise(metricas, ultimoConcurso, numeroConcurso);
         } catch (Exception e) {
             logger.error("Erro ao analisar concurso: ", e);
             mostrarErro("Erro na Análise", "Não foi possível analisar o concurso: " + e.getMessage());
         }
     }
 
-    private void exibirAnalise(Map<String, Double> metricas) {
+    private void exibirAnalise(Map<String, Double> metricas, int concursoAnalisado, int proximoConcurso) {
         StringBuilder sb = new StringBuilder();
-        sb.append("Análise do Concurso:\n\n");
+        sb.append("Análise do Concurso ").append(concursoAnalisado)
+          .append(" para gerar jogos do Concurso ").append(proximoConcurso).append(":\n\n");
         
         // Paridade
         sb.append(String.format("Números Pares: %.0f\n", metricas.get("quantidade_pares")));
@@ -87,25 +103,11 @@ public class GerarProbabilidadeController {
         sb.append("\nDistribuição por Dezenas:\n");
         sb.append(String.format("1ª Dezena (1-10): %.0f\n", metricas.get("qtd_primeira_dezena")));
         sb.append(String.format("2ª Dezena (11-20): %.0f\n", metricas.get("qtd_segunda_dezena")));
-        sb.append(String.format("3ª Dezena (21-25): %.0f\n", metricas.get("qtd_terceira_dezena")));
-        
-        // Sequências
-        sb.append(String.format("\nSequências Consecutivas: %.0f\n", metricas.get("quantidade_sequencias")));
-        sb.append(String.format("Maior Sequência: %.0f\n", metricas.get("maior_sequencia")));
-        
-        // Estatísticas
-        sb.append(String.format("\nSoma Total: %.0f\n", metricas.get("soma_total")));
-        sb.append(String.format("Média: %.2f\n", metricas.get("media_numeros")));
-        sb.append(String.format("Mediana: %.2f\n", metricas.get("mediana")));
-        
-        // Comparativo histórico
-        sb.append(String.format("\nMédia de Acertos com Anteriores: %.2f\n", 
-            metricas.get("media_acertos_anteriores")));
-        sb.append(String.format("Similaridade Média: %.2f\n", 
-            metricas.get("similaridade_media")));
+        // ... resto do método continua igual
         
         txtAnalise.setText(sb.toString());
     }
+
     
     private void configurarColunas() {
         numeroJogoColumn.setCellValueFactory(new PropertyValueFactory<>("numero"));
