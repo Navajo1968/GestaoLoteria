@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.loteriascorp.controller.GerarProbabilidadeController">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Quantidade de Jogos:"/>
+        <TextField fx:id="txtQuantidadeJogos" prefWidth="100"/>
+        <Button text="Gerar" onAction="#gerarProbabilidades"/>
+    </HBox>
+
+    <TextArea fx:id="txtResultado" 
+              prefWidth="600" 
+              prefHeight="400" 
+              wrapText="true"
+              editable="false"/>
+
+    <Button text="Voltar" onAction="#voltarMenu"/>
+</VBox>

@@ -1,0 +1,16 @@
+com\loteriascorp\LoteriaProbabilidadeController.class
+com\loteriascorp\service\LotoFacilService.class
+com\loteriascorp\LoteriaController.class
+com\loteriascorp\LoteriaPrecoController.class
+com\loteriascorp\Database.class
+com\loteriascorp\GerarProbabilidadeController.class
+com\loteriascorp\LoteriaHistorico.class
+com\loteriascorp\LoteriaPreco.class
+com\loteriascorp\Loteria.class
+com\loteriascorp\Main.class
+com\loteriascorp\MenuController.class
+com\loteriascorp\Jogo.class
+com\loteriascorp\CarregarHistoricoController.class
+com\loteriascorp\LoteriaHistoricoController.class
+com\loteriascorp\VerJogosGeradosController.class
+com\loteriascorp\LoteriaProbabilidade.class

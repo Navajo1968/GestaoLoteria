@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loteriascorp.LoteriaPrecoController">
+    <children>
+        <TableView fx:id="tabelaLoteriasPreco">
+            <columns>
+                <TableColumn fx:id="colunaNomeLoteria" text="Nome Loteria"/>
+                <TableColumn fx:id="colunaIdLoteriasPreco" text="ID Loterias Preço"/>
+                <TableColumn fx:id="colunaQtNumerosJogados" text="Qt. Números Jogados"/>
+                <TableColumn fx:id="colunaVlrAposta" text="Valor Aposta"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <ComboBox fx:id="comboBoxNomeLoteria" promptText="Nome Loteria"/>
+                <TextField fx:id="txtQtNumerosJogados" promptText="Qt. Números Jogados"/>
+                <TextField fx:id="txtVlrAposta" promptText="Valor Aposta"/>
+            </VBox>
+            <VBox spacing="5" alignment="CENTER_RIGHT">
+                <Button fx:id="btnSalvar" text="Salvar" onAction="#salvarLoteriaPreco"/>
+                <Button fx:id="btnNovo" text="Novo" onAction="#novoLoteriaPreco"/>
+                <Button fx:id="btnExcluir" text="Excluir" onAction="#excluirLoteriaPreco"/>
+            </VBox>
+        </HBox>
+    </children>
+</VBox>

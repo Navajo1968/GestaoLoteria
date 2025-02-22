@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loteriascorp.CarregarHistoricoController">
+    <children>
+        <ComboBox fx:id="comboBoxNomeLoteria" promptText="Nome Loteria"/>
+        <Button text="Selecionar Arquivo" onAction="#selecionarArquivo"/>
+        <Label fx:id="labelArquivo" text="Nenhum arquivo selecionado"/>
+        <Button text="Carregar Histórico" onAction="#carregarHistorico"/>
+    </children>
+</VBox>
