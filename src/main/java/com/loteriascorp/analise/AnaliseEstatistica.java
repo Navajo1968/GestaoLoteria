@@ -17,35 +17,134 @@ public class AnaliseEstatistica {
     
     public void analisarNumeros() {
         String sql = """
-            WITH ultimos_sorteios AS (
+        		
+            WITH numeros_expandidos AS (
                 SELECT 
-                    num, 
-                    nr_concurso,
-                    ROW_NUMBER() OVER (PARTITION BY num ORDER BY num_concurso DESC) as recencia
+                    num_concurso,
+                    num,
+                    CASE 
+                        WHEN num = num1 THEN 1
+                        WHEN num = num2 THEN 2
+                        WHEN num = num3 THEN 3
+                        WHEN num = num4 THEN 4
+                        WHEN num = num5 THEN 5
+                        WHEN num = num6 THEN 6
+                        WHEN num = num7 THEN 7
+                        WHEN num = num8 THEN 8
+                        WHEN num = num9 THEN 9
+                        WHEN num = num10 THEN 10
+                        WHEN num = num11 THEN 11
+                        WHEN num = num12 THEN 12
+                        WHEN num = num13 THEN 13
+                        WHEN num = num14 THEN 14
+                        WHEN num = num15 THEN 15
+                    END as posicao_no_jogo
                 FROM (
-                    SELECT num_concurso, num1 as num FROM tb_historico_jogos WHERE id_loterias = ?
-                    UNION ALL SELECT num_concurso, num2 
-                    UNION ALL SELECT num_concurso, num3
-                    UNION ALL SELECT num_concurso, num4
-                    UNION ALL SELECT num_concurso, num5
-                    UNION ALL SELECT num_concurso, num6
-                    UNION ALL SELECT num_concurso, num7
-                    UNION ALL SELECT num_concurso, num8
-                    UNION ALL SELECT num_concurso, num9
-                    UNION ALL SELECT num_concurso, num10
-                    UNION ALL SELECT num_concurso, num11
-                    UNION ALL SELECT num_concurso, num12
-                    UNION ALL SELECT num_concurso, num13
-                    UNION ALL SELECT num_concurso, num14
-                    UNION ALL SELECT num_concurso, num15
+                    SELECT num_concurso, num1 as num, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15 
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL 
+                    SELECT num_concurso, num2, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num3, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num4, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num5, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num6, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num7, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num8, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num9, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num10, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num11, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num12, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num13, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num14, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
+                    UNION ALL
+                    SELECT num_concurso, num15, 
+                           num1, num2, num3, num4, num5, num6, num7, num8, 
+                           num9, num10, num11, num12, num13, num14, num15
+                    FROM tb_historico_jogos 
+                    WHERE id_loterias = ?
                 ) nums
+            ),
+            ultimos_sorteios AS (
+                SELECT 
+                    num,
+                    num_concurso,
+                    posicao_no_jogo,
+                    ROW_NUMBER() OVER (PARTITION BY num ORDER BY num_concurso DESC) as recencia
+                FROM numeros_expandidos
             ),
             estatisticas AS (
                 SELECT 
                     num,
                     COUNT(*) as frequencia,
                     MIN(recencia) as recencia,
-                    AVG(nr_concurso) as media_posicao
+                    AVG(posicao_no_jogo) as media_posicao
                 FROM ultimos_sorteios
                 GROUP BY num
             )
@@ -63,8 +162,11 @@ public class AnaliseEstatistica {
         try (Connection conn = Database.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
-            stmt.setInt(1, idLoteria);
-            stmt.setInt(2, idLoteria);
+            // Precisamos definir o idLoteria para cada UNION na query
+            for (int i = 1; i <= 15; i++) {
+                stmt.setInt(i, idLoteria);
+            }
+            stmt.setInt(16, idLoteria); // Para o SELECT final
             
             int inseridos = stmt.executeUpdate();
             logger.info("Análise estatística atualizada: {} números analisados", inseridos);

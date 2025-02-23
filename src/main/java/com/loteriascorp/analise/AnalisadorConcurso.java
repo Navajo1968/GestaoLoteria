@@ -28,8 +28,7 @@ public class AnalisadorConcurso {
         carregarConcurso();
     }
     
-    
-        
+       
     private void salvarMetrica(String tipo, double valor) {
         String sql = """
             INSERT INTO tb_analise_concursos 

@@ -43,7 +43,7 @@ public class AnaliseConcursoScheduler {
             SELECT DISTINCT 
                 hj.id_loterias, 
                 hj.num_concurso,
-                l.nome_loteria
+                l.des_nome
             FROM tb_historico_jogos hj
             INNER JOIN tb_loterias l ON l.id_loterias = hj.id_loterias
             LEFT JOIN tb_analise_concursos ac 
@@ -72,7 +72,7 @@ public class AnaliseConcursoScheduler {
                 encontrouConcursos = true;
                 int idLoterias = rs.getInt("id_loterias");
                 int numConcurso = rs.getInt("num_concurso");
-                String nomeLoteria = rs.getString("nome_loteria");
+                String nomeLoteria = rs.getString("des_nome");
                 
                 try {
                     logger.info("Analisando {} concurso {}", nomeLoteria, numConcurso);

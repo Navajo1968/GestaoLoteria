@@ -7,9 +7,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.loteriascorp.controller.GerarProbabilidadeController;
 
 public class MenuController {
-
+	private static final Logger logger = LogManager.getLogger(GerarProbabilidadeController.class);
+	
     @FXML
     private void handleLoterias(ActionEvent event) {
         try {
@@ -86,6 +91,7 @@ public class MenuController {
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
+            logger.error("Erro ao abrir tela de Gerar Probabilidade: ", e);
         }
     }
 
