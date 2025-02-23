@@ -74,30 +74,36 @@ public class GeradorJogosOptimizado {
     
     private List<Integer> analisarJogosPremiados(int idLoteria) {
         String sql = """
-            WITH jogos_premiados AS (
+            WITH jogos_pontuados AS (
                 SELECT 
-                    num1, num2, num3, num4, num5, num6, num7, num8,
-                    num9, num10, num11, num12, num13, num14, num15
-                FROM tb_historico_jogos
-                WHERE id_loterias = ?
-                AND num_concurso IN (
-                    SELECT DISTINCT num_concurso 
-                    FROM tb_jogos_gerados 
-                    WHERE tot_acertos >= 14
-                )
-                ORDER BY num_concurso DESC
-                LIMIT 20
+                    hj.num1, hj.num2, hj.num3, hj.num4, hj.num5, hj.num6, hj.num7, hj.num8,
+                    hj.num9, hj.num10, hj.num11, hj.num12, hj.num13, hj.num14, hj.num15,
+                    ap.tot_acertos,
+                    CASE 
+                        WHEN ap.tot_acertos >= 13 THEN 3
+                        WHEN ap.tot_acertos >= 12 THEN 2
+                        WHEN ap.tot_acertos >= 11 THEN 1
+                        ELSE 0
+                    END as peso_acertos
+                FROM tb_historico_jogos hj
+                JOIN tb_jogos_gerados ap ON hj.num_concurso = ap.num_concurso
+                WHERE hj.id_loterias = ?
+                AND ap.tot_acertos >= 11  -- Considerar jogos com 11 ou mais acertos
+                ORDER BY hj.num_concurso DESC
+                LIMIT 50  -- Aumentar o limite para ter mais dados para análise
             )
             SELECT 
                 num,
-                COUNT(*) as freq_premio
+                SUM(peso_acertos) as score_numero
             FROM (
                 SELECT UNNEST(ARRAY[num1, num2, num3, num4, num5, num6, num7, num8,
-                                  num9, num10, num11, num12, num13, num14, num15]) as num
-                FROM jogos_premiados
+                                  num9, num10, num11, num12, num13, num14, num15]) as num,
+                      peso_acertos
+                FROM jogos_pontuados
             ) t
             GROUP BY num
-            ORDER BY freq_premio DESC
+            HAVING SUM(peso_acertos) > 0
+            ORDER BY score_numero DESC, num ASC
             LIMIT 15
         """;
         
@@ -111,12 +117,12 @@ public class GeradorJogosOptimizado {
             while (rs.next()) {
                 numerosPremiados.add(rs.getInt("num"));
             }
+            logger.info("Números premiados encontrados: {}", numerosPremiados);
         } catch (SQLException e) {
             logger.error("Erro ao analisar jogos premiados: ", e);
         }
         return numerosPremiados;
     }
-
     
     /**
      * Gera números prováveis baseado em análise estatística
@@ -128,17 +134,29 @@ public class GeradorJogosOptimizado {
         // Combinar as duas análises
         Map<Integer, Double> scoresFinal = new HashMap<>();
         
+        // Se não temos muitos números premiados, aumentar peso da frequência
+        double pesoPremiados = numerosPremiados.isEmpty() ? 0.2 : PESO_PADRAO;
+        double pesoFrequencia = numerosPremiados.isEmpty() ? 0.8 : PESO_FREQUENCIA + PESO_RECENCIA;
+        
         numerosFrequentes.forEach(n -> 
-            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + PESO_FREQUENCIA + PESO_RECENCIA));
+            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + pesoFrequencia));
         
         numerosPremiados.forEach(n -> 
-            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + PESO_PADRAO));
+            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + pesoPremiados));
         
-        return scoresFinal.entrySet().stream()
+        // Adicionar log para debug
+        logger.info("Números frequentes: {}", numerosFrequentes);
+        logger.info("Números premiados: {}", numerosPremiados);
+        
+        List<Integer> numerosSelecionados = scoresFinal.entrySet().stream()
             .sorted(Map.Entry.<Integer, Double>comparingByValue().reversed())
             .limit(TAMANHO_JOGO)
             .map(Map.Entry::getKey)
             .collect(Collectors.toList());
+        
+        logger.info("Números selecionados para o jogo: {}", numerosSelecionados);
+        
+        return numerosSelecionados;
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.loteriascorp;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Jogo {
     private int numeroJogo;
@@ -28,6 +29,14 @@ public class Jogo {
         this.dataAposta = dataAposta;
         this.numConcurso = numConcurso;
         this.totAcertos = totAcertos;
+    }
+    
+    public String getNumerosFormatados() {
+        if (numeros == null) return "";
+        return numeros.stream()
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", "));
     }
 
     public int getNumeroJogo() {
