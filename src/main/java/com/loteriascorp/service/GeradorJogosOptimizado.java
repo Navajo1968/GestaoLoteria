@@ -14,97 +14,133 @@ public class GeradorJogosOptimizado {
     private static final Logger logger = LogManager.getLogger(GeradorJogosOptimizado.class);
     private static final int TAMANHO_JOGO = 15;
     private static final int NUMERO_MAXIMO = 25;
-    private static final double PESO_RECENCIA = 0.3;
+    private static final double PESO_RECENCIA = 0.4;
     private static final double PESO_FREQUENCIA = 0.4;
-    private static final double PESO_PADRAO = 0.3;
+    private static final double PESO_PADRAO = 0.2;
     private static final int MAX_SEQUENCIAS_CONSECUTIVAS = 4;
-    private static final int MAX_SIMILARIDADE = 11;
-    
-   
-    /**
-     * Busca o último concurso realizado para uma loteria
-     */
-    private int buscarUltimoConcurso(int idLoteria) {
-        String sql = "SELECT MAX(num_concurso) as ultimo FROM tb_historico_jogos WHERE id_loterias = ?";
-        try (Connection conn = Database.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
-            stmt.setInt(1, idLoteria);
-            ResultSet rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                return rs.getInt("ultimo");
-            }
-        } catch (SQLException e) {
-            logger.error("Erro ao buscar último concurso: ", e);
-        }
-        return 0;
-    }
+    private static final int MAX_SIMILARIDADE = 12;
     
     /**
-     * Gera números prováveis baseado em análise estatística do último concurso
+     * Gera números baseados em análise de frequência
      */
-    public List<Integer> gerarNumerosProvaveis(int idLoteria) {
-        int ultimoConcurso = buscarUltimoConcurso(idLoteria);
-        if (ultimoConcurso == 0) {
-            logger.error("Nenhum concurso encontrado para a loteria {}", idLoteria);
-            return new ArrayList<>();
-        }
-        
+    private List<Integer> gerarNumerosPorFrequencia(int idLoteria) {
         String sql = """
-            WITH numeros_analisados AS (
+            WITH ultimos_sorteios AS (
                 SELECT 
-                    num,
-                    COUNT(*) as frequencia,
-                    MAX(num_concurso) - MIN(num_concurso) as recencia,
-                    AVG(posicao) as media_posicao
-                FROM (
-                    SELECT num_concurso,
-                           UNNEST(ARRAY[num1, num2, num3, num4, num5, num6, num7, num8,
-                                      num9, num10, num11, num12, num13, num14, num15]) as num,
-                           UNNEST(ARRAY[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) as posicao
-                    FROM tb_historico_jogos
+                    num_concurso,
+                    UNNEST(ARRAY[num1, num2, num3, num4, num5, num6, num7, num8,
+                               num9, num10, num11, num12, num13, num14, num15]) as numero
+                FROM tb_historico_jogos
+                WHERE id_loterias = ?
+                AND num_concurso >= (
+                    SELECT MAX(num_concurso) - 50 
+                    FROM tb_historico_jogos 
                     WHERE id_loterias = ?
-                    AND num_concurso >= ? - 10
-                ) t
-                GROUP BY num
+                )
             )
             SELECT 
-                num,
-                frequencia,
-                recencia,
-                media_posicao,
-                (frequencia * ? + 
-                 (1.0 / NULLIF(recencia, 0)) * ? + 
-                 media_posicao * ?) as score
-            FROM numeros_analisados
-            ORDER BY score DESC
+                numero,
+                COUNT(*) as frequencia,
+                MAX(num_concurso) - MIN(num_concurso) as periodo,
+                AVG(num_concurso) as media_ocorrencia
+            FROM ultimos_sorteios
+            GROUP BY numero
+            ORDER BY 
+                frequencia DESC,
+                periodo ASC,
+                media_ocorrencia DESC
             LIMIT ?
         """;
         
-        List<Integer> numerosProvaveis = new ArrayList<>();
+        List<Integer> numerosFrequentes = new ArrayList<>();
         try (Connection conn = Database.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
             stmt.setInt(1, idLoteria);
-            stmt.setInt(2, ultimoConcurso);
-            stmt.setDouble(3, PESO_FREQUENCIA);
-            stmt.setDouble(4, PESO_RECENCIA);
-            stmt.setDouble(5, PESO_PADRAO);
-            stmt.setInt(6, TAMANHO_JOGO);
+            stmt.setInt(2, idLoteria);
+            stmt.setInt(3, TAMANHO_JOGO * 2); // Busca o dobro para ter mais opções
             
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                numerosProvaveis.add(rs.getInt("num"));
+                numerosFrequentes.add(rs.getInt("numero"));
             }
             
         } catch (SQLException e) {
-            logger.error("Erro ao gerar números prováveis: ", e);
+            logger.error("Erro ao gerar números por frequência: ", e);
         }
         
-        return numerosProvaveis;
+        return numerosFrequentes;
     }
     
+    private List<Integer> analisarJogosPremiados(int idLoteria) {
+        String sql = """
+            WITH jogos_premiados AS (
+                SELECT 
+                    num1, num2, num3, num4, num5, num6, num7, num8,
+                    num9, num10, num11, num12, num13, num14, num15
+                FROM tb_historico_jogos
+                WHERE id_loterias = ?
+                AND num_concurso IN (
+                    SELECT DISTINCT num_concurso 
+                    FROM tb_jogos_gerados 
+                    WHERE tot_acertos >= 14
+                )
+                ORDER BY num_concurso DESC
+                LIMIT 20
+            )
+            SELECT 
+                num,
+                COUNT(*) as freq_premio
+            FROM (
+                SELECT UNNEST(ARRAY[num1, num2, num3, num4, num5, num6, num7, num8,
+                                  num9, num10, num11, num12, num13, num14, num15]) as num
+                FROM jogos_premiados
+            ) t
+            GROUP BY num
+            ORDER BY freq_premio DESC
+            LIMIT 15
+        """;
+        
+        List<Integer> numerosPremiados = new ArrayList<>();
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, idLoteria);
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                numerosPremiados.add(rs.getInt("num"));
+            }
+        } catch (SQLException e) {
+            logger.error("Erro ao analisar jogos premiados: ", e);
+        }
+        return numerosPremiados;
+    }
+
+    
+    /**
+     * Gera números prováveis baseado em análise estatística
+     */
+    public List<Integer> gerarNumerosProvaveis(int idLoteria) {
+        List<Integer> numerosFrequentes = gerarNumerosPorFrequencia(idLoteria);
+        List<Integer> numerosPremiados = analisarJogosPremiados(idLoteria);
+        
+        // Combinar as duas análises
+        Map<Integer, Double> scoresFinal = new HashMap<>();
+        
+        numerosFrequentes.forEach(n -> 
+            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + PESO_FREQUENCIA + PESO_RECENCIA));
+        
+        numerosPremiados.forEach(n -> 
+            scoresFinal.put(n, scoresFinal.getOrDefault(n, 0.0) + PESO_PADRAO));
+        
+        return scoresFinal.entrySet().stream()
+            .sorted(Map.Entry.<Integer, Double>comparingByValue().reversed())
+            .limit(TAMANHO_JOGO)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+    }
+
     /**
      * Gera uma lista de jogos baseada em análise estatística
      */
@@ -158,6 +194,12 @@ public class GeradorJogosOptimizado {
             // Verifica distribuição de pares e ímpares
             long pares = jogo.stream().filter(n -> n % 2 == 0).count();
             if (pares < 6 || pares > 9) {
+                return false;
+            }
+            
+            // Adicionar ao método validarJogoAvancado
+            int soma = jogo.stream().mapToInt(Integer::intValue).sum();
+            if (soma < 190 || soma > 220) { // Faixa típica de somas premiadas
                 return false;
             }
             
