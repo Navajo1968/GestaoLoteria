@@ -48,7 +48,7 @@ public class GerarProbabilidadeController {
         configurarColunas();
         
         quantidadeJogosSpinner.setValueFactory(
-            new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 5)
+            new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 7)
         );
         
         // Adicionar listener para atualizar o número do próximo concurso

@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.loteriascorp.Database;
+import java.util.stream.IntStream;
 
 public class GeradorJogosOptimizado {
     private static final Logger logger = LogManager.getLogger(GeradorJogosOptimizado.class);
@@ -159,6 +160,107 @@ public class GeradorJogosOptimizado {
         return numerosSelecionados;
     }
 
+    private void aplicarVariacoesInteligentes(List<Integer> jogo, List<List<Integer>> historico) {
+        Random random = new Random();
+        Map<Integer, Double> scoreNumeros = calcularScoreNumeros(historico);
+        
+        // Quantidade de números a variar baseada no histórico de sucesso
+        int qtdVariacoes = random.nextInt(3) + 2; // 2 a 4 variações
+        
+        for (int i = 0; i < qtdVariacoes; i++) {
+            // Remove números com menor score
+            jogo.sort((a, b) -> Double.compare(scoreNumeros.getOrDefault(a, 0.0), 
+                                             scoreNumeros.getOrDefault(b, 0.0)));
+            jogo.remove(0); // Remove o número com menor score
+            
+            // Adiciona números com maior probabilidade de sucesso
+            List<Integer> candidatos = IntStream.rangeClosed(1, 25)
+                .filter(n -> !jogo.contains(n))
+                .boxed()
+                .sorted((a, b) -> Double.compare(scoreNumeros.getOrDefault(b, 0.0),
+                                               scoreNumeros.getOrDefault(a, 0.0)))
+                .collect(Collectors.toList());
+            
+            if (!candidatos.isEmpty()) {
+                // Escolhe aleatoriamente entre os top 5 melhores candidatos
+                int indice = random.nextInt(Math.min(5, candidatos.size()));
+                jogo.add(candidatos.get(indice));
+            }
+        }
+        
+        Collections.sort(jogo);
+    }
+
+    private Map<Integer, Double> calcularScoreNumeros(List<List<Integer>> historico) {
+        Map<Integer, Double> scores = new HashMap<>();
+        Map<Integer, Integer> frequencia = new HashMap<>();
+        Map<Integer, Integer> recencia = new HashMap<>();
+        
+        for (int i = 0; i < historico.size(); i++) {
+            List<Integer> jogo = historico.get(i);
+            for (int numero : jogo) {
+                frequencia.merge(numero, 1, Integer::sum);
+                recencia.putIfAbsent(numero, i); // Guarda a primeira ocorrência (mais recente)
+            }
+        }
+        
+        int maxFreq = frequencia.values().stream().mapToInt(Integer::intValue).max().orElse(1);
+        int maxRec = historico.size();
+        
+        for (int numero = 1; numero <= 25; numero++) {
+            double scoreFreq = (double) frequencia.getOrDefault(numero, 0) / maxFreq;
+            double scoreRec = 1.0 - ((double) recencia.getOrDefault(numero, maxRec) / maxRec);
+            scores.put(numero, (scoreFreq * 0.6) + (scoreRec * 0.4));
+        }
+        
+        return scores;
+    }
+    
+    private double avaliarProbabilidadeAcertos(List<Integer> jogo, List<List<Integer>> historico) {
+        String sql = """
+            WITH ultimos_jogos AS (
+                SELECT 
+                    h.num_concurso,
+                    ARRAY[h.num1,h.num2,h.num3,h.num4,h.num5,h.num6,h.num7,h.num8,
+                          h.num9,h.num10,h.num11,h.num12,h.num13,h.num14,h.num15] as numeros,
+                    g.tot_acertos
+                FROM tb_historico_jogos h
+                JOIN tb_jogos_gerados g ON h.num_concurso = g.num_concurso
+                WHERE h.id_loterias = 1
+                ORDER BY h.num_concurso DESC
+                LIMIT 200
+            )
+            SELECT 
+                COUNT(*) as total_jogos,
+                SUM(CASE WHEN tot_acertos >= 11 THEN 1 ELSE 0 END) as jogos_premiados
+            FROM ultimos_jogos u
+            WHERE (
+                -- Verifica similaridade na distribuição par/ímpar
+                ABS((SELECT COUNT(*) FROM UNNEST(u.numeros) n WHERE n % 2 = 0) - 
+                    (SELECT COUNT(*) FROM UNNEST(?) n WHERE n % 2 = 0)) <= 2
+            )
+        """;
+        
+        try (Connection conn = Database.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+                
+            Object[] jogoArray = jogo.toArray();
+            stmt.setArray(1, conn.createArrayOf("integer", jogoArray));
+            
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                int totalJogos = rs.getInt("total_jogos");
+                int jogosPremidos = rs.getInt("jogos_premiados");
+                
+                if (totalJogos == 0) return 0.5;
+                return (double) jogosPremidos / totalJogos;
+            }
+        } catch (SQLException e) {
+            logger.error("Erro ao avaliar probabilidade de acertos: ", e);
+        }
+        return 0.5;
+    }
+
     /**
      * Gera uma lista de jogos baseada em análise estatística
      */
@@ -172,27 +274,39 @@ public class GeradorJogosOptimizado {
         }
         
         List<List<Integer>> historico = buscarJogosHistoricos(idLoteria, 100);
-        
         int tentativas = 0;
-        int maxTentativas = quantidade * 3;
+        int maxTentativas = quantidade * 30; // Aumentado para dar mais chances
         
         while (jogos.size() < quantidade && tentativas < maxTentativas) {
-            List<Integer> jogo = new ArrayList<>(numerosBase);
-            aplicarVariacoes(jogo);
+            List<Integer> jogoAtual = new ArrayList<>(numerosBase);
+            aplicarVariacoesInteligentes(jogoAtual, historico);
             
-            if (validarJogoAvancado(jogo) && validarSimilaridade(jogo, jogos, historico)) {
-                jogos.add(new ArrayList<>(jogo));
+            if (validarJogoAvancado(jogoAtual) && 
+                validarSimilaridade(jogoAtual, jogos, historico)) {
+                
+                double probabilidade = avaliarProbabilidadeAcertos(jogoAtual, historico);
+                if (probabilidade >= 0.4) { // Mantemos o uso da avaliação de probabilidade
+                    jogos.add(new ArrayList<>(jogoAtual));
+                    logger.info("Jogo {} de {} gerado com sucesso (probabilidade: {:.2f})", 
+                              jogos.size(), quantidade, probabilidade);
+                }
             }
             
             tentativas++;
+            if (tentativas % 10 == 0) {
+                logger.info("Tentativa {}/{}, jogos gerados: {}/{}",
+                           tentativas, maxTentativas, jogos.size(), quantidade);
+            }
         }
         
+        // Se não conseguiu gerar todos os jogos, log de aviso
         if (jogos.size() < quantidade) {
-            logger.warn("Gerados apenas {} de {} jogos solicitados", jogos.size(), quantidade);
+            logger.warn("Gerados apenas {} de {} jogos solicitados após {} tentativas",
+                       jogos.size(), quantidade, tentativas);
         }
         
         return jogos;
-    }
+    }    
     
     /**
      * Valida se um jogo atende aos critérios básicos
@@ -288,28 +402,7 @@ public class GeradorJogosOptimizado {
         return historico;
     }
     
-    /**
-     * Aplica variações aleatórias a um jogo
-     */
-    private void aplicarVariacoes(List<Integer> jogo) {
-        Random random = new Random();
-        int substituicoes = random.nextInt(3) + 1;
-        
-        for (int i = 0; i < substituicoes; i++) {
-            int posicaoRemover = random.nextInt(jogo.size());
-            jogo.remove(posicaoRemover);
-            
-            int novoNumero;
-            do {
-                novoNumero = random.nextInt(NUMERO_MAXIMO) + 1;
-            } while (jogo.contains(novoNumero));
-            
-            jogo.add(novoNumero);
-        }
-        
-        Collections.sort(jogo);
-    }
-    
+   
     /**
      * Valida se um jogo não é muito similar a outros
      */
