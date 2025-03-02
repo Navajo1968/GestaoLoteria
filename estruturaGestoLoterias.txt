@@ -3,26 +3,22 @@
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias
 
-02/03/2025  19:33    <DIR>          .
-02/03/2025  19:33    <DIR>          ..
+01/03/2025  21:33    <DIR>          .
+01/03/2025  21:33    <DIR>          ..
 18/02/2025  22:17             1.608 .classpath
 21/02/2025  23:09                66 .gitattributes
-02/03/2025  19:33    <DIR>          .mvn
 09/02/2025  15:05               566 .project
 09/02/2025  15:06    <DIR>          .settings
 09/02/2025  15:01    <DIR>          bin
 21/02/2025  23:48    <DIR>          database
-02/03/2025  19:35                 0 estruturaGestoLoterias.txt
+01/03/2025  23:52                 0 estruturaGestoLoterias.txt
 01/03/2025  21:32             6.510 Estrutura_src.txt
 10/02/2025  13:33    <DIR>          logs
-02/03/2025  19:33            10.069 mvnw
-02/03/2025  19:33             6.607 mvnw.cmd
-02/03/2025  18:43             5.395 pom.xml
+18/02/2025  22:16             4.988 pom.xml
 09/02/2025  23:18    <DIR>          scripts
 01/03/2025  21:33    <DIR>          src
 14/02/2025  00:41    <DIR>          target
-02/03/2025  18:59                61 treinar_modelo.bat
-               9 arquivo(s)         30.882 bytes
+               6 arquivo(s)         13.738 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git
 
@@ -1120,22 +1116,6 @@
 21/02/2025  23:09    <DIR>          ..
                0 arquivo(s)              0 bytes
 
- Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.mvn
-
-02/03/2025  19:33    <DIR>          .
-02/03/2025  19:33    <DIR>          ..
-02/03/2025  19:33    <DIR>          wrapper
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.mvn\wrapper
-
-02/03/2025  19:33    <DIR>          .
-02/03/2025  19:33    <DIR>          ..
-02/03/2025  19:33            50.710 maven-wrapper.jar
-02/03/2025  19:33               220 maven-wrapper.properties
-02/03/2025  19:33             4.941 MavenWrapperDownloader.java
-               3 arquivo(s)         55.871 bytes
-
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.settings
 
 09/02/2025  15:06    <DIR>          .
@@ -1447,18 +1427,17 @@
 
 09/02/2025  12:36    <DIR>          .
 09/02/2025  12:36    <DIR>          ..
-02/03/2025  15:58    <DIR>          loteriascorp
+22/02/2025  19:10    <DIR>          loteriascorp
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp
 
-02/03/2025  15:58    <DIR>          .
-02/03/2025  15:58    <DIR>          ..
+22/02/2025  19:10    <DIR>          .
+22/02/2025  19:10    <DIR>          ..
 20/02/2025  23:18    <DIR>          analise
 09/02/2025  21:11             5.498 CarregarHistoricoController.java
 22/02/2025  19:10    <DIR>          controller
 08/02/2025  02:00               877 Database.java
-02/03/2025  18:29             1.332 ExportarDados.java
 23/02/2025  19:24             2.716 Jogo.java
 15/02/2025  00:05             1.129 JogoGerado.java
 18/02/2025  22:26             4.931 Loteria.java
@@ -1474,7 +1453,7 @@
 20/02/2025  23:46    <DIR>          model
 01/03/2025  22:31    <DIR>          service
 15/02/2025  00:20             6.544 VerJogosGeradosController.java
-              16 arquivo(s)         82.365 bytes
+              15 arquivo(s)         81.033 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp\analise
 
@@ -1505,9 +1484,9 @@
 22/02/2025  19:24             7.227 AnaliseConcursoScheduler.java
 19/02/2025  22:02            14.421 AnaliseEstatisticaService.java
 24/02/2025  20:57             9.958 GeradorJogosOptimizado.java
-02/03/2025  18:35             4.411 JogoService.java
+01/03/2025  22:35             1.894 JogoService.java
 11/02/2025  00:24             9.507 LotoFacilService.java
-               5 arquivo(s)         45.524 bytes
+               5 arquivo(s)         43.007 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\resources
 
@@ -1570,7 +1549,7 @@
 14/02/2025  00:41    <DIR>          .
 14/02/2025  00:41    <DIR>          ..
 14/02/2025  00:41    <DIR>          archive-tmp
-02/03/2025  16:06    <DIR>          classes
+18/02/2025  22:17    <DIR>          classes
 14/02/2025  00:41    <DIR>          generated-sources
 14/02/2025  00:41    <DIR>          generated-test-sources
 14/02/2025  00:42        57.864.665 GestaoLoterias-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -1588,84 +1567,83 @@
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:05    <DIR>          com
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+18/02/2025  22:17    <DIR>          com
 09/02/2025  21:24               400 log4js.xml
-02/03/2025  16:06    <DIR>          META-INF
+18/02/2025  22:17    <DIR>          META-INF
                1 arquivo(s)            400 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com
 
-02/03/2025  16:05    <DIR>          .
-02/03/2025  16:05    <DIR>          ..
-02/03/2025  16:06    <DIR>          loteriascorp
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+22/02/2025  19:10    <DIR>          loteriascorp
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06    <DIR>          analise
-02/03/2025  16:06             8.721 CarregarHistoricoController.class
-02/03/2025  16:06    <DIR>          controller
-02/03/2025  16:06             1.198 Database.class
-02/03/2025  18:29             2.156 ExportarDados.class
-02/03/2025  16:06             4.332 Jogo.class
-02/03/2025  16:06             2.022 JogoGerado.class
-02/03/2025  16:06             5.378 Loteria.class
-02/03/2025  16:06            13.932 LoteriaController.class
-02/03/2025  16:06             4.011 LoteriaHistorico.class
-02/03/2025  16:06            15.784 LoteriaHistoricoController.class
-02/03/2025  16:06             1.430 LoteriaPreco.class
-02/03/2025  16:06             9.820 LoteriaPrecoController.class
-02/03/2025  16:06             2.368 LoteriaProbabilidade.class
-02/03/2025  16:06            13.181 LoteriaProbabilidadeController.class
-02/03/2025  16:06             1.590 Main.class
-02/03/2025  16:06             4.212 MenuController.class
-02/03/2025  16:06    <DIR>          model
-02/03/2025  16:06    <DIR>          service
-02/03/2025  16:06             8.903 VerJogosGeradosController.class
-02/03/2025  16:06    <DIR>          view
-              16 arquivo(s)         99.038 bytes
+22/02/2025  19:10    <DIR>          .
+22/02/2025  19:10    <DIR>          ..
+22/02/2025  18:22    <DIR>          analise
+18/02/2025  22:17             8.721 CarregarHistoricoController.class
+22/02/2025  22:30    <DIR>          controller
+18/02/2025  22:17             1.198 Database.class
+23/02/2025  19:24             4.332 Jogo.class
+18/02/2025  22:17             2.022 JogoGerado.class
+18/02/2025  22:26             5.378 Loteria.class
+19/02/2025  22:32            13.932 LoteriaController.class
+18/02/2025  22:17             4.011 LoteriaHistorico.class
+19/02/2025  19:34            15.784 LoteriaHistoricoController.class
+18/02/2025  22:17             1.430 LoteriaPreco.class
+19/02/2025  19:34             9.820 LoteriaPrecoController.class
+18/02/2025  22:17             2.368 LoteriaProbabilidade.class
+19/02/2025  19:35            13.181 LoteriaProbabilidadeController.class
+21/02/2025  00:19             1.590 Main.class
+23/02/2025  12:03             4.212 MenuController.class
+20/02/2025  23:47    <DIR>          model
+01/03/2025  22:31    <DIR>          service
+18/02/2025  22:17             8.903 VerJogosGeradosController.class
+23/02/2025  18:18    <DIR>          view
+              15 arquivo(s)         96.882 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\analise
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06             8.923 AnalisadorConcurso.class
-02/03/2025  16:06             4.470 AnaliseEstatistica.class
+22/02/2025  18:22    <DIR>          .
+22/02/2025  18:22    <DIR>          ..
+01/03/2025  21:55             8.923 AnalisadorConcurso.class
+01/03/2025  21:50             4.470 AnaliseEstatistica.class
                2 arquivo(s)         13.393 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\controller
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06            15.066 GerarProbabilidadeController.class
+22/02/2025  22:30    <DIR>          .
+22/02/2025  22:30    <DIR>          ..
+23/02/2025  21:42            15.066 GerarProbabilidadeController.class
                1 arquivo(s)         15.066 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\model
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06               966 PadraoSucesso.class
+20/02/2025  23:47    <DIR>          .
+20/02/2025  23:47    <DIR>          ..
+20/02/2025  23:47               966 PadraoSucesso.class
                1 arquivo(s)            966 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\service
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06             8.043 AnaliseConcursoScheduler.class
-02/03/2025  16:06            17.495 AnaliseEstatisticaService.class
-02/03/2025  16:06            10.554 GeradorJogosOptimizado.class
-02/03/2025  16:06             1.678 JogoService.class
-02/03/2025  16:06            10.342 LotoFacilService.class
-               5 arquivo(s)         48.112 bytes
+01/03/2025  22:31    <DIR>          .
+01/03/2025  22:31    <DIR>          ..
+22/02/2025  19:24             8.043 AnaliseConcursoScheduler.class
+19/02/2025  22:02            17.495 AnaliseEstatisticaService.class
+24/02/2025  20:57            10.554 GeradorJogosOptimizado.class
+01/03/2025  22:35             2.224 JogoService.class
+18/02/2025  22:17            10.342 LotoFacilService.class
+               5 arquivo(s)         48.658 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\view
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
+23/02/2025  18:18    <DIR>          .
+23/02/2025  18:18    <DIR>          ..
 09/02/2025  20:53               605 CarregarHistorico.fxml
 23/02/2025  11:58             1.997 GerarProbabilidade.fxml
 08/02/2025  18:52             2.500 Loteria.fxml
@@ -1678,33 +1656,33 @@
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  18:43                88 MANIFEST.MF
-02/03/2025  16:06    <DIR>          maven
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+01/03/2025  22:31                88 MANIFEST.MF
+18/02/2025  22:17    <DIR>          maven
                1 arquivo(s)             88 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  16:06    <DIR>          com.loteriascorp
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+18/02/2025  22:17    <DIR>          com.loteriascorp
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven\com.loteriascorp
 
-02/03/2025  16:06    <DIR>          .
-02/03/2025  16:06    <DIR>          ..
-02/03/2025  18:43    <DIR>          GestaoLoterias
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+01/03/2025  22:31    <DIR>          GestaoLoterias
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven\com.loteriascorp\GestaoLoterias
 
-02/03/2025  18:43    <DIR>          .
-02/03/2025  18:43    <DIR>          ..
-02/03/2025  18:43               265 pom.properties
-02/03/2025  18:43             5.395 pom.xml
-               2 arquivo(s)          5.660 bytes
+01/03/2025  22:31    <DIR>          .
+01/03/2025  22:31    <DIR>          ..
+01/03/2025  22:31               265 pom.properties
+01/03/2025  22:31             4.988 pom.xml
+               2 arquivo(s)          5.253 bytes
 
  Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\generated-sources
 
@@ -1791,5 +1769,5 @@
                0 arquivo(s)              0 bytes
 
      Total de Arquivos na Lista:
-             316 arquivo(s)    142.184.051 bytes
-             629 pasta(s)   328.414.662.656 bytes dispon¡veis
+             308 arquivo(s)    142.105.170 bytes
+             623 pasta(s)   323.128.070.144 bytes dispon¡veis

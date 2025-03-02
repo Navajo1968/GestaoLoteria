@@ -1,3 +1,3 @@
 @echo off
-cd C:\path\to\your\project
+cd C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias>
 .\mvnw spring-boot:run

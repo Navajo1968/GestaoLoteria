@@ -2,6 +2,8 @@ package com.loteriascorp.service;
 
 import com.loteriascorp.Database;
 import com.loteriascorp.Jogo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import weka.classifiers.Classifier;
@@ -18,6 +20,7 @@ import java.util.*;
 @Service
 public class JogoService {
 
+    private static final Logger logger = LoggerFactory.getLogger(JogoService.class);
     private Classifier classifier;
 
     public JogoService() {
@@ -28,6 +31,7 @@ public class JogoService {
 
     @Scheduled(cron = "0 15 22 * * *") // Agendado para rodar todos os dias às 22:15
     public void treinarModelo() {
+        logger.info("Iniciando o treinamento do modelo de Machine Learning...");
         try {
             // Carregar os dados históricos
             DataSource source = new DataSource("path/to/historical/data.arff");
@@ -36,9 +40,9 @@ public class JogoService {
 
             // Treinar o modelo
             classifier.buildClassifier(dataset);
-            System.out.println("Modelo treinado com sucesso.");
+            logger.info("Modelo treinado com sucesso.");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erro ao treinar o modelo de Machine Learning", e);
         }
     }
 
@@ -62,8 +66,9 @@ public class JogoService {
                     }
                 }
             }
+            logger.info("Cálculo dos números mais frequentes concluído.");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erro ao calcular os números mais frequentes", e);
         }
 
         return frequenciaNumeros.entrySet().stream()
@@ -86,8 +91,9 @@ public class JogoService {
                 double predicao = classifier.classifyInstance(instance);
                 numerosPrevistos.add((int) predicao);
             }
+            logger.info("Previsão dos números concluída.");
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Erro ao prever os números", e);
         }
 
         return numerosPrevistos;
