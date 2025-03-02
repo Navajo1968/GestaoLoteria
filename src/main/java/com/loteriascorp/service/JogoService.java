@@ -1,41 +1,50 @@
 package com.loteriascorp.service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import com.loteriascorp.Jogo;
-import com.loteriascorp.database.DatabaseHelper;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class JogoService {
 
-    private DatabaseHelper databaseHelper;
-
     public JogoService() {
-        this.databaseHelper = new DatabaseHelper();
+        // Construtor vazio ou outras inicializações, se necessário
     }
 
     public List<Jogo> gerarJogos(int numeroConcurso, int quantidadeJogos) {
         List<Integer> numerosMaisFrequentes = calcularNumerosMaisFrequentes();
-        return criarJogos(numeroConcurso, quantidadeJogos, numerosMaisFrequentes);
+        List<Integer> numerosPrevistos = preverNumeros(numerosMaisFrequentes);
+        return criarJogos(numeroConcurso, quantidadeJogos, numerosPrevistos);
     }
-
+    
     private List<Integer> calcularNumerosMaisFrequentes() {
-        Map<Integer, Long> frequenciaNumeros = databaseHelper.obterHistoricoJogos()
-            .stream()
-            .flatMap(jogo -> jogo.getNumeros().stream())
-            .collect(Collectors.groupingBy(numero -> numero, Collectors.counting()));
-
-        return frequenciaNumeros.entrySet()
-            .stream()
-            .sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
-            .map(Map.Entry::getKey)
-            .collect(Collectors.toList());
+        // Implementar lógica para calcular números mais frequentes
+        return new ArrayList<>(); // Retornar lista de números mais frequentes
     }
-
-    private List<Jogo> criarJogos(int numeroConcurso, int quantidadeJogos, List<Integer> numerosMaisFrequentes) {
-        // Implementação da lógica para criar jogos baseados nos números mais frequentes
-        // ...
-        return null; // Retorna a lista de jogos gerados
+    
+    private List<Integer> preverNumeros(List<Integer> numerosMaisFrequentes) {
+        // Implementar algoritmo de machine learning para prever números
+        return new ArrayList<>(); // Retornar lista de números previstos
+    }
+    
+    private List<Jogo> criarJogos(int numeroConcurso, int quantidadeJogos, List<Integer> numerosPrevistos) {
+        List<Jogo> jogos = new ArrayList<>();
+        Random random = new Random();
+        
+        for (int i = 0; i < quantidadeJogos; i++) {
+            Jogo jogo = new Jogo(i + 1, new ArrayList<>());
+            jogo.setNumConcurso(numeroConcurso);
+            List<Integer> numerosDoJogo = new ArrayList<>(numerosPrevistos);
+            
+            // Embaralhar e selecionar os números para o jogo
+            while (numerosDoJogo.size() > 15) {
+                numerosDoJogo.remove(random.nextInt(numerosDoJogo.size()));
+            }
+            
+            jogo.setNumeros(numerosDoJogo);
+            jogos.add(jogo);
+        }
+        
+        return jogos;
     }
 }

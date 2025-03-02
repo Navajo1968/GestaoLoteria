@@ -88,6 +88,20 @@ public class AnalisadorConcurso {
             return;
         }
         
+     // Nova métrica: análise de números consecutivos
+        int consecutivos = 0;
+        for (int i = 1; i < numerosSorteados.size(); i++) {
+            if (numerosSorteados.get(i) - numerosSorteados.get(i - 1) == 1) {
+                consecutivos++;
+            }
+        }
+        salvarMetrica("NUMEROS_CONSECUTIVOS", consecutivos);
+        
+        // Nova métrica: análise de desvio padrão
+        double media = numerosSorteados.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        double desvioPadrao = Math.sqrt(numerosSorteados.stream().mapToDouble(n -> Math.pow(n - media, 2)).average().orElse(0.0));
+        salvarMetrica("DESVIO_PADRAO", desvioPadrao);
+        
         // Análise de paridade
         long pares = numerosSorteados.stream().filter(n -> n % 2 == 0).count();
         salvarMetrica("PARES", pares);
