@@ -20,7 +20,7 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.3</version>
         </dependency>
-        
+    
         <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -77,6 +77,16 @@
             <artifactId>weka-stable</artifactId>
             <version>3.8.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.6.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-scheduling</artifactId>
+            <version>2.6.6</version>
+        </dependency>    
         
         <!-- CSV Handling -->
         <dependency>
