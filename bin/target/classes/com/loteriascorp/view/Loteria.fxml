@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loteriascorp.LoteriaController">
+    <children>
+        <TableView fx:id="tabelaLoterias">
+            <columns>
+            	<TableColumn fx:id="colunaId" text="ID"/>
+                <TableColumn fx:id="colunaNome" text="Nome"/>
+                <TableColumn fx:id="colunaContexto" text="Contexto"/>
+                <TableColumn fx:id="colunaQtNumeros" text="Qt. Números"/>
+                <TableColumn fx:id="colunaDtInclusao" text="Dt. Inclusão"/>
+                <TableColumn fx:id="colunaSeg" text="Seg"/>
+                <TableColumn fx:id="colunaTer" text="Ter"/>
+                <TableColumn fx:id="colunaQua" text="Qua"/>
+                <TableColumn fx:id="colunaQui" text="Qui"/>
+                <TableColumn fx:id="colunaSex" text="Sex"/>
+                <TableColumn fx:id="colunaSab" text="Sab"/>
+                <TableColumn fx:id="colunaDom" text="Dom"/>
+                <TableColumn fx:id="colunaHorarioSorteio" text="Horário Sorteio"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <TextField fx:id="txtNome" promptText="Nome"/>
+                <TextArea fx:id="txtContexto" promptText="Contexto" wrapText="true" VBox.vgrow="ALWAYS"/>
+                <TextField fx:id="txtQtNumeros" promptText="Qt. Números"/>
+                <HBox spacing="5">
+                    <CheckBox fx:id="cbSeg" text="Seg"/>
+                    <CheckBox fx:id="cbTer" text="Ter"/>
+                    <CheckBox fx:id="cbQua" text="Qua"/>
+                    <CheckBox fx:id="cbQui" text="Qui"/>
+                    <CheckBox fx:id="cbSex" text="Sex"/>
+                    <CheckBox fx:id="cbSab" text="Sab"/>
+                    <CheckBox fx:id="cbDom" text="Dom"/>
+                </HBox>
+                <TextField fx:id="txtHorarioSorteio" promptText="Horário Sorteio (HH:MM)"/>
+            </VBox>
+            <VBox spacing="5" alignment="CENTER_RIGHT">
+                <Button fx:id="btnSalvar" text="Salvar" onAction="#salvarLoteria"/>
+                <Button fx:id="btnNovo" text="Novo" onAction="#novoLoteria"/>
+                <Button fx:id="btnExcluir" text="Excluir" onAction="#excluirLoteria"/>
+            </VBox>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loteriascorp.MenuController"
+      prefWidth="800" prefHeight="600">
+    <MenuBar>
+        <Menu text="Cadastro">
+            <MenuItem text="Loterias" onAction="#handleLoterias"/>
+            <MenuItem text="Loterias Preço" onAction="#handleLoteriasPreco"/>
+            <MenuItem text="Loterias Probabilidade" onAction="#handleLoteriasProbabilidade"/>
+            <MenuItem text="Loterias Histórico" onAction="#handleLoteriasHistorico"/>
+        </Menu>
+        <Menu text="Operações">
+            <MenuItem text="Carregar histórico" onAction="#handleCarregarHistorico"/>
+            <MenuItem text="Gerar Probabilidade" onAction="#handleGerarProbabilidade"/>
+            <MenuItem text="Ver Jogos Gerados" onAction="#handleVerJogosGerados"/>
+            <MenuItem text="Rodar ML" onAction="#rodarML"/>
+        </Menu>
+        <Menu text="Encerrar">
+            <MenuItem text="Encerrar" onAction="#handleEncerrar"/>
+        </Menu>
+    </MenuBar>
+</VBox>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.loteriascorp.LoteriaProbabilidadeController">
+    <children>
+        <TableView fx:id="tabelaLoteriasProbabilidade">
+            <columns>
+                <TableColumn fx:id="colunaIdLoteriasProbabilidade" text="ID Loterias Probabilidade"/>
+                <TableColumn fx:id="colunaNomeLoteria" text="Nome Loteria"/>
+                <TableColumn fx:id="colunaNomeLoteriaPreco" text="Nome Loteria Preço"/>
+                <TableColumn fx:id="colunaQtNumerosAcertos" text="Qt. Números Acertos"/>
+                <TableColumn fx:id="colunaQtNumerosJogados" text="Qt. Números Jogados"/>
+                <TableColumn fx:id="colunaQtProbabilidade" text="Qt. Probabilidade"/>
+                <TableColumn fx:id="colunaVlrFatorPremiacao" text="Valor Fator Premiação"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <ComboBox fx:id="comboBoxNomeLoteria" promptText="Nome Loteria"/>
+                <ComboBox fx:id="comboBoxNomeLoteriaPreco" promptText="Nome Loteria Preço"/>
+                <TextField fx:id="txtQtNumerosAcertos" promptText="Qt. Números Acertos"/>
+                <TextField fx:id="txtQtNumerosJogados" promptText="Qt. Números Jogados"/>
+                <TextField fx:id="txtQtProbabilidade" promptText="Qt. Probabilidade"/>
+                <TextField fx:id="txtVlrFatorPremiacao" promptText="Valor Fator Premiação"/>
+            </VBox>
+            <VBox spacing="5" alignment="CENTER_RIGHT">
+                <Button fx:id="btnSalvar" text="Salvar" onAction="#salvarLoteriaProbabilidade"/>
+                <Button fx:id="btnNovo" text="Novo" onAction="#novoLoteriaProbabilidade"/>
+                <Button fx:id="btnExcluir" text="Excluir" onAction="#excluirLoteriaProbabilidade"/>
+            </VBox>
+        </HBox>
+    </children>
+</VBox>

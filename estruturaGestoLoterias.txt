@@ -1,0 +1,1773 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç 8AEF-BC08
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias
+
+01/03/2025  21:33    <DIR>          .
+01/03/2025  21:33    <DIR>          ..
+18/02/2025  22:17             1.608 .classpath
+21/02/2025  23:09                66 .gitattributes
+09/02/2025  15:05               566 .project
+09/02/2025  15:06    <DIR>          .settings
+09/02/2025  15:01    <DIR>          bin
+21/02/2025  23:48    <DIR>          database
+01/03/2025  23:52                 0 estruturaGestoLoterias.txt
+01/03/2025  21:32             6.510 Estrutura_src.txt
+10/02/2025  13:33    <DIR>          logs
+18/02/2025  22:16             4.988 pom.xml
+09/02/2025  23:18    <DIR>          scripts
+01/03/2025  21:33    <DIR>          src
+14/02/2025  00:41    <DIR>          target
+               6 arquivo(s)         13.738 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git
+
+21/02/2025  23:10                15 COMMIT_EDITMSG
+21/02/2025  23:09               165 config
+21/02/2025  23:09                73 description
+21/02/2025  23:09                21 HEAD
+21/02/2025  23:09    <DIR>          hooks
+21/02/2025  23:10            17.827 index
+21/02/2025  23:09    <DIR>          info
+21/02/2025  23:10    <DIR>          logs
+21/02/2025  23:10    <DIR>          objects
+21/02/2025  23:09    <DIR>          refs
+               5 arquivo(s)         18.101 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\hooks
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               478 applypatch-msg.sample
+21/02/2025  23:09               896 commit-msg.sample
+21/02/2025  23:09             4.726 fsmonitor-watchman.sample
+21/02/2025  23:09               189 post-update.sample
+21/02/2025  23:09               424 pre-applypatch.sample
+21/02/2025  23:09             1.649 pre-commit.sample
+21/02/2025  23:09               416 pre-merge-commit.sample
+21/02/2025  23:09             1.374 pre-push.sample
+21/02/2025  23:09             4.898 pre-rebase.sample
+21/02/2025  23:09               544 pre-receive.sample
+21/02/2025  23:09             1.492 prepare-commit-msg.sample
+21/02/2025  23:09             2.783 push-to-checkout.sample
+21/02/2025  23:09             2.308 sendemail-validate.sample
+21/02/2025  23:09             3.650 update.sample
+              14 arquivo(s)         25.827 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\info
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               240 exclude
+               1 arquivo(s)            240 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\logs
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               176 HEAD
+21/02/2025  23:10    <DIR>          refs
+               1 arquivo(s)            176 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\logs\refs
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10    <DIR>          heads
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\logs\refs\heads
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               176 main
+               1 arquivo(s)            176 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10    <DIR>          01
+21/02/2025  23:10    <DIR>          04
+21/02/2025  23:10    <DIR>          05
+21/02/2025  23:10    <DIR>          07
+21/02/2025  23:10    <DIR>          09
+21/02/2025  23:09    <DIR>          0e
+21/02/2025  23:09    <DIR>          10
+21/02/2025  23:10    <DIR>          11
+21/02/2025  23:10    <DIR>          14
+21/02/2025  23:09    <DIR>          19
+21/02/2025  23:10    <DIR>          1b
+21/02/2025  23:10    <DIR>          1c
+21/02/2025  23:09    <DIR>          21
+21/02/2025  23:09    <DIR>          22
+21/02/2025  23:10    <DIR>          28
+21/02/2025  23:09    <DIR>          29
+21/02/2025  23:10    <DIR>          2e
+21/02/2025  23:09    <DIR>          2f
+21/02/2025  23:09    <DIR>          33
+21/02/2025  23:10    <DIR>          35
+21/02/2025  23:09    <DIR>          39
+21/02/2025  23:10    <DIR>          3a
+21/02/2025  23:10    <DIR>          3b
+21/02/2025  23:09    <DIR>          3c
+21/02/2025  23:10    <DIR>          3e
+21/02/2025  23:09    <DIR>          3f
+21/02/2025  23:10    <DIR>          43
+21/02/2025  23:10    <DIR>          44
+21/02/2025  23:10    <DIR>          4a
+21/02/2025  23:10    <DIR>          4d
+21/02/2025  23:09    <DIR>          4e
+21/02/2025  23:09    <DIR>          4f
+21/02/2025  23:10    <DIR>          50
+21/02/2025  23:09    <DIR>          51
+21/02/2025  23:09    <DIR>          52
+21/02/2025  23:10    <DIR>          55
+21/02/2025  23:09    <DIR>          57
+21/02/2025  23:09    <DIR>          59
+21/02/2025  23:09    <DIR>          5c
+21/02/2025  23:10    <DIR>          5d
+21/02/2025  23:10    <DIR>          60
+21/02/2025  23:10    <DIR>          63
+21/02/2025  23:10    <DIR>          65
+21/02/2025  23:10    <DIR>          66
+21/02/2025  23:10    <DIR>          68
+21/02/2025  23:10    <DIR>          69
+21/02/2025  23:10    <DIR>          6b
+21/02/2025  23:10    <DIR>          71
+21/02/2025  23:10    <DIR>          72
+21/02/2025  23:10    <DIR>          73
+21/02/2025  23:10    <DIR>          77
+21/02/2025  23:10    <DIR>          78
+21/02/2025  23:10    <DIR>          79
+21/02/2025  23:10    <DIR>          7b
+21/02/2025  23:09    <DIR>          7c
+21/02/2025  23:10    <DIR>          7e
+21/02/2025  23:10    <DIR>          81
+21/02/2025  23:10    <DIR>          85
+21/02/2025  23:09    <DIR>          88
+21/02/2025  23:09    <DIR>          8c
+21/02/2025  23:10    <DIR>          8f
+21/02/2025  23:10    <DIR>          95
+21/02/2025  23:09    <DIR>          99
+21/02/2025  23:09    <DIR>          9f
+21/02/2025  23:10    <DIR>          a3
+21/02/2025  23:10    <DIR>          a4
+21/02/2025  23:09    <DIR>          a6
+21/02/2025  23:10    <DIR>          aa
+21/02/2025  23:09    <DIR>          ab
+21/02/2025  23:09    <DIR>          ac
+21/02/2025  23:10    <DIR>          ad
+21/02/2025  23:10    <DIR>          ae
+21/02/2025  23:10    <DIR>          b3
+21/02/2025  23:09    <DIR>          b5
+21/02/2025  23:09    <DIR>          b7
+21/02/2025  23:09    <DIR>          b8
+21/02/2025  23:10    <DIR>          b9
+21/02/2025  23:10    <DIR>          bc
+21/02/2025  23:10    <DIR>          be
+21/02/2025  23:10    <DIR>          c0
+21/02/2025  23:09    <DIR>          c1
+21/02/2025  23:10    <DIR>          c3
+21/02/2025  23:09    <DIR>          c4
+21/02/2025  23:10    <DIR>          c8
+21/02/2025  23:10    <DIR>          c9
+21/02/2025  23:10    <DIR>          cc
+21/02/2025  23:10    <DIR>          cd
+21/02/2025  23:10    <DIR>          cf
+21/02/2025  23:09    <DIR>          d2
+21/02/2025  23:10    <DIR>          d4
+21/02/2025  23:10    <DIR>          d7
+21/02/2025  23:09    <DIR>          d8
+21/02/2025  23:10    <DIR>          d9
+21/02/2025  23:10    <DIR>          db
+21/02/2025  23:10    <DIR>          dc
+21/02/2025  23:10    <DIR>          dd
+21/02/2025  23:10    <DIR>          df
+21/02/2025  23:10    <DIR>          e3
+21/02/2025  23:10    <DIR>          e4
+21/02/2025  23:09    <DIR>          e5
+21/02/2025  23:09    <DIR>          e6
+21/02/2025  23:09    <DIR>          e7
+21/02/2025  23:09    <DIR>          e8
+21/02/2025  23:09    <DIR>          e9
+21/02/2025  23:09    <DIR>          ea
+21/02/2025  23:09    <DIR>          ec
+21/02/2025  23:10    <DIR>          ed
+21/02/2025  23:09    <DIR>          ee
+21/02/2025  23:10    <DIR>          f0
+21/02/2025  23:10    <DIR>          f1
+21/02/2025  23:09    <DIR>          f2
+21/02/2025  23:10    <DIR>          f4
+21/02/2025  23:10    <DIR>          f5
+21/02/2025  23:10    <DIR>          f7
+21/02/2025  23:09    <DIR>          f8
+21/02/2025  23:09    <DIR>          fa
+21/02/2025  23:10    <DIR>          fd
+21/02/2025  23:10    <DIR>          fe
+21/02/2025  23:10    <DIR>          ff
+21/02/2025  23:09    <DIR>          info
+21/02/2025  23:09    <DIR>          pack
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\01
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             6.667 1f7d7c6f8a058c6671b178754c7db3275ff341
+               1 arquivo(s)          6.667 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\04
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                77 7bdd0627524872a09524f5f51a186909265ff6
+               1 arquivo(s)             77 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\05
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                45 004ce7836c5e7377111a982c64ce79098543f9
+21/02/2025  23:10             7.022 87960405a7b0de86663dd51c37e86888bca36d
+               2 arquivo(s)          7.067 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\07
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               108 07f3ae3f08efd8373881eb7d4122c231b54251
+               1 arquivo(s)            108 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\09
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               137 e546ea72cc605ec3dfdcf1af13afe83d925a42
+               1 arquivo(s)            137 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\0e
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10                99 15486af5190eb8d5bbdb7dec27c886418bef13
+               1 arquivo(s)             99 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\10
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               251 cd2189a0b7ffc9870aa969b976cc81835db8b3
+               1 arquivo(s)            251 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\11
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09               318 8a5f48596156fa9e4f7c1ba87783a896460edd
+21/02/2025  23:10               205 96d7b67623d6e98286c7637eb1dd34c69c1647
+               2 arquivo(s)            523 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\14
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             4.485 90e4ca83f7fc1705db72d5ecfaa777a67484d0
+               1 arquivo(s)          4.485 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\19
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               894 0d76f0344be17f53c17700b0c02936283c0e66
+               1 arquivo(s)            894 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\1b
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             1.480 d3f2ff4ad73755ea100c1aa15592183e414a3a
+               1 arquivo(s)          1.480 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\1c
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             7.612 87adc6930612a8293530429bca18ea206efb9a
+               1 arquivo(s)          7.612 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\21
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               436 365d8c017451196813cedc9a353dbabb2feafb
+21/02/2025  23:09               535 756aad06a2414db1efdd2021e08d98778fc072
+21/02/2025  23:09             1.009 e41d589ae8a122bbcc02b4f08a7ebae610cdc9
+               3 arquivo(s)          1.980 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\22
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               819 49a28657f86c645f8978b75babc1bd52aca318
+               1 arquivo(s)            819 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\28
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                63 8ca47582481c6b8433240aa5ba78f661292e92
+               1 arquivo(s)             63 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\29
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               107 abf999564110a0d6aca109f55f439c72b7031c
+               1 arquivo(s)            107 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\2e
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09         9.923.116 66ce60117542d8eb6d9e1f3073f95abddd5b9f
+21/02/2025  23:10                77 b37409db67855ceb2624846513b01cd208a998
+               2 arquivo(s)      9.923.193 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\2f
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               308 22066d2fe62723b3378ff824846d008ac9ab13
+               1 arquivo(s)            308 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\33
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09           115.619 9ac757aca7038a65c60cd745e4ca706beeefe1
+               1 arquivo(s)        115.619 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\35
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                45 07d70a807aff117db6d3e0f19ba6ad6aa03cd3
+               1 arquivo(s)             45 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\39
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               512 0e250a763c3ad74ee36781db2cef4462e93068
+               1 arquivo(s)            512 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\3a
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                64 547863d724dc2e5d3a946bf5473578c9e34220
+21/02/2025  23:10                63 7d5adaf3798d61f433532497195486922a766d
+21/02/2025  23:10               399 a58af0df9571228ca728ff0f27e935c313416a
+               3 arquivo(s)            526 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\3b
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               144 b02b90517912b012f8f88a039ae55222c8c022
+               1 arquivo(s)            144 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\3c
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               643 7014df4b55f859f973e6321e855e14f7501efb
+               1 arquivo(s)            643 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\3e
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               711 c0aec5651ed2cc253565e8c9bda69009ef6616
+               1 arquivo(s)            711 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\3f
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.863 224af2e7cdf5e4c326671d2d0fbad5fdd4b9eb
+21/02/2025  23:10               416 5f03135fc8d8f8977b8ea5d750f0fd7956281e
+               2 arquivo(s)          2.279 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\43
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               325 5e3dca1a691ae5ba8ccd492fdc5f94a0c8cd3a
+21/02/2025  23:10        53.893.796 73c0ed30e58303889ca60c12e471005c6e4579
+21/02/2025  23:09             2.682 b50f2fcf22211fd72b8609ba17bf5a54792637
+               3 arquivo(s)     53.896.803 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\44
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                91 e82fa94056555e15447cbb73500f05b0a074b6
+               1 arquivo(s)             91 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\4a
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09               726 0ea66b8fea8dab57c2b6dc8b6ec491603d0026
+21/02/2025  23:10               682 8be43ad2dd69b4ebb17599ba8f76dc331b99d0
+               2 arquivo(s)          1.408 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\4d
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               566 bfd0f29c4c30c64aeb66b45a92a38b74363fe5
+               1 arquivo(s)            566 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\4e
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.005 3434c8fecd795b6f1d6931e36c7ce14a11c91e
+               1 arquivo(s)          1.005 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\4f
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               249 86c5bd6760d1a32577b163013a87d6457f681a
+21/02/2025  23:09             1.649 ffc4c5bab2e17048a971723d6449dc8df209ca
+               2 arquivo(s)          1.898 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\50
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             7.565 f6e37fe8eb40151f01f296332a6c0e3be976b6
+               1 arquivo(s)          7.565 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\51
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               170 1ad81cd7dd21c52f1a0d384a15e8580bec69de
+               1 arquivo(s)            170 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\52
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               746 3c724156d9b2f112a8deb448e1874215aa28c0
+               1 arquivo(s)            746 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\55
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               177 8dfa82a2f9a5a262ec4f34c4c6b2a0cc766e93
+               1 arquivo(s)            177 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\57
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               389 ab9a83cd55c4317b8c95a8b8a326342bb9c235
+               1 arquivo(s)            389 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\59
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             2.202 143d45d94568dcb63496aa96f9de2033f3379d
+               1 arquivo(s)          2.202 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\5c
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               747 e86c75b0f0c730493b2d368eb675d8973a999e
+               1 arquivo(s)            747 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\5d
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               460 3bcfd1256f9ac29db2fd3a4b6fb71a330788f1
+21/02/2025  23:09            41.011 cf328012237cdf6a0a3b3a7421be14ae2ba696
+               2 arquivo(s)         41.471 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\60
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             6.817 445cb845a0803c6fa0708527abce62d82473bb
+               1 arquivo(s)          6.817 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\63
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             1.071 ff0eade4ab09e23944522a4458cd5d382393b5
+               1 arquivo(s)          1.071 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\65
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09               691 c31bbdc5d427de3cc0d3961614be808ab27f8d
+21/02/2025  23:10                58 e3dedafd93ec61dc6401e4ff93a3a11dc55724
+               2 arquivo(s)            749 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\66
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                86 d2584ea26e4e3da15a4043836b0fdb30f70096
+               1 arquivo(s)             86 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\68
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               606 14cd6d51abe84fab3cf450b160e424978adb49
+21/02/2025  23:10                59 d5963b6216f251b446d8a7b6af7935ecda1b45
+               2 arquivo(s)            665 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\69
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                55 211220acb6ebd1c3017ec33750e1cb7b95f799
+21/02/2025  23:10                91 6addacaea7d55af02a6f7a6ac161d56593bd03
+               2 arquivo(s)            146 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\6b
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               220 953b281c1615929392043307637f7b80872d1c
+               1 arquivo(s)            220 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\71
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               648 64f1e18b762fd96b753f057210f68667fe3011
+21/02/2025  23:10               321 9861695e429f79f066831b469ded50bf1f9086
+               2 arquivo(s)            969 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\72
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                56 16abd5d97d92da16e984b381a1aece0170ab38
+               1 arquivo(s)             56 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\73
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             2.594 f33e1714b8131b63c2513f4ebbfff912a09b2b
+               1 arquivo(s)          2.594 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\77
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                78 4a25b1071631e235e0c84edd087d886da0a74c
+21/02/2025  23:10             2.344 df8d5f8e13f14acb7653060377ff3d3f48b1c5
+               2 arquivo(s)          2.422 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\78
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                80 8ab801b028814f4c3e065c93109adf92ecc412
+               1 arquivo(s)             80 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\79
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09               135 dc3128569f08c3da4f9ac9ab8967f086ac2cf4
+21/02/2025  23:10                85 fe348934154e4f9f746fd71a05141d4fdca924
+               2 arquivo(s)            220 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\7b
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               331 4fdc4397f667a808c0fc7f3bb4f4e97271ff57
+               1 arquivo(s)            331 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\7c
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               371 829a05d789ab62df5cd171fe4761de9fde97b2
+               1 arquivo(s)            371 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\7e
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               912 2f7e2e0be266c49bc034ce9fd51912eef2b81f
+21/02/2025  23:10             4.974 ba067c8b4992cbeeda436752e210a42846885c
+               2 arquivo(s)          5.886 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\81
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                54 002861fafe965d64232fc5c5d20f5eb74eca0f
+               1 arquivo(s)             54 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\85
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               224 08cc885f95df60303babb951dba83a4281b3f0
+21/02/2025  23:10                57 7bda8fb938a7c9d45bfb165c9b181dd8b814f2
+21/02/2025  23:09             9.801 92ead1ecb294cdad6603d7948db60f32c9aa82
+               3 arquivo(s)         10.082 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\88
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               795 4e009bcee14c7ec078a10548b4a1ead460d991
+               1 arquivo(s)            795 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\8c
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             2.550 2e4ffabaedcfb01840241489466ba99c58fca4
+               1 arquivo(s)          2.550 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\8f
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               822 84063311a641075504afad50c7f62a8fa4ca79
+21/02/2025  23:09               184 c86d6fd45b633cf8d9affd7b33139b9ba18bac
+               2 arquivo(s)          1.006 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\95
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                54 9a99e91a2bc12f0fbbd8590bc763f33066b53c
+               1 arquivo(s)             54 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\99
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.482 ecdf1db154f81e05b2afff130766a4e96411bf
+               1 arquivo(s)          1.482 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\9f
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               206 4474479e4748b5dc8ed24442b09408225deafc
+               1 arquivo(s)            206 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\a3
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               234 f2cb827068f1a1635a373c2e7e0fa291a61d54
+               1 arquivo(s)            234 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\a4
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10            56.430 96e9991600b0e78137bc5e21e7d7d6b4be56c4
+21/02/2025  23:09             1.330 d9b48fcb8554924ae38478a14aad5316acc1c2
+               2 arquivo(s)         57.760 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\a6
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             3.032 3bd7c39cef2d1f36dcea638de7460fa33f2677
+               1 arquivo(s)          3.032 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\aa
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                62 56f8542c46c9b633ed0df6e61424d652a0c026
+               1 arquivo(s)             62 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ab
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09                51 09515981b29e8d7c810873b7245d91d8da7851
+21/02/2025  23:09               338 eb671035d4da303ec55881be47c7e38b21b44d
+               2 arquivo(s)            389 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ac
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               683 158095a4c3b2b76d6d1a06263b5c28ceb6bc95
+               1 arquivo(s)            683 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ad
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               824 0d6408efefbc26e3adb0426ea4873fb3969405
+               1 arquivo(s)            824 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ae
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                85 d67100b03125b86c50121e756cfe6f6c8ab165
+               1 arquivo(s)             85 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\b3
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                57 9d9f395e9e0900aa26503b4bd3cfed9469bb66
+               1 arquivo(s)             57 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\b5
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.625 ff9cb49faa8a5f7bfa5a917b6effcd21b187d3
+               1 arquivo(s)          1.625 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\b7
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               375 6994c4081e0265a2ea949cb4b9dde568e87250
+               1 arquivo(s)            375 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\b8
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.021 9b37662156e81b4eba50bdb08a89bb1b33ee49
+21/02/2025  23:09             1.422 c0ce4510f9f7479d5782c0fb251387cb32edb1
+               2 arquivo(s)          2.443 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\b9
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               118 5c69f3bd6261f1cce31a21911aa81c3f057fa0
+               1 arquivo(s)            118 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\bc
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               219 6ba0253cd38efb3d8bf4ecb2bd78bd79c148c7
+21/02/2025  23:10             4.397 c521f99ceea2368cb1c0bdca2b74d6dc89253c
+               2 arquivo(s)          4.616 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\be
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             2.434 5b061307b24fb34e8ddebad36a80705fee09ff
+               1 arquivo(s)          2.434 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c0
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                46 c7c54b35883d1a15a32f284f9dc526795b09cc
+               1 arquivo(s)             46 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c1
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               319 32f44c395076f5c78560e63c174c3172a046d3
+               1 arquivo(s)            319 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c3
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             1.224 1ba374fae1fb4d6c574c13d5174a1716f8032e
+               1 arquivo(s)          1.224 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c4
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.198 3fbc0bd13d8bec0c9de541c13d8fd3649cfab1
+21/02/2025  23:09             1.194 5f67fcf4bd0cec7dda1ea5d8c8a114d0f067a4
+               2 arquivo(s)          2.392 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c8
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               106 c092a58ec0ef083d26a2ed8f93463281146d97
+               1 arquivo(s)            106 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\c9
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                47 13dcbd0d96f8f864504f73773da2226360ac17
+               1 arquivo(s)             47 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\cc
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                54 428860a8a57c1eef0fe6e61342bcf401640ce0
+21/02/2025  23:10               940 b86c5936ae3a31e2e336c08a54bcf77b28ec6b
+21/02/2025  23:09               500 e7226f2cbd9950d316d0ba4140451a52c235b1
+               3 arquivo(s)          1.494 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\cd
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:09            35.723 a624d9ce97d4d64f71a3d12f8146d11d0c3ed4
+21/02/2025  23:09             1.622 efc4904081a183a703908bfa5b0c09905f9706
+21/02/2025  23:10                80 f260038b5cfc2ca5fad81343cddc543fbf3565
+               3 arquivo(s)         37.425 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\cf
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                61 9c543e7b77c936b56d260f8c9c83ead0ca06f0
+               1 arquivo(s)             61 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\d2
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               599 61c80f71a79bb68fdcfa02c42bdbdcea690df5
+               1 arquivo(s)            599 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\d4
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               199 1ede9bf82de58c379bc06179bc64e2362623e9
+21/02/2025  23:10                80 3b8968e63d9c102aec3c8ec67fe36ac1ca0185
+               2 arquivo(s)            279 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\d7
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               178 20230068c589d002c89b953d0444d5212438f2
+               1 arquivo(s)            178 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\d8
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10               435 2b3105f94f6b520c3bea77ba838bdf923979b9
+               1 arquivo(s)            435 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\d9
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                56 0d2dc606b8474231012c4e97abd3ba1ec5541e
+21/02/2025  23:09             2.009 b572ca0e4345ddf991f8c70fa327337b20d4b9
+               2 arquivo(s)          2.065 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\db
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                87 c3ae111197a05bc61d2dcd2d9e855c48fd9ee9
+               1 arquivo(s)             87 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\dc
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                70 23c64c9eb67569c202c080f97dd48eb33b140c
+               1 arquivo(s)             70 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\dd
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                54 6101b83f9b70056863f37c57aa52b49d8d0e52
+21/02/2025  23:10               772 78d7a73b73ec4b7aed04779ac2724e7ea78ccd
+21/02/2025  23:09             4.025 7a51fd5bffafb2150068afe479b51365e1e19e
+               3 arquivo(s)          4.851 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\df
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                45 2d376ff6c8b47057f89393a3b4d83e539b7809
+21/02/2025  23:09                76 e0770424b2a19faf507a501ebfc23be8f54e7b
+               2 arquivo(s)            121 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e3
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                46 691169f4b3ddc277c9df1e8b3853b964bebe86
+21/02/2025  23:10            17.088 a3c4a6a994dd0499c26a50a12e1ed6fc1d3c95
+               2 arquivo(s)         17.134 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e4
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             4.547 006a9985f9b56b474a78e84a3ff5c46cc74688
+               1 arquivo(s)          4.547 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e5
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               109 ba8cde2e37ab4b0bbebef4582253380993b372
+               1 arquivo(s)            109 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e6
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.690 3a5bb4a9af96be477246d295dfee6ca9d6b40e
+21/02/2025  23:10                15 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+               2 arquivo(s)          1.705 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e7
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               664 836502859cd1c52b31626093edea970b47d0d9
+               1 arquivo(s)            664 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e8
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               914 ddaf9577b9a9fef6ff822c713df8f937fb024c
+               1 arquivo(s)            914 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\e9
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10                81 d134b7accc6fd3cd3755cf0c67e9f3f561369d
+               1 arquivo(s)             81 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ea
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               946 a2179aa3cb2941794e76709e92350098f64bf3
+               1 arquivo(s)            946 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ec
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09               463 b8204267a4546e2c74a59c870ef07b7de5e1f5
+               1 arquivo(s)            463 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ed
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             5.767 3e58f1ccbd44c95959d6a7b45c594d25477101
+               1 arquivo(s)          5.767 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ee
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             3.601 cae7a7463684649698aff883d943556731cb8e
+               1 arquivo(s)          3.601 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f0
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                58 7b3b7056bb460a19e6411284e83f3ff2c0cdd6
+               1 arquivo(s)             58 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f1
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               225 e636463fa5b7c153f68e1e5a156859001b0642
+               1 arquivo(s)            225 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f2
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             2.849 c0884bfbfb44719f1081b030e690807a51b620
+               1 arquivo(s)          2.849 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f4
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10             2.435 fdfda7ebb5ebbcef3040a81635ab90d2365324
+               1 arquivo(s)          2.435 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f5
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                46 65240085810f366870312d9584b3945f81ad5e
+               1 arquivo(s)             46 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f7
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                88 f3df1706300f130cd3f380b5414412b8779b4e
+               1 arquivo(s)             88 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\f8
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:09             1.524 225c5b86c35cfdfb03820b4913608dd9b3b957
+               1 arquivo(s)          1.524 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\fa
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10             1.149 12f26c00fa70c719cd641d2fa51b9751ce84e9
+               1 arquivo(s)          1.149 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\fd
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                59 619cbb3478b4c5d57bdbe350fd8337e07bd5b4
+21/02/2025  23:10             1.328 b82c86ba5bb7ad5276e7c30cf39850db76264b
+               2 arquivo(s)          1.387 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\fe
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               111 08797c99f2a86c5c18d8ff4b0e1cbdef9823a4
+               1 arquivo(s)            111 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\ff
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10               122 80c6953a8f0694aebc111a78a5150c3c036441
+               1 arquivo(s)            122 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\info
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\objects\pack
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\refs
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+21/02/2025  23:10    <DIR>          heads
+21/02/2025  23:09    <DIR>          tags
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\refs\heads
+
+21/02/2025  23:10    <DIR>          .
+21/02/2025  23:10    <DIR>          ..
+21/02/2025  23:10                41 main
+               1 arquivo(s)             41 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.git\refs\tags
+
+21/02/2025  23:09    <DIR>          .
+21/02/2025  23:09    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\.settings
+
+09/02/2025  15:06    <DIR>          .
+09/02/2025  15:06    <DIR>          ..
+09/02/2025  15:06               191 org.eclipse.core.resources.prefs
+18/02/2025  22:17               426 org.eclipse.jdt.core.prefs
+               2 arquivo(s)            617 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:00             2.284 pom.xml
+09/02/2025  15:01    <DIR>          src
+09/02/2025  15:01    <DIR>          target
+               1 arquivo(s)          2.284 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          main
+09/02/2025  15:01    <DIR>          test
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          java
+09/02/2025  15:01    <DIR>          resources
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\java
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          com
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\java\com
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\java\com\loteriascorp
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01             7.759 CarregarHistoricoController.class
+09/02/2025  15:01             2.580 Database.class
+09/02/2025  15:01             3.951 Loteria.class
+09/02/2025  15:01             7.322 LoteriaController.class
+09/02/2025  15:01             4.790 LoteriaHistorico.class
+09/02/2025  15:01             7.901 LoteriaHistoricoController.class
+09/02/2025  15:01             2.157 LoteriaPreco.class
+09/02/2025  15:01             9.229 LoteriaPrecoController.class
+09/02/2025  15:01             3.220 LoteriaProbabilidade.class
+09/02/2025  15:01             8.633 LoteriaProbabilidadeController.class
+09/02/2025  15:01             2.013 Main.class
+09/02/2025  15:01             4.782 MenuController.class
+              12 arquivo(s)         64.337 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\resources
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          com
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\resources\com
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\resources\com\loteriascorp
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          view
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\main\resources\com\loteriascorp\view
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+08/02/2025  22:58               602 CarregarHistorico.fxml
+08/02/2025  18:52             2.500 Loteria.fxml
+08/02/2025  22:22             3.315 LoteriaHistorico.fxml
+08/02/2025  20:19             1.445 LoteriaPreco.fxml
+08/02/2025  20:50             2.081 LoteriaProbabilidade.fxml
+08/02/2025  22:33             1.126 Menu.fxml
+               6 arquivo(s)         11.069 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\test
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          java
+09/02/2025  15:01    <DIR>          resources
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\test\java
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\src\test\resources
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          classes
+09/02/2025  15:01    <DIR>          generated-sources
+09/02/2025  14:54            38.333 GestaoLoterias-1.0-SNAPSHOT.jar
+09/02/2025  15:01    <DIR>          maven-archiver
+09/02/2025  15:01    <DIR>          maven-status
+               1 arquivo(s)         38.333 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          com
+09/02/2025  15:01    <DIR>          META-INF
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\com
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\com\loteriascorp
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          view
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\com\loteriascorp\view
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+08/02/2025  22:58               602 CarregarHistorico.fxml
+08/02/2025  18:52             2.500 Loteria.fxml
+08/02/2025  22:22             3.315 LoteriaHistorico.fxml
+08/02/2025  20:19             1.445 LoteriaPreco.fxml
+08/02/2025  20:50             2.081 LoteriaProbabilidade.fxml
+08/02/2025  22:33             1.126 Menu.fxml
+               6 arquivo(s)         11.069 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\META-INF
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:00                88 MANIFEST.MF
+09/02/2025  15:01    <DIR>          maven
+               1 arquivo(s)             88 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\META-INF\maven
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          com.loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\META-INF\maven\com.loteriascorp
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          GestaoLoterias
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\classes\META-INF\maven\com.loteriascorp\GestaoLoterias
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:00               265 pom.properties
+09/02/2025  15:00             2.284 pom.xml
+               2 arquivo(s)          2.549 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\generated-sources
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          annotations
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\generated-sources\annotations
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-archiver
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  14:54                75 pom.properties
+               1 arquivo(s)             75 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          maven-compiler-plugin
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status\maven-compiler-plugin
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          compile
+09/02/2025  15:01    <DIR>          testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status\maven-compiler-plugin\compile
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          default-compile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status\maven-compiler-plugin\compile\default-compile
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  14:54               491 createdFiles.lst
+09/02/2025  14:54             1.247 inputFiles.lst
+               2 arquivo(s)          1.738 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status\maven-compiler-plugin\testCompile
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  15:01    <DIR>          default-testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\bin\target\maven-status\maven-compiler-plugin\testCompile\default-testCompile
+
+09/02/2025  15:01    <DIR>          .
+09/02/2025  15:01    <DIR>          ..
+09/02/2025  14:54                 0 createdFiles.lst
+09/02/2025  14:54                 0 inputFiles.lst
+               2 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\database
+
+21/02/2025  23:48    <DIR>          .
+21/02/2025  23:48    <DIR>          ..
+22/02/2025  14:49            10.695 gestaoloteriaschema.sql
+               1 arquivo(s)         10.695 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\logs
+
+10/02/2025  13:33    <DIR>          .
+10/02/2025  13:33    <DIR>          ..
+10/02/2025  23:53                37 lotofacil.log
+               1 arquivo(s)             37 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\scripts
+
+09/02/2025  23:18    <DIR>          .
+09/02/2025  23:18    <DIR>          ..
+03/02/2025  15:06        18.560.000 chromedriver.exe
+03/02/2025  15:06             1.536 LICENSE.chromedriver
+10/02/2025  11:21           190.400 page_source.html
+03/02/2025  15:06           620.599 THIRD_PARTY_NOTICES.chromedriver
+10/02/2025  11:20             5.264 update_database.py
+               5 arquivo(s)     19.377.799 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src
+
+01/03/2025  21:33    <DIR>          .
+01/03/2025  21:33    <DIR>          ..
+09/02/2025  12:39    <DIR>          main
+09/02/2025  13:34    <DIR>          test
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main
+
+09/02/2025  12:39    <DIR>          .
+09/02/2025  12:39    <DIR>          ..
+09/02/2025  12:44    <DIR>          java
+09/02/2025  13:26               188 module-info.java
+09/02/2025  21:24    <DIR>          resources
+               1 arquivo(s)            188 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java
+
+09/02/2025  12:44    <DIR>          .
+09/02/2025  12:44    <DIR>          ..
+09/02/2025  12:36    <DIR>          com
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com
+
+09/02/2025  12:36    <DIR>          .
+09/02/2025  12:36    <DIR>          ..
+22/02/2025  19:10    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp
+
+22/02/2025  19:10    <DIR>          .
+22/02/2025  19:10    <DIR>          ..
+20/02/2025  23:18    <DIR>          analise
+09/02/2025  21:11             5.498 CarregarHistoricoController.java
+22/02/2025  19:10    <DIR>          controller
+08/02/2025  02:00               877 Database.java
+23/02/2025  19:24             2.716 Jogo.java
+15/02/2025  00:05             1.129 JogoGerado.java
+18/02/2025  22:26             4.931 Loteria.java
+19/02/2025  22:32            13.159 LoteriaController.java
+13/02/2025  23:28             3.286 LoteriaHistorico.java
+19/02/2025  19:34            15.995 LoteriaHistoricoController.java
+08/02/2025  20:09             1.165 LoteriaPreco.java
+19/02/2025  19:34             6.870 LoteriaPrecoController.java
+08/02/2025  20:37             2.236 LoteriaProbabilidade.java
+19/02/2025  19:35            11.324 LoteriaProbabilidadeController.java
+21/02/2025  00:19             1.124 Main.java
+23/02/2025  12:03             4.179 MenuController.java
+20/02/2025  23:46    <DIR>          model
+01/03/2025  22:31    <DIR>          service
+15/02/2025  00:20             6.544 VerJogosGeradosController.java
+              15 arquivo(s)         81.033 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp\analise
+
+20/02/2025  23:18    <DIR>          .
+20/02/2025  23:18    <DIR>          ..
+01/03/2025  21:55             6.181 AnalisadorConcurso.java
+01/03/2025  21:50             4.026 AnaliseEstatistica.java
+               2 arquivo(s)         10.207 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp\controller
+
+22/02/2025  19:10    <DIR>          .
+22/02/2025  19:10    <DIR>          ..
+23/02/2025  21:42            11.145 GerarProbabilidadeController.java
+               1 arquivo(s)         11.145 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp\model
+
+20/02/2025  23:46    <DIR>          .
+20/02/2025  23:46    <DIR>          ..
+20/02/2025  23:47               970 PadraoSucesso.java
+               1 arquivo(s)            970 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\java\com\loteriascorp\service
+
+01/03/2025  22:31    <DIR>          .
+01/03/2025  22:31    <DIR>          ..
+22/02/2025  19:24             7.227 AnaliseConcursoScheduler.java
+19/02/2025  22:02            14.421 AnaliseEstatisticaService.java
+24/02/2025  20:57             9.958 GeradorJogosOptimizado.java
+01/03/2025  22:35             1.894 JogoService.java
+11/02/2025  00:24             9.507 LotoFacilService.java
+               5 arquivo(s)         43.007 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\resources
+
+09/02/2025  21:24    <DIR>          .
+09/02/2025  21:24    <DIR>          ..
+09/02/2025  12:40    <DIR>          com
+09/02/2025  21:24               400 log4js.xml
+               1 arquivo(s)            400 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\resources\com
+
+09/02/2025  12:40    <DIR>          .
+09/02/2025  12:40    <DIR>          ..
+09/02/2025  12:40    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\resources\com\loteriascorp
+
+09/02/2025  12:40    <DIR>          .
+09/02/2025  12:40    <DIR>          ..
+23/02/2025  18:18    <DIR>          view
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\main\resources\com\loteriascorp\view
+
+23/02/2025  18:18    <DIR>          .
+23/02/2025  18:18    <DIR>          ..
+09/02/2025  20:53               605 CarregarHistorico.fxml
+23/02/2025  11:58             1.997 GerarProbabilidade.fxml
+08/02/2025  18:52             2.500 Loteria.fxml
+13/02/2025  23:02             3.480 LoteriaHistorico.fxml
+08/02/2025  20:19             1.445 LoteriaPreco.fxml
+08/02/2025  20:50             2.081 LoteriaProbabilidade.fxml
+12/02/2025  22:36             1.227 Menu.fxml
+15/02/2025  00:06             1.078 VerJogosGerados.fxml
+               8 arquivo(s)         14.413 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\test
+
+09/02/2025  13:34    <DIR>          .
+09/02/2025  13:34    <DIR>          ..
+09/02/2025  13:34    <DIR>          java
+09/02/2025  13:34    <DIR>          resources
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\test\java
+
+09/02/2025  13:34    <DIR>          .
+09/02/2025  13:34    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\src\test\resources
+
+09/02/2025  13:34    <DIR>          .
+09/02/2025  13:34    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          archive-tmp
+18/02/2025  22:17    <DIR>          classes
+14/02/2025  00:41    <DIR>          generated-sources
+14/02/2025  00:41    <DIR>          generated-test-sources
+14/02/2025  00:42        57.864.665 GestaoLoterias-1.0-SNAPSHOT-jar-with-dependencies.jar
+14/02/2025  00:41            59.655 GestaoLoterias-1.0-SNAPSHOT.jar
+14/02/2025  00:41    <DIR>          maven-archiver
+14/02/2025  00:41    <DIR>          maven-status
+14/02/2025  00:41    <DIR>          test-classes
+               2 arquivo(s)     57.924.320 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\archive-tmp
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes
+
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+18/02/2025  22:17    <DIR>          com
+09/02/2025  21:24               400 log4js.xml
+18/02/2025  22:17    <DIR>          META-INF
+               1 arquivo(s)            400 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com
+
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+22/02/2025  19:10    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp
+
+22/02/2025  19:10    <DIR>          .
+22/02/2025  19:10    <DIR>          ..
+22/02/2025  18:22    <DIR>          analise
+18/02/2025  22:17             8.721 CarregarHistoricoController.class
+22/02/2025  22:30    <DIR>          controller
+18/02/2025  22:17             1.198 Database.class
+23/02/2025  19:24             4.332 Jogo.class
+18/02/2025  22:17             2.022 JogoGerado.class
+18/02/2025  22:26             5.378 Loteria.class
+19/02/2025  22:32            13.932 LoteriaController.class
+18/02/2025  22:17             4.011 LoteriaHistorico.class
+19/02/2025  19:34            15.784 LoteriaHistoricoController.class
+18/02/2025  22:17             1.430 LoteriaPreco.class
+19/02/2025  19:34             9.820 LoteriaPrecoController.class
+18/02/2025  22:17             2.368 LoteriaProbabilidade.class
+19/02/2025  19:35            13.181 LoteriaProbabilidadeController.class
+21/02/2025  00:19             1.590 Main.class
+23/02/2025  12:03             4.212 MenuController.class
+20/02/2025  23:47    <DIR>          model
+01/03/2025  22:31    <DIR>          service
+18/02/2025  22:17             8.903 VerJogosGeradosController.class
+23/02/2025  18:18    <DIR>          view
+              15 arquivo(s)         96.882 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\analise
+
+22/02/2025  18:22    <DIR>          .
+22/02/2025  18:22    <DIR>          ..
+01/03/2025  21:55             8.923 AnalisadorConcurso.class
+01/03/2025  21:50             4.470 AnaliseEstatistica.class
+               2 arquivo(s)         13.393 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\controller
+
+22/02/2025  22:30    <DIR>          .
+22/02/2025  22:30    <DIR>          ..
+23/02/2025  21:42            15.066 GerarProbabilidadeController.class
+               1 arquivo(s)         15.066 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\model
+
+20/02/2025  23:47    <DIR>          .
+20/02/2025  23:47    <DIR>          ..
+20/02/2025  23:47               966 PadraoSucesso.class
+               1 arquivo(s)            966 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\service
+
+01/03/2025  22:31    <DIR>          .
+01/03/2025  22:31    <DIR>          ..
+22/02/2025  19:24             8.043 AnaliseConcursoScheduler.class
+19/02/2025  22:02            17.495 AnaliseEstatisticaService.class
+24/02/2025  20:57            10.554 GeradorJogosOptimizado.class
+01/03/2025  22:35             2.224 JogoService.class
+18/02/2025  22:17            10.342 LotoFacilService.class
+               5 arquivo(s)         48.658 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\com\loteriascorp\view
+
+23/02/2025  18:18    <DIR>          .
+23/02/2025  18:18    <DIR>          ..
+09/02/2025  20:53               605 CarregarHistorico.fxml
+23/02/2025  11:58             1.997 GerarProbabilidade.fxml
+08/02/2025  18:52             2.500 Loteria.fxml
+13/02/2025  23:02             3.480 LoteriaHistorico.fxml
+08/02/2025  20:19             1.445 LoteriaPreco.fxml
+08/02/2025  20:50             2.081 LoteriaProbabilidade.fxml
+12/02/2025  22:36             1.227 Menu.fxml
+15/02/2025  00:06             1.078 VerJogosGerados.fxml
+               8 arquivo(s)         14.413 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF
+
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+01/03/2025  22:31                88 MANIFEST.MF
+18/02/2025  22:17    <DIR>          maven
+               1 arquivo(s)             88 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven
+
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+18/02/2025  22:17    <DIR>          com.loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven\com.loteriascorp
+
+18/02/2025  22:17    <DIR>          .
+18/02/2025  22:17    <DIR>          ..
+01/03/2025  22:31    <DIR>          GestaoLoterias
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\classes\META-INF\maven\com.loteriascorp\GestaoLoterias
+
+01/03/2025  22:31    <DIR>          .
+01/03/2025  22:31    <DIR>          ..
+01/03/2025  22:31               265 pom.properties
+01/03/2025  22:31             4.988 pom.xml
+               2 arquivo(s)          5.253 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\generated-sources
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          annotations
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\generated-sources\annotations
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\generated-test-sources
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          test-annotations
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\generated-test-sources\test-annotations
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-archiver
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41                75 pom.properties
+               1 arquivo(s)             75 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          maven-compiler-plugin
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status\maven-compiler-plugin
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          compile
+14/02/2025  00:41    <DIR>          testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status\maven-compiler-plugin\compile
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          default-compile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status\maven-compiler-plugin\compile\default-compile
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41               668 createdFiles.lst
+14/02/2025  00:41             1.676 inputFiles.lst
+               2 arquivo(s)          2.344 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status\maven-compiler-plugin\testCompile
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41    <DIR>          default-testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\maven-status\maven-compiler-plugin\testCompile\default-testCompile
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+14/02/2025  00:41                 0 createdFiles.lst
+14/02/2025  00:41                 0 inputFiles.lst
+               2 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\target\test-classes
+
+14/02/2025  00:41    <DIR>          .
+14/02/2025  00:41    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+     Total de Arquivos na Lista:
+             308 arquivo(s)    142.105.170 bytes
+             623 pasta(s)   323.128.070.144 bytes dispon°veis

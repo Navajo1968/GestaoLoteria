@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.loteriascorp.controller.GerarProbabilidadeController">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Controles superiores -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Loteria:"/>
+        <ComboBox fx:id="loteriaComboBox" prefWidth="200"/>
+        
+        <Label text="Quantidade de Jogos:"/>
+        <Spinner fx:id="quantidadeJogosSpinner" prefWidth="100"/>
+        
+        <Label text="Número do Concurso:"/>
+        <TextField fx:id="numeroConcursoTextField" prefWidth="100"/>
+        
+        <Button text="Gerar" onAction="#handleGerarProbabilidade"/>
+    </HBox>
+
+    <!-- Área principal com tabela e análise -->
+    <SplitPane dividerPositions="0.6" VBox.vgrow="ALWAYS">
+        <VBox spacing="10">
+            <TableView fx:id="jogosTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="numeroJogoColumn" text="Nº"/>
+                    <TableColumn fx:id="numerosColumn" text="Números"/>
+                </columns>
+            </TableView>
+            <Label fx:id="valorTotalApostaLabel" text="Valor Total da Aposta: R$ 0,00"/>
+        </VBox>
+        
+        <VBox spacing="10">
+            <Label text="Análise do Concurso" style="-fx-font-weight: bold"/>
+            <TextArea fx:id="txtAnalise" VBox.vgrow="ALWAYS" editable="false" wrapText="true"/>
+        </VBox>
+    </SplitPane>
+
+    <!-- Botões inferiores -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Salvar Jogos" onAction="#handleAceitarSugestao"/>
+        <Button text="Limpar" onAction="#handleDescartarSugestao"/>
+        <Button text="Fechar" onAction="#handleFechar"/>
+    </HBox>
+</VBox>
