@@ -11,7 +11,7 @@
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <javafx.version>23</javafx.version>
-        <spring.boot.version>3.0.0</spring.boot.version> <!-- Use uma versão estável -->
+        <spring.boot.version>3.0.0</spring.boot.version>
     </properties>
 
     <repositories>
@@ -60,11 +60,7 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.18</version>
         </dependency>
-    <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-        <version>3.0.2</version>
-    </dependency>        
+        
         <!-- JSON and HTTP -->
         <dependency>
             <groupId>org.json</groupId>
@@ -110,12 +106,13 @@
             <artifactId>spring-boot-starter-scheduling</artifactId>
             <version>0.1.0</version>
         </dependency>   
+
         <!-- JAXB Dependencies -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>3.0.2</version>
-        </dependency>        
+        </dependency>
         
         <!-- CSV Handling -->
         <dependency>
