@@ -34,6 +34,11 @@
           <target>17</target>
         </configuration>
       </plugin>
+       <!-- Plugin FrameWork -->
+      <plugin>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-maven-plugin</artifactId>
+</plugin>
       <!-- Plugin para criar fat jar executável -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
