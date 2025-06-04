@@ -1,0 +1,337 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç 24F8-75DE
+
+ Pasta de C:\Users\rodri\GestaoLoteria
+
+03/06/2025  21:40    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31             1.608 .classpath
+03/06/2025  21:31                68 .gitattributes
+03/06/2025  21:31    <DIR>          .mvn
+03/06/2025  21:31               566 .project
+03/06/2025  21:31    <DIR>          .settings
+03/06/2025  21:35    <DIR>          bin
+03/06/2025  21:35    <DIR>          database
+03/06/2025  21:40                 0 EstruturaDiretorios_GestaoLoteria.txt
+03/06/2025  21:40                 0 EstruturaDiretorio_GestaoLoteria.txt
+03/06/2025  21:36    <DIR>          logs
+03/06/2025  21:31            10.379 mvnw
+03/06/2025  21:31             6.789 mvnw.cmd
+03/06/2025  21:31             7.052 pom.xml
+03/06/2025  21:31    <DIR>          scripts
+03/06/2025  21:37    <DIR>          src
+03/06/2025  21:31    <DIR>          target
+               8 arquivo(s)         26.462 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git
+
+03/06/2025  21:40    <DIR>          ..
+03/06/2025  21:31               306 config
+03/06/2025  21:31                73 description
+03/06/2025  21:36                21 HEAD
+03/06/2025  21:31    <DIR>          hooks
+03/06/2025  21:37             8.895 index
+03/06/2025  21:31    <DIR>          info
+03/06/2025  21:31    <DIR>          logs
+03/06/2025  21:31    <DIR>          objects
+03/06/2025  21:31               112 packed-refs
+03/06/2025  21:31    <DIR>          refs
+               5 arquivo(s)          9.407 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\hooks
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31               478 applypatch-msg.sample
+03/06/2025  21:31               896 commit-msg.sample
+03/06/2025  21:31             4.726 fsmonitor-watchman.sample
+03/06/2025  21:31               189 post-update.sample
+03/06/2025  21:31               424 pre-applypatch.sample
+03/06/2025  21:31             1.649 pre-commit.sample
+03/06/2025  21:31               416 pre-merge-commit.sample
+03/06/2025  21:31             1.374 pre-push.sample
+03/06/2025  21:31             4.898 pre-rebase.sample
+03/06/2025  21:31               544 pre-receive.sample
+03/06/2025  21:31             1.492 prepare-commit-msg.sample
+03/06/2025  21:31             2.783 push-to-checkout.sample
+03/06/2025  21:31             2.308 sendemail-validate.sample
+03/06/2025  21:31             3.650 update.sample
+              14 arquivo(s)         25.827 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\info
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31               240 exclude
+               1 arquivo(s)            240 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\logs
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:36               547 HEAD
+03/06/2025  21:31    <DIR>          refs
+               1 arquivo(s)            547 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          heads
+03/06/2025  21:31    <DIR>          remotes
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs\heads
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31               199 main
+               1 arquivo(s)            199 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs\remotes
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          origin
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs\remotes\origin
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31               199 HEAD
+               1 arquivo(s)            199 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          info
+03/06/2025  21:31    <DIR>          pack
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\info
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\pack
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31             6.308 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.idx
+03/06/2025  21:31        71.557.588 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.pack
+03/06/2025  21:31               800 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.rev
+               3 arquivo(s)     71.564.696 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\refs
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          heads
+03/06/2025  21:31    <DIR>          remotes
+03/06/2025  21:31    <DIR>          tags
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\heads
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31                41 main
+               1 arquivo(s)             41 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\remotes
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          origin
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\remotes\origin
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31                30 HEAD
+               1 arquivo(s)             30 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\tags
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.mvn
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+03/06/2025  21:31    <DIR>          wrapper
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.mvn\wrapper
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31            50.710 maven-wrapper.jar
+03/06/2025  21:31               220 maven-wrapper.properties
+03/06/2025  21:31             5.058 MavenWrapperDownloader.java
+               3 arquivo(s)         55.988 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.settings
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+03/06/2025  21:31               191 org.eclipse.core.resources.prefs
+03/06/2025  21:31               426 org.eclipse.jdt.core.prefs
+               2 arquivo(s)            617 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\bin
+
+03/06/2025  21:35    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\database
+
+03/06/2025  21:35    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\logs
+
+03/06/2025  21:36    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\scripts
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+03/06/2025  21:31        18.560.000 chromedriver.exe
+03/06/2025  21:31             1.563 LICENSE.chromedriver
+03/06/2025  21:31           190.400 page_source.html
+03/06/2025  21:31           620.599 THIRD_PARTY_NOTICES.chromedriver
+03/06/2025  21:31             5.264 update_database.py
+               5 arquivo(s)     19.377.826 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\src
+
+03/06/2025  21:37    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:40    <DIR>          ..
+03/06/2025  21:31    <DIR>          classes
+03/06/2025  21:31        66.806.601 GestaoLoterias-1.0-SNAPSHOT.jar
+03/06/2025  21:31            94.275 GestaoLoterias-1.0-SNAPSHOT.jar.original
+03/06/2025  21:31    <DIR>          maven-archiver
+03/06/2025  21:31    <DIR>          maven-status
+               2 arquivo(s)     66.900.876 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31               433 application.properties
+03/06/2025  21:31               177 application.yml
+03/06/2025  21:31    <DIR>          com
+03/06/2025  21:31               400 log4js.xml
+03/06/2025  21:31    <DIR>          META-INF
+               3 arquivo(s)          1.010 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:38    <DIR>          loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\loteriascorp
+
+03/06/2025  21:38    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\META-INF
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31                88 MANIFEST.MF
+03/06/2025  21:31    <DIR>          maven
+               1 arquivo(s)             88 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\META-INF\maven
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          com.loteriascorp
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\META-INF\maven\com.loteriascorp
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          GestaoLoterias
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\META-INF\maven\com.loteriascorp\GestaoLoterias
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31               265 pom.properties
+03/06/2025  21:31             7.052 pom.xml
+               2 arquivo(s)          7.317 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-archiver
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31                75 pom.properties
+               1 arquivo(s)             75 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          maven-compiler-plugin
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          compile
+03/06/2025  21:31    <DIR>          testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\compile
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          default-compile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\compile\default-compile
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31             1.128 createdFiles.lst
+03/06/2025  21:31             2.703 inputFiles.lst
+               2 arquivo(s)          3.831 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\testCompile
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31    <DIR>          default-testCompile
+               0 arquivo(s)              0 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\testCompile\default-testCompile
+
+03/06/2025  21:31    <DIR>          .
+03/06/2025  21:31    <DIR>          ..
+03/06/2025  21:31                 0 createdFiles.lst
+03/06/2025  21:31                 0 inputFiles.lst
+               2 arquivo(s)              0 bytes
+
+     Total de Arquivos na Lista:
+              59 arquivo(s)    157.975.276 bytes
+             112 pasta(s)   406.850.846.720 bytes dispon°veis

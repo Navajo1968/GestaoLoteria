@@ -1,4 +1,0 @@
-# Configuração de logging
-logging.file.path=C:\Users\Rodrigo\eclipse-workspace\GestaoLoterias\logs
-logging.file.name=gestao_loterias.log
-logging.level.com.loteriascorp=INFO
