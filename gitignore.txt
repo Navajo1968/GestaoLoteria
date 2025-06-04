@@ -1,0 +1,64 @@
+# Ignore arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Pastas de build
+bin/
+build/
+dist/
+out/
+target/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+.settings/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+env/
+venv/
+
+# Java
+*.class
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Banco de dados local
+database/
+
+# Arquivos sensíveis (ajuste conforme necessidade)
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Outros
+*.swp
+
+# Exceções: Remova comentários acima das linhas que não se aplicam ao stack do seu novo projeto.
