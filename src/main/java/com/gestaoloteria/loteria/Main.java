@@ -15,7 +15,13 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+    public static void showLoteriaCadastro() {
+        LoteriaCadastroView view = new LoteriaCadastroView();
+        Scene scene = new Scene(view.getRoot(), 700, 480);
+        mainStage.setScene(scene);
+    }
 
+    
     public static void main(String[] args) {
         launch(args);
     }

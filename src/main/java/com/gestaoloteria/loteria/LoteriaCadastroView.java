@@ -3,6 +3,8 @@ package com.gestaoloteria.loteria;
 import com.gestaoloteria.loteria.model.Loteria;
 import com.gestaoloteria.loteria.model.FaixaPremiacao;
 import com.gestaoloteria.loteria.dao.LoteriaDAO;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -15,9 +17,11 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import javafx.util.Callback;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class LoteriaCadastroView {
 
@@ -25,6 +29,10 @@ public class LoteriaCadastroView {
     private TextField nomeField, descricaoField, qtdMinField, qtdMaxField, qtdSorteadosField;
     private ObservableList<FaixaPremiacaoRow> faixasList;
     private TableView<FaixaPremiacaoRow> faixasTable;
+    private TableView<LoteriaRow> loteriasTable;
+    private ObservableList<LoteriaRow> loteriasList;
+    private Button salvarBtn, cancelarBtn, novoBtn;
+    private Integer editandoId = null;
 
     public LoteriaCadastroView() {
         root = new VBox(18);
@@ -65,7 +73,7 @@ public class LoteriaCadastroView {
         faixasList = FXCollections.observableArrayList();
         faixasTable = new TableView<>(faixasList);
         faixasTable.setEditable(true);
-        faixasTable.setPrefHeight(180);
+        faixasTable.setPrefHeight(150);
 
         TableColumn<FaixaPremiacaoRow, String> nomeFaixaCol = new TableColumn<>("Nome");
         nomeFaixaCol.setCellValueFactory(new PropertyValueFactory<>("nome"));
@@ -101,14 +109,14 @@ public class LoteriaCadastroView {
 
         // Add faixa controls
         HBox addFaixaBox = new HBox(10);
-        addFaixaBox.setAlignment(Pos.CENTER);
+        addFaixaBox.setAlignment(Pos.CENTER_LEFT);
         TextField nomeFaixaField = new TextField();
         nomeFaixaField.setPromptText("Nome da Faixa");
         TextField acertosField = new TextField();
         acertosField.setPromptText("Acertos");
         TextField ordemField = new TextField();
         ordemField.setPromptText("Ordem");
-        Button addFaixaBtn = new Button("Adicionar Faixa");
+        Button addFaixaBtn = new Button("Adicionar");
         addFaixaBtn.setStyle("-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;");
         addFaixaBtn.setOnAction(e -> {
             String nome = nomeFaixaField.getText().trim();
@@ -129,26 +137,90 @@ public class LoteriaCadastroView {
         });
         addFaixaBox.getChildren().addAll(nomeFaixaField, acertosField, ordemField, addFaixaBtn);
 
+        // CRUD TableView de Loterias
+        loteriasList = FXCollections.observableArrayList();
+        loteriasTable = new TableView<>(loteriasList);
+        loteriasTable.setPrefHeight(180);
+
+        TableColumn<LoteriaRow, String> nomeCol = new TableColumn<>("Loteria");
+        nomeCol.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        nomeCol.setPrefWidth(150);
+
+        TableColumn<LoteriaRow, String> descCol = new TableColumn<>("Descrição");
+        descCol.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        descCol.setPrefWidth(150);
+
+        TableColumn<LoteriaRow, String> editarCol = new TableColumn<>("Editar");
+        editarCol.setCellFactory(col -> new TableCell<>() {
+            private final Button editarBtn = new Button("Editar");
+            {
+                editarBtn.setOnAction(e -> {
+                    LoteriaRow row = getTableView().getItems().get(getIndex());
+                    carregarParaEdicao(row.getId());
+                });
+            }
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : editarBtn);
+            }
+        });
+        editarCol.setPrefWidth(70);
+
+        TableColumn<LoteriaRow, String> excluirCol = new TableColumn<>("Excluir");
+        excluirCol.setCellFactory(col -> new TableCell<>() {
+            private final Button excluirBtn = new Button("Excluir");
+            {
+                excluirBtn.setStyle("-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;");
+                excluirBtn.setOnAction(e -> {
+                    LoteriaRow row = getTableView().getItems().get(getIndex());
+                    excluirLoteria(row.getId());
+                });
+            }
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : excluirBtn);
+            }
+        });
+        excluirCol.setPrefWidth(70);
+
+        loteriasTable.getColumns().addAll(nomeCol, descCol, editarCol, excluirCol);
+
         // Footer buttons
         HBox footer = new HBox(16);
         footer.setAlignment(Pos.CENTER_RIGHT);
-        Button salvarBtn = new Button("Salvar");
+        salvarBtn = new Button("Salvar");
         salvarBtn.setStyle("-fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold;");
-        Button cancelarBtn = new Button("Cancelar");
-        cancelarBtn.setOnAction(e -> Main.showLoteriaCadastro()); // Volta pro menu de Loterias
-        footer.getChildren().addAll(salvarBtn, cancelarBtn);
+        cancelarBtn = new Button("Cancelar");
+        cancelarBtn.setOnAction(e -> limparCampos());
+        novoBtn = new Button("Novo");
+        novoBtn.setOnAction(e -> limparCampos());
+        footer.getChildren().addAll(salvarBtn, cancelarBtn, novoBtn);
 
-        salvarBtn.setOnAction(e -> salvarCadastro());
+        salvarBtn.setOnAction(e -> {
+            if (editandoId == null) salvarCadastro();
+            else atualizarCadastro();
+        });
 
-        // Monta layout
         VBox faixasBox = new VBox(8, faixasLabel, faixasTable, addFaixaBox);
-        faixasBox.setAlignment(Pos.CENTER);
+        faixasBox.setAlignment(Pos.CENTER_LEFT);
         faixasBox.setPadding(new Insets(10, 0, 0, 0));
-        root.getChildren().addAll(title, loteriaPane, faixasBox, footer);
+        VBox formulario = new VBox(10, loteriaPane, faixasBox, footer);
+        formulario.setStyle("-fx-background-color: rgba(255,255,255,0.07); -fx-background-radius: 10;");
+        formulario.setPadding(new Insets(15));
+        formulario.setAlignment(Pos.CENTER);
+
+        Label listaLabel = new Label("Loterias Cadastradas");
+        listaLabel.setFont(Font.font("Segoe UI", 17));
+        listaLabel.setTextFill(Color.WHITE);
+
+        root.getChildren().addAll(title, formulario, listaLabel, loteriasTable);
+        atualizarLista();
     }
 
+    // CRUD - salvar novo
     private void salvarCadastro() {
-        // Validação
         String nome = nomeField.getText().trim();
         String descricao = descricaoField.getText().trim();
         String minTxt = qtdMinField.getText().trim();
@@ -185,15 +257,127 @@ public class LoteriaCadastroView {
             dao.salvarLoteriaComFaixas(loteria);
 
             showAlert("Salvo", "Cadastro salvo com sucesso!");
-            // Limpa campos
-            nomeField.clear(); descricaoField.clear();
-            qtdMinField.clear(); qtdMaxField.clear(); qtdSorteadosField.clear();
-            faixasList.clear();
+            limparCampos();
+            atualizarLista();
         } catch (NumberFormatException ex) {
             showAlert("Atenção", "Qtd. mín/máx/sorteados devem ser números inteiros.");
         } catch (Exception ex) {
             showAlert("Erro", "Erro ao salvar no banco: " + ex.getMessage());
         }
+    }
+
+    // CRUD - atualizar
+    private void atualizarCadastro() {
+        String nome = nomeField.getText().trim();
+        String descricao = descricaoField.getText().trim();
+        String minTxt = qtdMinField.getText().trim();
+        String maxTxt = qtdMaxField.getText().trim();
+        String sorteadosTxt = qtdSorteadosField.getText().trim();
+
+        if (nome.isEmpty() || descricao.isEmpty() || minTxt.isEmpty() || maxTxt.isEmpty() || sorteadosTxt.isEmpty() || faixasList.isEmpty()) {
+            showAlert("Atenção", "Preencha todos os campos da loteria e adicione ao menos uma faixa de premiação!");
+            return;
+        }
+
+        try {
+            int qtdMin = Integer.parseInt(minTxt);
+            int qtdMax = Integer.parseInt(maxTxt);
+            int qtdSorteados = Integer.parseInt(sorteadosTxt);
+
+            List<FaixaPremiacao> faixas = new ArrayList<>();
+            for (FaixaPremiacaoRow row : faixasList) {
+                FaixaPremiacao f = new FaixaPremiacao();
+                f.setNome(row.getNome());
+                f.setAcertos(row.getAcertos());
+                f.setOrdem(row.getOrdem());
+                faixas.add(f);
+            }
+            Loteria loteria = new Loteria();
+            loteria.setId(editandoId);
+            loteria.setNome(nome);
+            loteria.setDescricao(descricao);
+            loteria.setQtdMin(qtdMin);
+            loteria.setQtdMax(qtdMax);
+            loteria.setQtdSorteados(qtdSorteados);
+            loteria.setFaixas(faixas);
+
+            LoteriaDAO dao = new LoteriaDAO();
+            dao.atualizarLoteriaComFaixas(loteria);
+
+            showAlert("Atualizado", "Cadastro atualizado com sucesso!");
+            limparCampos();
+            atualizarLista();
+        } catch (NumberFormatException ex) {
+            showAlert("Atenção", "Qtd. mín/máx/sorteados devem ser números inteiros.");
+        } catch (Exception ex) {
+            showAlert("Erro", "Erro ao atualizar no banco: " + ex.getMessage());
+        }
+    }
+
+    // CRUD - carregar para edição
+    private void carregarParaEdicao(int loteriaId) {
+        try {
+            LoteriaDAO dao = new LoteriaDAO();
+            for (Loteria lot : dao.listarLoterias()) {
+                if (lot.getId() == loteriaId) {
+                    editandoId = lot.getId();
+                    nomeField.setText(lot.getNome());
+                    descricaoField.setText(lot.getDescricao());
+                    qtdMinField.setText(lot.getQtdMin().toString());
+                    qtdMaxField.setText(lot.getQtdMax().toString());
+                    qtdSorteadosField.setText(lot.getQtdSorteados().toString());
+                    faixasList.clear();
+                    for (FaixaPremiacao f : lot.getFaixas()) {
+                        faixasList.add(new FaixaPremiacaoRow(f.getNome(), f.getAcertos(), f.getOrdem()));
+                    }
+                    break;
+                }
+            }
+        } catch (Exception ex) {
+            showAlert("Erro", "Erro ao buscar loteria: " + ex.getMessage());
+        }
+    }
+
+    // CRUD - excluir
+    private void excluirLoteria(int loteriaId) {
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Deseja excluir esta loteria e todas as faixas?", ButtonType.YES, ButtonType.NO);
+        a.setTitle("Confirma exclusão");
+        Optional<ButtonType> result = a.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            try {
+                LoteriaDAO dao = new LoteriaDAO();
+                dao.excluirLoteria(loteriaId);
+                showAlert("Excluído", "Loteria excluída com sucesso!");
+                atualizarLista();
+                limparCampos();
+            } catch (Exception ex) {
+                showAlert("Erro", "Erro ao excluir: " + ex.getMessage());
+            }
+        }
+    }
+
+    // Atualiza tabela de listagem
+    private void atualizarLista() {
+        loteriasList.clear();
+        try {
+            LoteriaDAO dao = new LoteriaDAO();
+            for (Loteria l : dao.listarLoterias()) {
+                loteriasList.add(new LoteriaRow(l.getId(), l.getNome(), l.getDescricao()));
+            }
+        } catch (Exception ex) {
+            showAlert("Erro", "Erro ao buscar loterias: " + ex.getMessage());
+        }
+    }
+
+    // Limpa formulário
+    private void limparCampos() {
+        editandoId = null;
+        nomeField.clear();
+        descricaoField.clear();
+        qtdMinField.clear();
+        qtdMaxField.clear();
+        qtdSorteadosField.clear();
+        faixasList.clear();
     }
 
     private void showAlert(String title, String msg) {
@@ -208,7 +392,7 @@ public class LoteriaCadastroView {
         return root;
     }
 
-    // Classe auxiliar para a TableView
+    // Auxiliares para TableView
     public static class FaixaPremiacaoRow {
         private final String nome;
         private final int acertos;
@@ -222,5 +406,20 @@ public class LoteriaCadastroView {
         public String getNome() { return nome; }
         public int getAcertos() { return acertos; }
         public int getOrdem() { return ordem; }
+    }
+
+    public static class LoteriaRow {
+        private final int id;
+        private final SimpleStringProperty nome;
+        private final SimpleStringProperty descricao;
+
+        public LoteriaRow(int id, String nome, String descricao) {
+            this.id = id;
+            this.nome = new SimpleStringProperty(nome);
+            this.descricao = new SimpleStringProperty(descricao);
+        }
+        public int getId() { return id; }
+        public String getNome() { return nome.get(); }
+        public String getDescricao() { return descricao.get(); }
     }
 }
