@@ -20,6 +20,14 @@
       <artifactId>postgresql</artifactId>
       <version>42.7.3</version>
     </dependency>
+    <!-- (Opcional) Starter Spring Boot para aplicações Spring -->
+    <!--
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>3.2.6</version>
+    </dependency>
+    -->
   </dependencies>
 
   <build>
@@ -34,11 +42,12 @@
           <target>17</target>
         </configuration>
       </plugin>
-       <!-- Plugin FrameWork -->
+      <!-- Plugin Spring Boot (com versão) -->
       <plugin>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-maven-plugin</artifactId>
-</plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>3.2.6</version>
+      </plugin>
       <!-- Plugin para criar fat jar executável -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -47,7 +56,8 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.gestaoloteria.loteria.Main</mainClass> <!-- Troque para o FQN da sua classe Main -->
+              <!-- Ajuste o FQN abaixo se necessário -->
+              <mainClass>com.gestaoloteria.loteria.Main</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
