@@ -1,4 +1,4 @@
-package com.seuprojeto.loteria;
+package com.gestaoloteria.loteria;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
