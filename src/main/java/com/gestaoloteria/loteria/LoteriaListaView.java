@@ -68,7 +68,7 @@ public class LoteriaListaView {
 
         Button btnNovo = new Button("Novo");
         btnNovo.setStyle("-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnNovo.setOnAction(e -> Main.showLoteriaCadastro(new LoteriaCadastroView(null, this)));
+        btnNovo.setOnAction(e -> Main.showLoteriaCadastroView(new LoteriaCadastroView(null, this)));
 
         Button btnVoltar = new Button("Voltar");
         btnVoltar.setStyle("-fx-background-color: #395886; -fx-text-fill: white; -fx-font-weight: bold;");
@@ -97,7 +97,7 @@ public class LoteriaListaView {
         try {
             LoteriaDAO dao = new LoteriaDAO();
             Loteria loteria = dao.obterLoteriaPorId(loteriaId);
-            Main.showLoteriaCadastro(new LoteriaCadastroView(loteria, this));
+            Main.showLoteriaCadastroView(new LoteriaCadastroView(loteria, this));
         } catch (Exception ex) {
             mostrarErro("Erro ao carregar loteria para edição:\n" + ex.getMessage());
         }

@@ -132,7 +132,7 @@ public class LoteriaCadastroView {
         Button salvarBtn = new Button("Salvar");
         salvarBtn.setStyle("-fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold;");
         Button voltarBtn = new Button("Voltar");
-        voltarBtn.setOnAction(e -> Main.showLoteriaLista());
+        voltarBtn.setOnAction(e -> Main.showLoteriaListaView());
 
         footer.getChildren().addAll(salvarBtn, voltarBtn);
 
@@ -200,7 +200,7 @@ public class LoteriaCadastroView {
                 dao.salvarLoteriaComFaixas(loteria);
 
             showAlert("Sucesso", "Cadastro salvo com sucesso!");
-            Main.showLoteriaLista();
+            Main.showLoteriaListaView();
             if (parentView != null) parentView.atualizarTabela();
         } catch (NumberFormatException ex) {
             showAlert("Atenção", "Qtd. mín/máx/sorteados devem ser números inteiros.");
