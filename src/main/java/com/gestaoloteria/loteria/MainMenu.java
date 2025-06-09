@@ -1,62 +1,42 @@
 package com.gestaoloteria.loteria;
 
-import javafx.geometry.Pos;
+import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 
 public class MainMenu {
 
-    private final StackPane root;
+    public static Scene createMainMenuScene() {
+        VBox root = new VBox(28);
+        root.setPadding(new Insets(60));
+        root.setAlignment(Pos.CENTER);
+        root.setStyle("-fx-background-color: linear-gradient(to bottom, #2c3e50 0%, #2980b9 100%);");
 
-    public MainMenu() {
-        root = new StackPane();
-        root.setStyle("-fx-background-color: linear-gradient(to bottom, #23395d 0%, #4069a3 100%);");
-
-        VBox vbox = new VBox(30);
-        vbox.setAlignment(Pos.CENTER);
-
-        Label title = new Label("Gestão de Loterias");
-        title.setFont(Font.font("Segoe UI", 38));
-        title.setTextFill(Color.WHITE);
-        title.setEffect(new DropShadow(8, Color.BLACK));
-        title.setTextAlignment(TextAlignment.CENTER);
-
-        Region spacer = new Region();
-        spacer.setMinHeight(32);
-
-        Button btnCadastros = createMenuButton("Cadastro Loterias");
-        btnCadastros.setOnAction(e -> Main.showLoteriaLista());
+        Button btnCadastros = createMenuButton("Cadastros");
+        btnCadastros.setOnAction(e -> Main.showLoteriaListaView());
 
         Button btnProcessos = createMenuButton("Processos");
-        // btnProcessos.setOnAction(e -> ...); // Implemente quando houver processos
+        btnProcessos.setOnAction(e -> Main.showProcessosView());
 
         Button btnSair = createMenuButton("Sair");
         btnSair.setOnAction(e -> System.exit(0));
 
-        vbox.getChildren().addAll(title, spacer, btnCadastros, btnProcessos, btnSair);
-        root.getChildren().add(vbox);
+        root.getChildren().addAll(btnCadastros, btnProcessos, btnSair);
+
+        return new Scene(root, 510, 400);
     }
 
-    private Button createMenuButton(String text) {
+    private static Button createMenuButton(String text) {
         Button btn = new Button(text);
-        btn.setFont(Font.font("Segoe UI", 20));
-        btn.setStyle("-fx-background-radius: 6; -fx-background-color: #395886; -fx-text-fill: white; -fx-font-weight: bold;");
-        btn.setPrefWidth(220);
-        btn.setPrefHeight(45);
-        btn.setOnMouseEntered(e -> btn.setStyle("-fx-background-radius: 6; -fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold;"));
-        btn.setOnMouseExited(e -> btn.setStyle("-fx-background-radius: 6; -fx-background-color: #395886; -fx-text-fill: white; -fx-font-weight: bold;"));
+        btn.setFont(Font.font("Segoe UI", 24));
+        btn.setPrefWidth(280);
+        btn.setPrefHeight(64);
+        btn.setStyle("-fx-background-radius: 22; -fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold;");
+        btn.setEffect(new DropShadow(7, Color.DARKGRAY));
         return btn;
-    }
-
-    public StackPane getRoot() {
-        return root;
     }
 }
