@@ -20,14 +20,29 @@ public class Main extends Application {
         stagePrincipal.setScene(MainMenu.createMainMenuScene());
     }
 
+    // PADRÃO: mostrar lista de loterias
     public static void showLoteriaListaView() {
         LoteriaListaView view = new LoteriaListaView();
         stagePrincipal.setScene(new Scene(view.getRoot(), 700, 500));
     }
 
+    // PADRÃO: mostrar cadastro de loteria (novo ou edição)
+    public static void showLoteriaCadastroView(LoteriaCadastroView view) {
+        stagePrincipal.setScene(new Scene(view.getRoot(), 700, 500));
+    }
+    // Alternativamente, se você cria o LoteriaCadastroView dentro desse método:
+    // public static void showLoteriaCadastroView() {
+    //     LoteriaCadastroView view = new LoteriaCadastroView();
+    //     stagePrincipal.setScene(new Scene(view.getRoot(), 700, 500));
+    // }
+
     public static void showProcessosView() {
         ProcessosView view = new ProcessosView();
         stagePrincipal.setScene(new Scene(view.getRoot(), 800, 500));
+    }
+
+    public static Stage getStagePrincipal() {
+        return stagePrincipal;
     }
 
     public static void main(String[] args) {
