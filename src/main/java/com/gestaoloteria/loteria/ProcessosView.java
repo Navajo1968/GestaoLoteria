@@ -1,9 +1,13 @@
 package com.gestaoloteria.loteria;
 
-import com.gestaoloteria.loteria.dao.JogoDAO;
+import com.gestaoloteria.loteria.dao.ConcursoDAO;
+import com.gestaoloteria.loteria.dao.ConcursoNumeroSorteadoDAO;
 import com.gestaoloteria.loteria.dao.LoteriaDAO;
-import com.gestaoloteria.loteria.model.Jogo;
+import com.gestaoloteria.loteria.model.Concurso;
+import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Loteria;
+import com.gestaoloteria.loteria.ui.ConcursoRow;
+import com.gestaoloteria.loteria.util.ImportadorHistoricoLoteria;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -17,13 +21,13 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProcessosView {
-
     private final VBox root;
     private final ComboBox<Loteria> cbLoteria;
-    private final TableView<JogoRow> tabela;
-    private final ObservableList<JogoRow> dadosTabela;
+    private final TableView<ConcursoRow> tabela;
+    private final ObservableList<ConcursoRow> dadosTabela;
     private File arquivoSelecionado;
 
     public ProcessosView() {
@@ -31,7 +35,7 @@ public class ProcessosView {
         root.setPadding(new Insets(24));
         root.setStyle("-fx-background-color: linear-gradient(to bottom, #23395d 0%, #4069a3 100%);");
 
-        Label title = new Label("Importação de Jogos");
+        Label title = new Label("Importação de Jogos - Histórico");
         title.setFont(Font.font("Segoe UI", 26));
         title.setTextFill(Color.WHITE);
         title.setEffect(new DropShadow(6, Color.BLACK));
@@ -43,7 +47,7 @@ public class ProcessosView {
         cbLoteria.setPromptText("Selecione a Loteria");
         carregarLoterias();
         cbLoteria.setMinWidth(200);
-        cbLoteria.setOnAction(e -> carregarJogos());
+        cbLoteria.setOnAction(e -> carregarConcursos());
 
         Button btnArquivo = new Button("Selecionar Arquivo");
         btnArquivo.setOnAction(e -> selecionarArquivo());
@@ -55,22 +59,22 @@ public class ProcessosView {
 
         Button btnImportar = new Button("Importar");
         btnImportar.setStyle("-fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnImportar.setOnAction(e -> importarJogos(lblArquivo));
+        btnImportar.setOnAction(e -> importarHistorico(lblArquivo));
 
         filtrosBox.getChildren().addAll(cbLoteria, btnArquivo, lblArquivo, btnImportar);
 
         dadosTabela = FXCollections.observableArrayList();
         tabela = new TableView<>(dadosTabela);
 
-        TableColumn<JogoRow, Integer> colConcurso = new TableColumn<>("Concurso");
-        colConcurso.setCellValueFactory(cell -> cell.getValue().concursoProperty().asObject());
+        TableColumn<ConcursoRow, Integer> colConcurso = new TableColumn<>("Concurso");
+        colConcurso.setCellValueFactory(cell -> cell.getValue().numeroConcursoProperty().asObject());
         colConcurso.setPrefWidth(80);
 
-        TableColumn<JogoRow, String> colData = new TableColumn<>("Data");
-        colData.setCellValueFactory(cell -> cell.getValue().dataProperty());
+        TableColumn<ConcursoRow, String> colData = new TableColumn<>("Data");
+        colData.setCellValueFactory(cell -> cell.getValue().dataConcursoProperty());
         colData.setPrefWidth(110);
 
-        TableColumn<JogoRow, String> colDezenas = new TableColumn<>("Dezenas");
+        TableColumn<ConcursoRow, String> colDezenas = new TableColumn<>("Dezenas");
         colDezenas.setCellValueFactory(cell -> cell.getValue().dezenasProperty());
         colDezenas.setPrefWidth(350);
 
@@ -107,7 +111,7 @@ public class ProcessosView {
         }
     }
 
-    private void importarJogos(Label lblArquivo) {
+    private void importarHistorico(Label lblArquivo) {
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) {
             mostrarErro("Selecione a loteria para importar.");
@@ -118,10 +122,9 @@ public class ProcessosView {
             return;
         }
         try {
-            // TODO: Implemente aqui a leitura do arquivo XLSX e importação para o banco
-            // Exemplo: JogoImportacaoUtil.importar(loteria, arquivoSelecionado);
+            ImportadorHistoricoLoteria.importar(loteria, arquivoSelecionado);
             mostrarInfo("Importação concluída com sucesso!");
-            carregarJogos();
+            carregarConcursos();
             lblArquivo.setText("Nenhum arquivo selecionado.");
             arquivoSelecionado = null;
         } catch (Exception ex) {
@@ -129,22 +132,26 @@ public class ProcessosView {
         }
     }
 
-    private void carregarJogos() {
+    private void carregarConcursos() {
         dadosTabela.clear();
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) return;
         try {
-            JogoDAO dao = new JogoDAO();
-            List<Jogo> jogos = dao.listarJogosPorLoteria(loteria.getId());
-            jogos.sort((a, b) -> Integer.compare(b.getConcurso(), a.getConcurso())); // último primeiro
-            for (Jogo jogo : jogos) {
-                dadosTabela.add(new JogoRow(jogo));
+            ConcursoDAO concursoDAO = new ConcursoDAO();
+            ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
+            List<Concurso> concursos = concursoDAO.listarConcursosPorLoteria(loteria.getId());
+            for (Concurso concurso : concursos) {
+                List<ConcursoNumeroSorteado> dezenas = numeroDAO.listarNumerosPorConcurso(concurso.getId());
+                String dezenasStr = dezenas.stream()
+                        .map(n -> String.format("%02d", n.getNumero()))
+                        .collect(Collectors.joining(" - "));
+                dadosTabela.add(new ConcursoRow(concurso, dezenasStr));
             }
             if (!dadosTabela.isEmpty()) {
                 tabela.getSelectionModel().select(0); // destaca o último
             }
         } catch (Exception ex) {
-            mostrarErro("Erro ao carregar jogos: " + ex.getMessage());
+            mostrarErro("Erro ao carregar concursos: " + ex.getMessage());
         }
     }
 
