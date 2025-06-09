@@ -26,4 +26,9 @@ public class Loteria {
     public void setQtdSorteados(Integer qtdSorteados) { this.qtdSorteados = qtdSorteados; }
     public List<FaixaPremiacao> getFaixas() { return faixas; }
     public void setFaixas(List<FaixaPremiacao> faixas) { this.faixas = faixas; }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
