@@ -1,14 +1,15 @@
 package com.gestaoloteria.loteria.dao;
 
 import com.gestaoloteria.loteria.ConexaoBanco;
-import com.gestaoloteria.loteria.model.Loteria;
 import com.gestaoloteria.loteria.model.FaixaPremiacao;
+import com.gestaoloteria.loteria.model.Loteria;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoteriaDAO {
+
     public void salvarLoteriaComFaixas(Loteria loteria) throws Exception {
         String insertLoteria = "INSERT INTO loteria (nome, descricao, quantidade_numeros_aposta_min, quantidade_numeros_aposta_max, quantidade_numeros_sorteados) VALUES (?, ?, ?, ?, ?) RETURNING id";
         String insertFaixa = "INSERT INTO faixa_premiacao (loteria_id, nome, acertos, ordem) VALUES (?, ?, ?, ?)";
@@ -114,6 +115,27 @@ public class LoteriaDAO {
             }
         }
         return lista;
+    }
+
+    public Loteria obterLoteriaPorId(int loteriaId) throws Exception {
+        String sql = "SELECT * FROM loteria WHERE id = ?";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, loteriaId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Loteria l = new Loteria();
+                l.setId(rs.getInt("id"));
+                l.setNome(rs.getString("nome"));
+                l.setDescricao(rs.getString("descricao"));
+                l.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
+                l.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
+                l.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
+                l.setFaixas(listarFaixasPorLoteria(l.getId()));
+                return l;
+            }
+        }
+        return null;
     }
 
     public List<FaixaPremiacao> listarFaixasPorLoteria(int loteriaId) throws Exception {

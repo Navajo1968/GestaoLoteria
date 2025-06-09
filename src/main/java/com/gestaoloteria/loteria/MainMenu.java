@@ -4,8 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -16,7 +14,7 @@ import javafx.scene.text.TextAlignment;
 
 public class MainMenu {
 
-    private StackPane root;
+    private final StackPane root;
 
     public MainMenu() {
         root = new StackPane();
@@ -34,18 +32,16 @@ public class MainMenu {
         Region spacer = new Region();
         spacer.setMinHeight(32);
 
-        // Botão principal para Cadastros
-        MenuButton cadastrosMenu = new MenuButton("Cadastros");
-        MenuItem loteriasItem = new MenuItem("Loterias");
-        loteriasItem.setOnAction(e -> Main.showLoteriaCadastro()); // Abre tela de cadastro de loterias
-        cadastrosMenu.getItems().add(loteriasItem);
+        Button btnCadastros = createMenuButton("Cadastro Loterias");
+        btnCadastros.setOnAction(e -> Main.showLoteriaLista());
 
-        // Outros botões do menu principal
         Button btnProcessos = createMenuButton("Processos");
+        // btnProcessos.setOnAction(e -> ...); // Implemente quando houver processos
+
         Button btnSair = createMenuButton("Sair");
         btnSair.setOnAction(e -> System.exit(0));
 
-        vbox.getChildren().addAll(title, spacer, cadastrosMenu, btnProcessos, btnSair);
+        vbox.getChildren().addAll(title, spacer, btnCadastros, btnProcessos, btnSair);
         root.getChildren().add(vbox);
     }
 
