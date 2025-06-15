@@ -1,41 +1,37 @@
 package com.gestaoloteria.loteria.dao;
 
-import com.gestaoloteria.loteria.ConexaoBanco;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.ResultSet;
 
 public class ConcursoNumeroSorteadoDAO {
-    public void inserirNumerosSorteados(List<ConcursoNumeroSorteado> numeros) throws Exception {
-        String sql = "INSERT INTO concurso_numero_sorteado (concurso_id, numero, ordem) VALUES (?, ?, ?)";
+
+    public void inserirNumeroSorteado(ConcursoNumeroSorteado numeroSorteado) throws Exception {
+        String sql = "INSERT INTO concurso_numero_sorteado (concurso_id, numero) VALUES (?, ?)";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            for (ConcursoNumeroSorteado n : numeros) {
-                ps.setInt(1, n.getConcursoId());
-                ps.setInt(2, n.getNumero());
-                ps.setInt(3, n.getOrdem());
-                ps.addBatch();
-            }
-            ps.executeBatch();
+            ps.setInt(1, numeroSorteado.getConcursoId());
+            ps.setInt(2, numeroSorteado.getNumero());
+            ps.executeUpdate();
         }
     }
 
-    public List<ConcursoNumeroSorteado> listarNumerosPorConcurso(int concursoId) throws Exception {
-        String sql = "SELECT * FROM concurso_numero_sorteado WHERE concurso_id = ? ORDER BY ordem";
+    public List<ConcursoNumeroSorteado> listarNumerosPorConcurso(Integer concursoId) throws Exception {
+        String sql = "SELECT id, concurso_id, numero FROM concurso_numero_sorteado WHERE concurso_id = ? ORDER BY numero";
         List<ConcursoNumeroSorteado> lista = new ArrayList<>();
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, concursoId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ConcursoNumeroSorteado n = new ConcursoNumeroSorteado();
-                n.setId(rs.getInt("id"));
-                n.setConcursoId(rs.getInt("concurso_id"));
-                n.setNumero(rs.getInt("numero"));
-                n.setOrdem(rs.getInt("ordem"));
-                lista.add(n);
+                ConcursoNumeroSorteado num = new ConcursoNumeroSorteado();
+                num.setId(rs.getInt("id"));
+                num.setConcursoId(rs.getInt("concurso_id"));
+                num.setNumero(rs.getInt("numero"));
+                lista.add(num);
             }
         }
         return lista;

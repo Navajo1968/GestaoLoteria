@@ -11,53 +11,138 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.time.LocalDate;
-import java.util.*;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class ImportadorHistoricoLoteria {
-    /**
-     * Importa o arquivo XLSX do histórico de uma loteria e insere concursos e dezenas normalizados.
-     */
-    public static void importar(Loteria loteria, File arquivo) throws Exception {
-        List<Concurso> concursos = new ArrayList<>();
-        Map<Concurso, List<Integer>> dezenasPorConcurso = new LinkedHashMap<>();
 
+    public static void importar(Loteria loteria, File arquivo) throws Exception {
         try (FileInputStream fis = new FileInputStream(arquivo);
              Workbook workbook = new XSSFWorkbook(fis)) {
+
             Sheet sheet = workbook.getSheetAt(0);
-            Iterator<Row> iterator = sheet.iterator();
-            boolean headerLido = false;
-            while (iterator.hasNext()) {
-                Row row = iterator.next();
-                if (!headerLido) { headerLido = true; continue; }
-                // Supondo as primeiras colunas: numero_concurso, data_concurso, dezenas...
-                int numeroConcurso = (int) row.getCell(0).getNumericCellValue();
-                LocalDate dataConcurso = row.getCell(1).getLocalDateTimeCellValue().toLocalDate();
+            Iterator<Row> rowIterator = sheet.iterator();
+
+            // Pular cabeçalho (ajuste se necessário)
+            if (rowIterator.hasNext()) {
+                rowIterator.next();
+            }
+
+            ConcursoDAO concursoDAO = new ConcursoDAO();
+            ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
+
+            while (rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+
+                // Ajuste os índices das colunas conforme o seu layout do Excel
+                Cell cellConcurso = row.getCell(0); // número do concurso
+                Cell cellData = row.getCell(1);     // data do concurso
                 List<Integer> dezenas = new ArrayList<>();
-                for (int i = 2; i < row.getLastCellNum(); i++) {
-                    Cell cell = row.getCell(i);
-                    if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                        dezenas.add((int) cell.getNumericCellValue());
+
+                // Para Lotofácil, geralmente há 15 dezenas, começando na coluna 2
+                for (int i = 2; i < 17; i++) {
+                    Cell cellDezena = row.getCell(i);
+                    Integer dezena = getCellAsInteger(cellDezena);
+                    if (dezena != null) {
+                        dezenas.add(dezena);
                     }
                 }
-                Concurso concurso = new Concurso(loteria.getId(), numeroConcurso, dataConcurso);
-                concursos.add(concurso);
-                dezenasPorConcurso.put(concurso, dezenas);
+
+                Integer numeroConcurso = getCellAsInteger(cellConcurso);
+                LocalDate dataConcurso = getCellAsLocalDate(cellData);
+
+                if (numeroConcurso == null || dataConcurso == null || dezenas.size() != 15) {
+                    // Pula linhas inválidas
+                    continue;
+                }
+
+                // Verifica se o concurso já existe para evitar duplicidade
+                if (concursoDAO.existeConcurso(loteria.getId(), numeroConcurso)) {
+                    continue;
+                }
+
+                Concurso concurso = new Concurso();
+                concurso.setLoteriaId(loteria.getId());
+                concurso.setNumero(numeroConcurso);
+                concurso.setData(dataConcurso);
+
+                int concursoId = concursoDAO.inserirConcurso(concurso);
+
+                for (Integer dezena : dezenas) {
+                    ConcursoNumeroSorteado numeroSorteado = new ConcursoNumeroSorteado();
+                    numeroSorteado.setConcursoId(concursoId);
+                    numeroSorteado.setNumero(dezena);
+                    numeroDAO.inserirNumeroSorteado(numeroSorteado);
+                }
             }
         }
+    }
 
-        ConcursoDAO concursoDAO = new ConcursoDAO();
-        ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
+    // Utilitário seguro para extrair inteiro de uma célula
+    private static Integer getCellAsInteger(Cell cell) {
+        Double d = getCellAsDouble(cell);
+        return (d == null) ? null : d.intValue();
+    }
 
-        for (Concurso concurso : concursos) {
-            int concursoId = concursoDAO.inserirConcurso(concurso);
-            List<Integer> dezenas = dezenasPorConcurso.get(concurso);
-            List<ConcursoNumeroSorteado> numeros = new ArrayList<>();
-            int ordem = 1;
-            for (Integer dezena : dezenas) {
-                numeros.add(new ConcursoNumeroSorteado(concursoId, dezena, ordem));
-                ordem++;
-            }
-            numeroDAO.inserirNumerosSorteados(numeros);
+    // Utilitário seguro para extrair double de uma célula
+    private static Double getCellAsDouble(Cell cell) {
+        if (cell == null) return null;
+        switch (cell.getCellType()) {
+            case NUMERIC:
+                return cell.getNumericCellValue();
+            case STRING:
+                String valor = cell.getStringCellValue().replace(",", ".").trim();
+                try {
+                    return Double.parseDouble(valor);
+                } catch (NumberFormatException e) {
+                    return null;
+                }
+            case FORMULA:
+                try {
+                    return cell.getNumericCellValue();
+                } catch (IllegalStateException e) {
+                    // Caso fórmula retorne string
+                    try {
+                        String formulaResult = cell.getStringCellValue().replace(",", ".").trim();
+                        return Double.parseDouble(formulaResult);
+                    } catch (Exception ex) {
+                        return null;
+                    }
+                }
+            case BLANK:
+            case BOOLEAN:
+            case ERROR:
+            default:
+                return null;
         }
+    }
+
+    // Utilitário seguro para extrair LocalDate de uma célula (data)
+    private static LocalDate getCellAsLocalDate(Cell cell) {
+        if (cell == null) return null;
+        if (cell.getCellType() == CellType.NUMERIC && DateUtil.isCellDateFormatted(cell)) {
+            return cell.getDateCellValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        } else if (cell.getCellType() == CellType.STRING) {
+            String dataStr = cell.getStringCellValue().trim();
+            try {
+                // Tenta formato padrão ISO (yyyy-MM-dd)
+                return LocalDate.parse(dataStr);
+            } catch (Exception e) {
+                // Tenta outros formatos se necessário
+                // Exemplo: dd/MM/yyyy
+                try {
+                    String[] parts = dataStr.split("[/\\-]");
+                    if (parts.length == 3) {
+                        int dia = Integer.parseInt(parts[0]);
+                        int mes = Integer.parseInt(parts[1]);
+                        int ano = Integer.parseInt(parts[2]);
+                        return LocalDate.of(ano, mes, dia);
+                    }
+                } catch (Exception ignored) {}
+            }
+        }
+        return null;
     }
 }

@@ -20,6 +20,8 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -96,7 +98,7 @@ public class ProcessosView {
             List<Loteria> loterias = dao.listarLoterias();
             cbLoteria.getItems().setAll(loterias);
         } catch (Exception ex) {
-            mostrarErro("Erro ao carregar loterias: " + ex.getMessage());
+            mostrarErro("Erro ao carregar loterias: " + ex.getMessage(), ex);
         }
     }
 
@@ -114,11 +116,11 @@ public class ProcessosView {
     private void importarHistorico(Label lblArquivo) {
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) {
-            mostrarErro("Selecione a loteria para importar.");
+            mostrarErro("Selecione a loteria para importar.", null);
             return;
         }
         if (arquivoSelecionado == null) {
-            mostrarErro("Selecione o arquivo de importação.");
+            mostrarErro("Selecione o arquivo de importação.", null);
             return;
         }
         try {
@@ -128,7 +130,7 @@ public class ProcessosView {
             lblArquivo.setText("Nenhum arquivo selecionado.");
             arquivoSelecionado = null;
         } catch (Exception ex) {
-            mostrarErro("Erro ao importar: " + ex.getMessage());
+            mostrarErro("Erro ao importar!", ex);
         }
     }
 
@@ -151,12 +153,37 @@ public class ProcessosView {
                 tabela.getSelectionModel().select(0); // destaca o último
             }
         } catch (Exception ex) {
-            mostrarErro("Erro ao carregar concursos: " + ex.getMessage());
+            mostrarErro("Erro ao carregar concursos: " + ex.getMessage(), ex);
         }
     }
 
-    private void mostrarErro(String msg) {
-        Alert alert = new Alert(Alert.AlertType.ERROR, msg, ButtonType.OK);
+    private void mostrarErro(String msg, Throwable ex) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erro");
+        alert.setHeaderText(msg);
+
+        if (ex != null) {
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            ex.printStackTrace(pw);
+            String exceptionText = sw.toString();
+
+            TextArea textArea = new TextArea(exceptionText);
+            textArea.setEditable(false);
+            textArea.setWrapText(true);
+
+            textArea.setMaxWidth(Double.MAX_VALUE);
+            textArea.setMaxHeight(Double.MAX_VALUE);
+            GridPane.setVgrow(textArea, Priority.ALWAYS);
+            GridPane.setHgrow(textArea, Priority.ALWAYS);
+
+            GridPane expContent = new GridPane();
+            expContent.setMaxWidth(Double.MAX_VALUE);
+            expContent.add(new Label("Detalhes do erro:"), 0, 0);
+            expContent.add(textArea, 0, 1);
+
+            alert.getDialogPane().setExpandableContent(expContent);
+        }
         alert.showAndWait();
     }
 
