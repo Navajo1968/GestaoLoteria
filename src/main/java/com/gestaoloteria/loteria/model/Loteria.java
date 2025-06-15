@@ -1,5 +1,6 @@
 package com.gestaoloteria.loteria.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Loteria {
@@ -10,7 +11,9 @@ public class Loteria {
     private int qtdMin;
     private int qtdMax;
     private int qtdSorteados;
-    private List<FaixaPremiacao> faixas;
+    private List<FaixaPremiacao> faixas = new ArrayList<>();
+
+    public Loteria() {}
 
     public Integer getId() {
         return id;
@@ -58,6 +61,10 @@ public class Loteria {
         return faixas;
     }
     public void setFaixas(List<FaixaPremiacao> faixas) {
-        this.faixas = faixas;
+        if (faixas == null) {
+            this.faixas = new ArrayList<>();
+        } else {
+            this.faixas = faixas;
+        }
     }
 }

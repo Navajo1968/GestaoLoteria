@@ -7,6 +7,8 @@ public class FaixaPremiacao {
     private int ordem;
     private int acertos;
 
+    public FaixaPremiacao() {}
+
     public Integer getId() {
         return id;
     }
