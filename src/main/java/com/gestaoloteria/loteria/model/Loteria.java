@@ -1,9 +1,16 @@
 package com.gestaoloteria.loteria.model;
 
+import java.util.List;
+
 public class Loteria {
     private Integer id;
     private String nome;
     private String tipo;
+    private String descricao;
+    private int qtdMin;
+    private int qtdMax;
+    private int qtdSorteados;
+    private List<FaixaPremiacao> faixas;
 
     public Integer getId() {
         return id;
@@ -22,5 +29,35 @@ public class Loteria {
     }
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+    public String getDescricao() {
+        return descricao;
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    public int getQtdMin() {
+        return qtdMin;
+    }
+    public void setQtdMin(int qtdMin) {
+        this.qtdMin = qtdMin;
+    }
+    public int getQtdMax() {
+        return qtdMax;
+    }
+    public void setQtdMax(int qtdMax) {
+        this.qtdMax = qtdMax;
+    }
+    public int getQtdSorteados() {
+        return qtdSorteados;
+    }
+    public void setQtdSorteados(int qtdSorteados) {
+        this.qtdSorteados = qtdSorteados;
+    }
+    public List<FaixaPremiacao> getFaixas() {
+        return faixas;
+    }
+    public void setFaixas(List<FaixaPremiacao> faixas) {
+        this.faixas = faixas;
     }
 }
