@@ -37,4 +37,18 @@ public class JogoDAO {
         }
         return jogos;
     }
+
+    public void salvarJogos(List<Jogo> jogos) throws Exception {
+        String sql = "INSERT INTO jogo (loteria_id, concurso_id, numeros) VALUES (?, ?, ?)";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            for (Jogo jogo : jogos) {
+                ps.setInt(1, jogo.getLoteriaId());
+                ps.setInt(2, jogo.getConcursoId());
+                ps.setString(3, jogo.getNumeros());
+                ps.addBatch();
+            }
+            ps.executeBatch();
+        }
+    }
 }
