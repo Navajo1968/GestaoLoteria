@@ -9,38 +9,18 @@ public class FaixaPremiacao {
 
     public FaixaPremiacao() {}
 
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public int getOrdem() {
-        return ordem;
-    }
-    public void setOrdem(int ordem) {
-        this.ordem = ordem;
-    }
+    public int getOrdem() { return ordem; }
+    public void setOrdem(int ordem) { this.ordem = ordem; }
 
-    public int getAcertos() {
-        return acertos;
-    }
-    public void setAcertos(int acertos) {
-        this.acertos = acertos;
-    }
+    public int getAcertos() { return acertos; }
+    public void setAcertos(int acertos) { this.acertos = acertos; }
 }
