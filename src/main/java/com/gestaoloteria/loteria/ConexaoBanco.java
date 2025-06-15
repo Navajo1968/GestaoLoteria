@@ -1,19 +1,16 @@
-package com.gestaoloteria.loteria;
+package com.gestaoloteria.loteria.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.Properties;
-import java.io.InputStream;
 
 public class ConexaoBanco {
+
+    private static final String URL = "jdbc:sqlite:gestaoloteria.db"; // OU seu JDBC de produção
+    // Exemplo H2: "jdbc:h2:./gestaoloteria"
+    // Exemplo MySQL: "jdbc:mysql://localhost:3306/gestaoloteria?user=root&password=123"
+
     public static Connection getConnection() throws Exception {
-        Properties props = new Properties();
-        try (InputStream input = ConexaoBanco.class.getClassLoader().getResourceAsStream("db.properties")) {
-            props.load(input);
-        }
-        String url = props.getProperty("db.url");
-        String user = props.getProperty("db.user");
-        String password = props.getProperty("db.password");
-        return DriverManager.getConnection(url, user, password);
+        // Para SQLite, não precisa de usuário/senha
+        return DriverManager.getConnection(URL);
     }
 }

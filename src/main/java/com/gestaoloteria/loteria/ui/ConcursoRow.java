@@ -1,22 +1,22 @@
 package com.gestaoloteria.loteria.ui;
 
 import com.gestaoloteria.loteria.model.Concurso;
-
-import javafx.beans.property.*;
-import java.time.format.DateTimeFormatter;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class ConcursoRow {
-    private final IntegerProperty numeroConcurso;
-    private final StringProperty dataConcurso;
-    private final StringProperty dezenas;
+
+    private final SimpleIntegerProperty numeroConcurso;
+    private final SimpleStringProperty dataConcurso;
+    private final SimpleStringProperty dezenas;
 
     public ConcursoRow(Concurso concurso, String dezenas) {
-        this.numeroConcurso = new SimpleIntegerProperty(concurso.getNumeroConcurso());
-        this.dataConcurso = new SimpleStringProperty(concurso.getDataConcurso().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        this.numeroConcurso = new SimpleIntegerProperty(concurso.getNumero());
+        this.dataConcurso = new SimpleStringProperty(concurso.getData() != null ? concurso.getData().toString() : "");
         this.dezenas = new SimpleStringProperty(dezenas);
     }
 
-    public IntegerProperty numeroConcursoProperty() { return numeroConcurso; }
-    public StringProperty dataConcursoProperty() { return dataConcurso; }
-    public StringProperty dezenasProperty() { return dezenas; }
+    public SimpleIntegerProperty numeroConcursoProperty() { return numeroConcurso; }
+    public SimpleStringProperty dataConcursoProperty() { return dataConcurso; }
+    public SimpleStringProperty dezenasProperty() { return dezenas; }
 }

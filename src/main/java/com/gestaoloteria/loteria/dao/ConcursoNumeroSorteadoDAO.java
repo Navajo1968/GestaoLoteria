@@ -3,9 +3,9 @@ package com.gestaoloteria.loteria.dao;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.ResultSet;
 
 public class ConcursoNumeroSorteadoDAO {
 

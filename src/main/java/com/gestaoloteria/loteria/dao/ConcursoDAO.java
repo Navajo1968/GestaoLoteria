@@ -57,6 +57,4 @@ public class ConcursoDAO {
         }
         return concursos;
     }
-
-    // Adicione outros métodos conforme necessário
 }
