@@ -22,7 +22,7 @@ import javafx.stage.FileChooser;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -200,11 +200,11 @@ public class ProcessosView {
                     while (rowIterator.hasNext()) {
                         Row row = rowIterator.next();
 
-                        org.apache.poi.ss.usermodel.Cell cellConcurso = row.getCell(0);
-                        org.apache.poi.ss.usermodel.Cell cellData = row.getCell(1);
+                        Cell cellConcurso = row.getCell(0);
+                        Cell cellData = row.getCell(1);
                         List<Integer> dezenas = new ArrayList<>();
                         for (int i = 2; i < 17; i++) {
-                            org.apache.poi.ss.usermodel.Cell cellDezena = row.getCell(i);
+                            Cell cellDezena = row.getCell(i);
                             Integer dezena = ImportadorHistoricoLoteria.getCellAsInteger(cellDezena);
                             if (dezena != null) dezenas.add(dezena);
                         }

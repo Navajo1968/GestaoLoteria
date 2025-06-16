@@ -5,11 +5,7 @@ import com.gestaoloteria.loteria.dao.ConcursoNumeroSorteadoDAO;
 import com.gestaoloteria.loteria.model.Concurso;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Loteria;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -128,9 +124,9 @@ public class ImportadorHistoricoLoteria {
     // Utilitário seguro para extrair LocalDate de uma célula (data)
     public static LocalDate getCellAsLocalDate(Cell cell) {
         if (cell == null) return null;
-        if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC && DateUtil.isCellDateFormatted(cell)) {
+        if (cell.getCellType() == CellType.NUMERIC && DateUtil.isCellDateFormatted(cell)) {
             return cell.getDateCellValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        } else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+        } else if (cell.getCellType() == CellType.STRING) {
             String dataStr = cell.getStringCellValue().trim();
             try {
                 // Tenta formato padrão ISO (yyyy-MM-dd)
