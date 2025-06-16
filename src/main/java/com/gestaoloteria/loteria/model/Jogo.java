@@ -1,57 +1,50 @@
 package com.gestaoloteria.loteria.model;
 
-import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class Jogo {
     private Integer id;
     private Integer loteriaId;
     private Integer concursoId;
-    private String numeros;
+    private Integer numeroConcursoPrevisto;
+    private String numeros; // ex: "01,03,08,09,13,15,16,17,18,19,20,21,22,23,25"
+    private LocalDateTime dataHora;
+    private Integer acertos;
+    private String observacao;
 
-    // Construtor padrão
     public Jogo() {}
 
-    // Construtor adicional (usado em JogoImportacaoUtil)
-    public Jogo(Integer loteriaId, int numeroConcurso, LocalDate dataConcurso, List<Integer> numeros) {
+    public Jogo(Integer loteriaId, Integer concursoId, Integer numeroConcursoPrevisto, String numeros, LocalDateTime dataHora, Integer acertos, String observacao) {
         this.loteriaId = loteriaId;
-        this.concursoId = numeroConcurso;
-        this.numeros = numerosToString(numeros);
-        // dataConcurso pode ser usado conforme necessidade do seu domínio
-    }
-
-    private String numerosToString(List<Integer> numeros) {
-        if (numeros == null) return "";
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < numeros.size(); i++) {
-            if (i > 0) sb.append(",");
-            sb.append(numeros.get(i));
-        }
-        return sb.toString();
-    }
-
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public Integer getLoteriaId() {
-        return loteriaId;
-    }
-    public void setLoteriaId(Integer loteriaId) {
-        this.loteriaId = loteriaId;
-    }
-    public Integer getConcursoId() {
-        return concursoId;
-    }
-    public void setConcursoId(Integer concursoId) {
         this.concursoId = concursoId;
-    }
-    public String getNumeros() {
-        return numeros;
-    }
-    public void setNumeros(String numeros) {
+        this.numeroConcursoPrevisto = numeroConcursoPrevisto;
         this.numeros = numeros;
+        this.dataHora = dataHora;
+        this.acertos = acertos;
+        this.observacao = observacao;
     }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
+    public Integer getLoteriaId() { return loteriaId; }
+    public void setLoteriaId(Integer loteriaId) { this.loteriaId = loteriaId; }
+
+    public Integer getConcursoId() { return concursoId; }
+    public void setConcursoId(Integer concursoId) { this.concursoId = concursoId; }
+
+    public Integer getNumeroConcursoPrevisto() { return numeroConcursoPrevisto; }
+    public void setNumeroConcursoPrevisto(Integer numeroConcursoPrevisto) { this.numeroConcursoPrevisto = numeroConcursoPrevisto; }
+
+    public String getNumeros() { return numeros; }
+    public void setNumeros(String numeros) { this.numeros = numeros; }
+
+    public LocalDateTime getDataHora() { return dataHora; }
+    public void setDataHora(LocalDateTime dataHora) { this.dataHora = dataHora; }
+
+    public Integer getAcertos() { return acertos; }
+    public void setAcertos(Integer acertos) { this.acertos = acertos; }
+
+    public String getObservacao() { return observacao; }
+    public void setObservacao(String observacao) { this.observacao = observacao; }
 }

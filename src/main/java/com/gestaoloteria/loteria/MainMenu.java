@@ -22,10 +22,17 @@ public class MainMenu {
         Button btnProcessos = createMenuButton("Processos");
         btnProcessos.setOnAction(e -> Main.showProcessosView());
 
+        Button btnGerarJogos = createMenuButton("Gerar Jogos");
+        btnGerarJogos.setOnAction(e -> {
+            // Abre a tela de geração de jogos sugeridos
+            GerarJogosView gerarJogosView = new GerarJogosView();
+            gerarJogosView.show();
+        });
+
         Button btnSair = createMenuButton("Sair");
         btnSair.setOnAction(e -> System.exit(0));
 
-        root.getChildren().addAll(btnCadastros, btnProcessos, btnSair);
+        root.getChildren().addAll(btnCadastros, btnProcessos, btnGerarJogos, btnSair);
 
         return new Scene(root, 510, 400);
     }
