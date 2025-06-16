@@ -47,6 +47,23 @@ public class ProcessosView {
 
         cbLoteria = new ComboBox<>();
         cbLoteria.setPromptText("Selecione a Loteria");
+
+        // Exibir o nome da loteria na combo e no botão (NÃO a descrição)
+        cbLoteria.setCellFactory(listView -> new ListCell<Loteria>() {
+            @Override
+            protected void updateItem(Loteria item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? null : item.getNome());
+            }
+        });
+        cbLoteria.setButtonCell(new ListCell<Loteria>() {
+            @Override
+            protected void updateItem(Loteria item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? null : item.getNome());
+            }
+        });
+
         carregarLoterias();
         cbLoteria.setMinWidth(200);
         cbLoteria.setOnAction(e -> carregarConcursos());
