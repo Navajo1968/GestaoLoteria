@@ -31,7 +31,7 @@ public class ConcursoDAO {
         }
     }
     public int inserirConcurso(Concurso concurso, Connection conn) throws Exception {
-        String sql = "INSERT INTO concurso (loteria_id, numero_concurso, data) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO concurso (loteria_id, numero_concurso, data_concurso) VALUES (?, ?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, concurso.getLoteriaId());
             ps.setInt(2, concurso.getNumero());
@@ -64,5 +64,25 @@ public class ConcursoDAO {
             }
         }
         return lista;
+    }
+
+    // NOVO: retorna o último concurso da loteria (maior numero_concurso)
+    public Concurso buscarUltimoConcursoPorLoteria(int loteriaId) throws Exception {
+        String sql = "SELECT id, numero_concurso, data_concurso FROM concurso WHERE loteria_id = ? ORDER BY numero_concurso DESC LIMIT 1";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, loteriaId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Concurso c = new Concurso();
+                    c.setId(rs.getInt("id"));
+                    c.setNumero(rs.getInt("numero_concurso"));
+                    c.setData(rs.getDate("data_concurso").toLocalDate());
+                    c.setLoteriaId(loteriaId);
+                    return c;
+                }
+            }
+        }
+        return null;
     }
 }
