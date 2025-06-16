@@ -83,13 +83,13 @@ public class ImportadorHistoricoLoteria {
     }
 
     // Utilitário seguro para extrair inteiro de uma célula
-    private static Integer getCellAsInteger(Cell cell) {
+    public static Integer getCellAsInteger(Cell cell) {
         Double d = getCellAsDouble(cell);
         return (d == null) ? null : d.intValue();
     }
 
     // Utilitário seguro para extrair double de uma célula
-    private static Double getCellAsDouble(Cell cell) {
+    public static Double getCellAsDouble(Cell cell) {
         if (cell == null) return null;
         switch (cell.getCellType()) {
             case NUMERIC:
@@ -122,7 +122,7 @@ public class ImportadorHistoricoLoteria {
     }
 
     // Utilitário seguro para extrair LocalDate de uma célula (data)
-    private static LocalDate getCellAsLocalDate(Cell cell) {
+    public static LocalDate getCellAsLocalDate(Cell cell) {
         if (cell == null) return null;
         if (cell.getCellType() == CellType.NUMERIC && DateUtil.isCellDateFormatted(cell)) {
             return cell.getDateCellValue().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();

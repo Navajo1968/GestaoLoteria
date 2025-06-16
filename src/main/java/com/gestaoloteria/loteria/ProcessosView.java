@@ -2,14 +2,15 @@ package com.gestaoloteria.loteria;
 
 import com.gestaoloteria.loteria.dao.ConcursoDAO;
 import com.gestaoloteria.loteria.dao.ConcursoNumeroSorteadoDAO;
-import com.gestaoloteria.loteria.dao.LoteriaDAO;
 import com.gestaoloteria.loteria.model.Concurso;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Loteria;
 import com.gestaoloteria.loteria.ui.ConcursoRow;
 import com.gestaoloteria.loteria.util.ImportadorHistoricoLoteria;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -18,10 +19,16 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +38,10 @@ public class ProcessosView {
     private final TableView<ConcursoRow> tabela;
     private final ObservableList<ConcursoRow> dadosTabela;
     private File arquivoSelecionado;
+
+    // Progress bar e status
+    private final ProgressBar progressBar;
+    private final Label lblStatus;
 
     public ProcessosView() {
         root = new VBox(16);
@@ -48,7 +59,6 @@ public class ProcessosView {
         cbLoteria = new ComboBox<>();
         cbLoteria.setPromptText("Selecione a Loteria");
 
-        // Exibir o nome da loteria na combo e no botão (NÃO a descrição)
         cbLoteria.setCellFactory(listView -> new ListCell<Loteria>() {
             @Override
             protected void updateItem(Loteria item, boolean empty) {
@@ -78,9 +88,20 @@ public class ProcessosView {
 
         Button btnImportar = new Button("Importar");
         btnImportar.setStyle("-fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnImportar.setOnAction(e -> importarHistorico(lblArquivo));
+        btnImportar.setOnAction(e -> importarHistoricoAssincrono(lblArquivo));
 
         filtrosBox.getChildren().addAll(cbLoteria, btnArquivo, lblArquivo, btnImportar);
+
+        // Barra de progresso e status
+        progressBar = new ProgressBar(0);
+        progressBar.setPrefWidth(250);
+        progressBar.setVisible(false);
+
+        lblStatus = new Label();
+        lblStatus.setTextFill(Color.WHITE);
+
+        HBox progressoBox = new HBox(12, progressBar, lblStatus);
+        progressoBox.setAlignment(Pos.CENTER_LEFT);
 
         dadosTabela = FXCollections.observableArrayList();
         tabela = new TableView<>(dadosTabela);
@@ -106,12 +127,12 @@ public class ProcessosView {
         btnVoltar.setOnAction(e -> Main.showMainMenu());
         footer.getChildren().add(btnVoltar);
 
-        root.getChildren().addAll(title, filtrosBox, tabela, footer);
+        root.getChildren().addAll(title, filtrosBox, progressoBox, tabela, footer);
     }
 
     private void carregarLoterias() {
         try {
-            LoteriaDAO dao = new LoteriaDAO();
+            com.gestaoloteria.loteria.dao.LoteriaDAO dao = new com.gestaoloteria.loteria.dao.LoteriaDAO();
             List<Loteria> loterias = dao.listarLoterias();
             cbLoteria.getItems().setAll(loterias);
         } catch (Exception ex) {
@@ -130,7 +151,8 @@ public class ProcessosView {
         }
     }
 
-    private void importarHistorico(Label lblArquivo) {
+    // NOVO: Importação assíncrona com barra de progresso
+    private void importarHistoricoAssincrono(Label lblArquivo) {
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) {
             mostrarErro("Selecione a loteria para importar.", null);
@@ -140,15 +162,71 @@ public class ProcessosView {
             mostrarErro("Selecione o arquivo de importação.", null);
             return;
         }
-        try {
-            ImportadorHistoricoLoteria.importar(loteria, arquivoSelecionado);
-            mostrarInfo("Importação concluída com sucesso!");
-            carregarConcursos();
-            lblArquivo.setText("Nenhum arquivo selecionado.");
-            arquivoSelecionado = null;
-        } catch (Exception ex) {
-            mostrarErro("Erro ao importar!", ex);
-        }
+
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                updateMessage("Abrindo arquivo...");
+                // Conta as linhas de dados (não cabeçalho)
+                int totalLinhas = 0;
+                try (FileInputStream fis = new FileInputStream(arquivoSelecionado);
+                     Workbook workbook = new XSSFWorkbook(fis)) {
+                    Sheet sheet = workbook.getSheetAt(0);
+                    Iterator<Row> rowIterator = sheet.iterator();
+                    if (rowIterator.hasNext()) rowIterator.next(); // pula cabeçalho
+                    while (rowIterator.hasNext()) {
+                        rowIterator.next();
+                        totalLinhas++;
+                    }
+                }
+
+                updateMessage("Importando...");
+                progressBar.setVisible(true);
+
+                ImportadorHistoricoLoteria.importarComProgresso(loteria, arquivoSelecionado, this, totalLinhas);
+
+                updateMessage("Importação finalizada!");
+                updateProgress(1, 1);
+                return null;
+            }
+
+            @Override
+            protected void scheduled() {
+                Platform.runLater(() -> {
+                    progressBar.setVisible(true);
+                    lblStatus.setText("Iniciando importação...");
+                });
+            }
+
+            @Override
+            protected void succeeded() {
+                Platform.runLater(() -> {
+                    mostrarInfo("Importação concluída com sucesso!");
+                    carregarConcursos();
+                    lblArquivo.setText("Nenhum arquivo selecionado.");
+                    arquivoSelecionado = null;
+                    progressBar.setVisible(false);
+                    lblStatus.setText("");
+                });
+            }
+
+            @Override
+            protected void failed() {
+                Throwable ex = getException();
+                Platform.runLater(() -> {
+                    mostrarErro("Erro ao importar!", ex);
+                    progressBar.setVisible(false);
+                    lblStatus.setText("");
+                });
+            }
+        };
+
+        progressBar.progressProperty().bind(task.progressProperty());
+        lblStatus.textProperty().bind(task.messageProperty());
+
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
     }
 
     private void carregarConcursos() {
