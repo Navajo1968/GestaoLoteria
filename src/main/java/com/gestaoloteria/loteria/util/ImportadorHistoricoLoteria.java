@@ -5,38 +5,42 @@ import com.gestaoloteria.loteria.dao.ConcursoNumeroSorteadoDAO;
 import com.gestaoloteria.loteria.model.Concurso;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Loteria;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ImportadorHistoricoLoteria {
 
     public static void importar(Loteria loteria, File arquivo) throws Exception {
         try (FileInputStream fis = new FileInputStream(arquivo);
-             Workbook workbook = new XSSFWorkbook(fis)) {
+             Workbook workbook = new XSSFWorkbook(fis);
+             Connection conn = com.gestaoloteria.loteria.dao.ConexaoBanco.getConnection()) {
+
+            conn.setAutoCommit(false); // transação única
+
+            // Carregue todos os números de concurso já existentes para a loteria em memória
+            Set<Integer> concursosExistentes = new HashSet<>();
+            ConcursoDAO concursoDAO = new ConcursoDAO();
+            for (Concurso c : concursoDAO.listarConcursosPorLoteria(loteria.getId(), conn)) {
+                concursosExistentes.add(c.getNumero());
+            }
 
             Sheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.iterator();
 
             // Pular cabeçalho
-            if (rowIterator.hasNext()) {
-                rowIterator.next();
-            }
+            if (rowIterator.hasNext()) rowIterator.next();
 
-            ConcursoDAO concursoDAO = new ConcursoDAO();
             ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
+
+            int novosConcursos = 0;
+            int novosNumeros = 0;
 
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
@@ -59,7 +63,7 @@ public class ImportadorHistoricoLoteria {
                     continue;
                 }
 
-                if (concursoDAO.existeConcurso(loteria.getId(), numeroConcurso)) {
+                if (concursosExistentes.contains(numeroConcurso)) {
                     continue;
                 }
 
@@ -68,17 +72,26 @@ public class ImportadorHistoricoLoteria {
                 concurso.setNumero(numeroConcurso);
                 concurso.setData(dataConcurso);
 
-                int concursoId = concursoDAO.inserirConcurso(concurso);
+                int concursoId = concursoDAO.inserirConcurso(concurso, conn);
 
+                List<ConcursoNumeroSorteado> batchNumeros = new ArrayList<>();
                 for (int idx = 0; idx < dezenas.size(); idx++) {
                     Integer dezena = dezenas.get(idx);
                     ConcursoNumeroSorteado numeroSorteado = new ConcursoNumeroSorteado();
                     numeroSorteado.setConcursoId(concursoId);
                     numeroSorteado.setNumero(dezena);
                     numeroSorteado.setOrdem(idx + 1);
-                    numeroDAO.inserirNumeroSorteado(numeroSorteado);
+                    batchNumeros.add(numeroSorteado);
                 }
+                numeroDAO.inserirNumerosSorteadosBatch(batchNumeros, conn);
+
+                concursosExistentes.add(numeroConcurso); // previne duplicidade se arquivo estiver bagunçado
+                novosConcursos++;
+                novosNumeros += batchNumeros.size();
             }
+
+            conn.commit();
+            System.out.println("Importação finalizada: " + novosConcursos + " concursos, " + novosNumeros + " dezenas inseridas.");
         }
     }
 
