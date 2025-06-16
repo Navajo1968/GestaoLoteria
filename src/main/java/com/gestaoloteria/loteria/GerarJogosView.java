@@ -70,7 +70,7 @@ public class GerarJogosView extends Stage {
         try {
             // Filtra para Lotofacil (por nome)
             return new LoteriaDAO().listarLoterias().stream()
-                    .filter(l -> l.getNome().equalsIgnoreCase("Lotofacil"))
+                    .filter(l -> l.getNome().equalsIgnoreCase("Lotofácil"))
                     .collect(Collectors.toList());
         } catch (Exception e) {
             e.printStackTrace();
