@@ -19,15 +19,15 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -151,7 +151,7 @@ public class ProcessosView {
         }
     }
 
-    // NOVO: Importação assíncrona com barra de progresso
+    // Importação assíncrona com barra de progresso
     private void importarHistoricoAssincrono(Label lblArquivo) {
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) {
@@ -183,7 +183,67 @@ public class ProcessosView {
                 updateMessage("Importando...");
                 progressBar.setVisible(true);
 
-                ImportadorHistoricoLoteria.importarComProgresso(loteria, arquivoSelecionado, this, totalLinhas);
+                try (FileInputStream fis = new FileInputStream(arquivoSelecionado);
+                     Workbook workbook = new XSSFWorkbook(fis)) {
+
+                    Sheet sheet = workbook.getSheetAt(0);
+                    Iterator<Row> rowIterator = sheet.iterator();
+
+                    if (rowIterator.hasNext()) rowIterator.next(); // pula cabeçalho
+
+                    ConcursoDAO concursoDAO = new ConcursoDAO();
+                    ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
+
+                    int linhaAtual = 0;
+                    while (rowIterator.hasNext()) {
+                        Row row = rowIterator.next();
+
+                        org.apache.poi.ss.usermodel.Cell cellConcurso = row.getCell(0);
+                        org.apache.poi.ss.usermodel.Cell cellData = row.getCell(1);
+                        List<Integer> dezenas = new ArrayList<>();
+                        for (int i = 2; i < 17; i++) {
+                            org.apache.poi.ss.usermodel.Cell cellDezena = row.getCell(i);
+                            Integer dezena = ImportadorHistoricoLoteria.getCellAsInteger(cellDezena);
+                            if (dezena != null) dezenas.add(dezena);
+                        }
+                        Integer numeroConcurso = ImportadorHistoricoLoteria.getCellAsInteger(cellConcurso);
+                        LocalDate dataConcurso = ImportadorHistoricoLoteria.getCellAsLocalDate(cellData);
+
+                        if (numeroConcurso == null || dataConcurso == null || dezenas.size() != 15) {
+                            linhaAtual++;
+                            updateProgress(linhaAtual, totalLinhas);
+                            updateMessage("Pulando linha inválida: " + linhaAtual + "/" + totalLinhas);
+                            continue;
+                        }
+
+                        if (concursoDAO.existeConcurso(loteria.getId(), numeroConcurso)) {
+                            linhaAtual++;
+                            updateProgress(linhaAtual, totalLinhas);
+                            updateMessage("Concurso já existe: " + linhaAtual + "/" + totalLinhas);
+                            continue;
+                        }
+
+                        Concurso concurso = new Concurso();
+                        concurso.setLoteriaId(loteria.getId());
+                        concurso.setNumero(numeroConcurso);
+                        concurso.setData(dataConcurso);
+
+                        int concursoId = concursoDAO.inserirConcurso(concurso);
+
+                        for (int idx = 0; idx < dezenas.size(); idx++) {
+                            Integer dezena = dezenas.get(idx);
+                            ConcursoNumeroSorteado numeroSorteado = new ConcursoNumeroSorteado();
+                            numeroSorteado.setConcursoId(concursoId);
+                            numeroSorteado.setNumero(dezena);
+                            numeroSorteado.setOrdem(idx + 1);
+                            numeroDAO.inserirNumeroSorteado(numeroSorteado);
+                        }
+
+                        linhaAtual++;
+                        updateProgress(linhaAtual, totalLinhas);
+                        updateMessage("Processando: " + linhaAtual + "/" + totalLinhas);
+                    }
+                }
 
                 updateMessage("Importação finalizada!");
                 updateProgress(1, 1);
