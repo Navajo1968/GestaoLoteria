@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -34,10 +35,33 @@ public class GerarJogosView extends Stage {
         qtdJogosField = new TextField();
         concursoPrevistoField = new TextField();
 
-        // Carrega apenas Lotofacil
+        // Carrega todas as loterias
         List<Loteria> loterias = carregarLoterias();
         loteriaCombo.setItems(FXCollections.observableArrayList(loterias));
         if (!loterias.isEmpty()) loteriaCombo.getSelectionModel().selectFirst();
+
+        // Ajuste para exibir o nome na ComboBox
+        loteriaCombo.setConverter(new StringConverter<Loteria>() {
+            @Override
+            public String toString(Loteria object) {
+                return (object != null) ? object.getNome() : "";
+            }
+            @Override
+            public Loteria fromString(String string) {
+                for (Loteria l : loteriaCombo.getItems()) {
+                    if (l.getNome().equals(string)) return l;
+                }
+                return null;
+            }
+        });
+
+        loteriaCombo.setCellFactory(listView -> new ListCell<Loteria>() {
+            @Override
+            protected void updateItem(Loteria item, boolean empty) {
+                super.updateItem(item, empty);
+                setText((item == null || empty) ? "" : item.getNome());
+            }
+        });
 
         HBox linha1 = new HBox(10, new Label("Loteria:"), loteriaCombo, new Label("Nº jogos:"), qtdJogosField, new Label("Concurso previsto:"), concursoPrevistoField);
         linha1.setPadding(new Insets(0,0,10,0));
@@ -68,10 +92,8 @@ public class GerarJogosView extends Stage {
 
     private List<Loteria> carregarLoterias() {
         try {
-            // Filtra para Lotofacil (por nome)
-            return new LoteriaDAO().listarLoterias().stream()
-                    .filter(l -> l.getNome().equalsIgnoreCase("Lotofácil"))
-                    .collect(Collectors.toList());
+            // Retorna todas as loterias cadastradas. Se quiser filtrar, basta ajustar aqui.
+            return new LoteriaDAO().listarLoterias();
         } catch (Exception e) {
             e.printStackTrace();
             return Collections.emptyList();
@@ -93,7 +115,6 @@ public class GerarJogosView extends Stage {
             showAlert("Selecione a loteria");
             return;
         }
-        // Geração baseada em estatística/probabilidade de Lotofacil
         for (int i = 0; i < qtd; i++) {
             jogosSugeridos.add(gerarJogoMelhorProbabilidade());
         }
@@ -102,14 +123,10 @@ public class GerarJogosView extends Stage {
     }
 
     private List<Integer> gerarJogoMelhorProbabilidade() {
-        // Estratégia estatística: dezenas mais frequentes, distribuição par/ímpar, evita repetições exatas dos últimos concursos etc.
-        // Para Lotofacil: 15 dezenas entre 1 e 25. Exemplo simples usando aleatório e combinando frequentes:
         List<Integer> todas = new ArrayList<>();
         for (int i = 1; i <= 25; i++) todas.add(i);
-
         Collections.shuffle(todas, new Random());
         return todas.subList(0, 15).stream().sorted().collect(Collectors.toList());
-        // Para produção, use um algoritmo avançado de estatística/histórico, se desejar.
     }
 
     private void salvarJogos() {
