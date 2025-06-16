@@ -2,9 +2,7 @@ package com.gestaoloteria.loteria.dao;
 
 import com.gestaoloteria.loteria.model.Concurso;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +29,25 @@ public class ConcursoDAO {
         }
     }
     public int inserirConcurso(Concurso concurso, Connection conn) throws Exception {
-        String sql = "INSERT INTO concurso (loteria_id, numero_concurso, data_concurso) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO concurso " +
+                "(loteria_id, numero_concurso, data_concurso, arrecadacao_total, acumulado, valor_acumulado, estimativa_premio, acumulado_especial, observacao, time_coracao) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, concurso.getLoteriaId());
             ps.setInt(2, concurso.getNumero());
             ps.setDate(3, java.sql.Date.valueOf(concurso.getData()));
+            if (concurso.getArrecadacaoTotal() != null) ps.setBigDecimal(4, concurso.getArrecadacaoTotal());
+            else ps.setNull(4, Types.NUMERIC);
+            if (concurso.getAcumulado() != null) ps.setBoolean(5, concurso.getAcumulado());
+            else ps.setNull(5, Types.BOOLEAN);
+            if (concurso.getValorAcumulado() != null) ps.setBigDecimal(6, concurso.getValorAcumulado());
+            else ps.setNull(6, Types.NUMERIC);
+            if (concurso.getEstimativaPremio() != null) ps.setBigDecimal(7, concurso.getEstimativaPremio());
+            else ps.setNull(7, Types.NUMERIC);
+            if (concurso.getAcumuladoEspecial() != null) ps.setBigDecimal(8, concurso.getAcumuladoEspecial());
+            else ps.setNull(8, Types.NUMERIC);
+            ps.setString(9, concurso.getObservacao());
+            ps.setString(10, concurso.getTimeCoracao());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
@@ -66,7 +78,6 @@ public class ConcursoDAO {
         return lista;
     }
 
-    // NOVO: retorna o último concurso da loteria (maior numero_concurso)
     public Concurso buscarUltimoConcursoPorLoteria(int loteriaId) throws Exception {
         String sql = "SELECT id, numero_concurso, data_concurso FROM concurso WHERE loteria_id = ? ORDER BY numero_concurso DESC LIMIT 1";
         try (Connection conn = ConexaoBanco.getConnection();

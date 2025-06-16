@@ -6,10 +6,10 @@ import com.gestaoloteria.loteria.model.Concurso;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Loteria;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -24,7 +24,6 @@ public class ImportadorHistoricoLoteria {
 
             conn.setAutoCommit(false); // transação única
 
-            // Carregue todos os números de concurso já existentes para a loteria em memória
             Set<Integer> concursosExistentes = new HashSet<>();
             ConcursoDAO concursoDAO = new ConcursoDAO();
             for (Concurso c : concursoDAO.listarConcursosPorLoteria(loteria.getId(), conn)) {
@@ -71,6 +70,15 @@ public class ImportadorHistoricoLoteria {
                 concurso.setLoteriaId(loteria.getId());
                 concurso.setNumero(numeroConcurso);
                 concurso.setData(dataConcurso);
+
+                // Colunas adicionais conforme ordem do arquivo/sheet
+                concurso.setArrecadacaoTotal(getCellAsBigDecimal(row.getCell(17)));
+                concurso.setAcumulado(getCellAsBoolean(row.getCell(18)));
+                concurso.setValorAcumulado(getCellAsBigDecimal(row.getCell(19)));
+                concurso.setEstimativaPremio(getCellAsBigDecimal(row.getCell(20)));
+                concurso.setAcumuladoEspecial(getCellAsBigDecimal(row.getCell(21)));
+                concurso.setObservacao(getCellAsString(row.getCell(22)));
+                concurso.setTimeCoracao(getCellAsString(row.getCell(23)));
 
                 int concursoId = concursoDAO.inserirConcurso(concurso, conn);
 
@@ -148,6 +156,31 @@ public class ImportadorHistoricoLoteria {
                 } catch (Exception ignored) {}
             }
         }
+        return null;
+    }
+
+    public static BigDecimal getCellAsBigDecimal(Cell cell) {
+        Double d = getCellAsDouble(cell);
+        return (d == null) ? null : BigDecimal.valueOf(d);
+    }
+
+    public static Boolean getCellAsBoolean(Cell cell) {
+        if (cell == null) return null;
+        if (cell.getCellType() == CellType.BOOLEAN) return cell.getBooleanCellValue();
+        if (cell.getCellType() == CellType.NUMERIC) return cell.getNumericCellValue() != 0;
+        if (cell.getCellType() == CellType.STRING) {
+            String val = cell.getStringCellValue().trim().toLowerCase();
+            if (val.equals("true") || val.equals("sim") || val.equals("1")) return true;
+            if (val.equals("false") || val.equals("não") || val.equals("nao") || val.equals("0")) return false;
+        }
+        return null;
+    }
+
+    public static String getCellAsString(Cell cell) {
+        if (cell == null) return null;
+        if (cell.getCellType() == CellType.STRING) return cell.getStringCellValue().trim();
+        if (cell.getCellType() == CellType.NUMERIC) return String.valueOf(cell.getNumericCellValue());
+        if (cell.getCellType() == CellType.BOOLEAN) return String.valueOf(cell.getBooleanCellValue());
         return null;
     }
 }
