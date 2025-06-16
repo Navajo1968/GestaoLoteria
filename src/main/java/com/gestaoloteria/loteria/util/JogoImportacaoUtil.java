@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class JogoImportacaoUtil {
@@ -32,7 +33,22 @@ public class JogoImportacaoUtil {
                         dezenas.add((int) cell.getNumericCellValue());
                     }
                 }
-                jogos.add(new Jogo(loteria.getId(), concurso, data, dezenas));
+                // Converte lista para string no formato "01,02,03,..."
+                String dezenasStr = dezenas.stream()
+                        .map(n -> String.format("%02d", n))
+                        .reduce((a, b) -> a + "," + b)
+                        .orElse("");
+                // Ajuste: concursoId é null porque esse dado normalmente representa o sorteio futuro/importado
+                Jogo jogo = new Jogo(
+                        loteria.getId(), // loteriaId
+                        null,            // concursoId (não existe ainda)
+                        concurso,        // numeroConcursoPrevisto
+                        dezenasStr,      // numeros
+                        data.atStartOfDay(), // dataHora
+                        null,            // acertos
+                        null             // observacao
+                );
+                jogos.add(jogo);
             }
         }
         if (!jogos.isEmpty()) {
