@@ -1,4 +1,4 @@
-package com.gestaoloteria.loteria.DAO;
+package com.gestaoloteria.loteria.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
