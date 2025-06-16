@@ -19,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -40,8 +41,6 @@ public class ProcessosView {
     private final TableView<ConcursoRow> tabela;
     private final ObservableList<ConcursoRow> dadosTabela;
     private File arquivoSelecionado;
-
-    // Progress bar e status
     private final ProgressBar progressBar;
     private final Label lblStatus;
 
@@ -94,7 +93,6 @@ public class ProcessosView {
 
         filtrosBox.getChildren().addAll(cbLoteria, btnArquivo, lblArquivo, btnImportar);
 
-        // Barra de progresso e status
         progressBar = new ProgressBar(0);
         progressBar.setPrefWidth(250);
         progressBar.setVisible(false);
@@ -153,7 +151,6 @@ public class ProcessosView {
         }
     }
 
-    // Importação assíncrona com barra de progresso
     private void importarHistoricoAssincrono(Label lblArquivo) {
         Loteria loteria = cbLoteria.getValue();
         if (loteria == null) {
@@ -169,13 +166,12 @@ public class ProcessosView {
             @Override
             protected Void call() throws Exception {
                 updateMessage("Abrindo arquivo...");
-                // Conta as linhas de dados (não cabeçalho)
                 int totalLinhas = 0;
                 try (FileInputStream fis = new FileInputStream(arquivoSelecionado);
                      Workbook workbook = new XSSFWorkbook(fis)) {
                     Sheet sheet = workbook.getSheetAt(0);
                     Iterator<Row> rowIterator = sheet.iterator();
-                    if (rowIterator.hasNext()) rowIterator.next(); // pula cabeçalho
+                    if (rowIterator.hasNext()) rowIterator.next();
                     while (rowIterator.hasNext()) {
                         rowIterator.next();
                         totalLinhas++;
@@ -191,7 +187,7 @@ public class ProcessosView {
                     Sheet sheet = workbook.getSheetAt(0);
                     Iterator<Row> rowIterator = sheet.iterator();
 
-                    if (rowIterator.hasNext()) rowIterator.next(); // pula cabeçalho
+                    if (rowIterator.hasNext()) rowIterator.next();
 
                     ConcursoDAO concursoDAO = new ConcursoDAO();
                     ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
@@ -307,7 +303,7 @@ public class ProcessosView {
                 dadosTabela.add(new ConcursoRow(concurso, dezenasStr));
             }
             if (!dadosTabela.isEmpty()) {
-                tabela.getSelectionModel().select(0); // destaca o último
+                tabela.getSelectionModel().select(0);
             }
         } catch (Exception ex) {
             mostrarErro("Erro ao carregar concursos: " + ex.getMessage(), ex);
