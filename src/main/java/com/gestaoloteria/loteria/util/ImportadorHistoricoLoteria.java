@@ -70,10 +70,12 @@ public class ImportadorHistoricoLoteria {
 
                 int concursoId = concursoDAO.inserirConcurso(concurso);
 
-                for (Integer dezena : dezenas) {
+                for (int idx = 0; idx < dezenas.size(); idx++) {
+                    Integer dezena = dezenas.get(idx);
                     ConcursoNumeroSorteado numeroSorteado = new ConcursoNumeroSorteado();
                     numeroSorteado.setConcursoId(concursoId);
                     numeroSorteado.setNumero(dezena);
+                    numeroSorteado.setOrdem(idx + 1); // ordem começa em 1
                     numeroDAO.inserirNumeroSorteado(numeroSorteado);
                 }
             }
