@@ -12,7 +12,7 @@ import java.util.List;
 public class ConcursoDAO {
 
     public boolean existeConcurso(Integer loteriaId, Integer numeroConcurso) throws Exception {
-        String sql = "SELECT id FROM concurso WHERE loteria_id = ? AND numero = ?";
+        String sql = "SELECT id FROM concurso WHERE loteria_id = ? AND numero_concurso = ?";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, loteriaId);
@@ -23,7 +23,7 @@ public class ConcursoDAO {
     }
 
     public int inserirConcurso(Concurso concurso) throws Exception {
-        String sql = "INSERT INTO concurso (loteria_id, numero, data) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO concurso (loteria_id, numero_concurso, data_concurso) VALUES (?, ?, ?)";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, concurso.getLoteriaId());
@@ -40,7 +40,7 @@ public class ConcursoDAO {
     }
 
     public List<Concurso> listarConcursosPorLoteria(Integer loteriaId) throws Exception {
-        String sql = "SELECT id, loteria_id, numero, data FROM concurso WHERE loteria_id = ? ORDER BY numero DESC";
+        String sql = "SELECT id, loteria_id, numero_concurso, data_concurso FROM concurso WHERE loteria_id = ? ORDER BY numero_concurso DESC";
         List<Concurso> concursos = new ArrayList<>();
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -50,8 +50,8 @@ public class ConcursoDAO {
                 Concurso concurso = new Concurso();
                 concurso.setId(rs.getInt("id"));
                 concurso.setLoteriaId(rs.getInt("loteria_id"));
-                concurso.setNumero(rs.getInt("numero"));
-                concurso.setData(rs.getDate("data").toLocalDate());
+                concurso.setNumero(rs.getInt("numero_concurso"));
+                concurso.setData(rs.getDate("data_concurso").toLocalDate());
                 concursos.add(concurso);
             }
         }
