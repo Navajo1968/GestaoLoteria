@@ -10,7 +10,7 @@ import java.util.List;
 public class LoteriaDAO {
 
     public List<Loteria> listarLoterias() throws Exception {
-        String sql = "SELECT id, nome, tipo FROM loteria";
+        String sql = "SELECT id, nome FROM loteria";
         List<Loteria> loterias = new ArrayList<>();
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -19,7 +19,6 @@ public class LoteriaDAO {
                 Loteria loteria = new Loteria();
                 loteria.setId(rs.getInt("id"));
                 loteria.setNome(rs.getString("nome"));
-                loteria.setTipo(rs.getString("tipo"));
                 loterias.add(loteria);
             }
         }
@@ -27,7 +26,7 @@ public class LoteriaDAO {
     }
 
     public Loteria obterLoteriaPorId(int id) throws Exception {
-        String sql = "SELECT id, nome, tipo FROM loteria WHERE id = ?";
+        String sql = "SELECT id, nome FROM loteria WHERE id = ?";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -36,7 +35,6 @@ public class LoteriaDAO {
                 Loteria loteria = new Loteria();
                 loteria.setId(rs.getInt("id"));
                 loteria.setNome(rs.getString("nome"));
-                loteria.setTipo(rs.getString("tipo"));
                 return loteria;
             } else {
                 return null;
@@ -55,22 +53,20 @@ public class LoteriaDAO {
 
     public void salvarLoteriaComFaixas(Loteria loteria) throws Exception {
         // Exemplo de inserção simples. Adapte para faixas se necessário.
-        String sql = "INSERT INTO loteria (nome, tipo) VALUES (?, ?)";
+        String sql = "INSERT INTO loteria (nome) VALUES (?)";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, loteria.getNome());
-            ps.setString(2, loteria.getTipo());
             ps.executeUpdate();
         }
     }
 
     public void atualizarLoteriaComFaixas(Loteria loteria) throws Exception {
         // Exemplo de update simples. Adapte para faixas se necessário.
-        String sql = "UPDATE loteria SET nome = ?, tipo = ? WHERE id = ?";
+        String sql = "UPDATE loteria SET nome = ? WHERE id = ?";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, loteria.getNome());
-            ps.setString(2, loteria.getTipo());
             ps.setInt(3, loteria.getId());
             ps.executeUpdate();
         }
