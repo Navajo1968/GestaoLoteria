@@ -7,7 +7,7 @@ public class Loteria {
     private Integer id;
     private String nome;
     private String descricao;
-    private String tipo;
+    // Remover: private String tipo;
     private int qtdMin;
     private int qtdMax;
     private int qtdSorteados;
@@ -24,8 +24,7 @@ public class Loteria {
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    // Remova getter e setter de tipo
 
     public int getQtdMin() { return qtdMin; }
     public void setQtdMin(int qtdMin) { this.qtdMin = qtdMin; }
