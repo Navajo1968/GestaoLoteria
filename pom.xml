@@ -87,7 +87,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.gestaoloteria.loteria.Main</mainClass> <!-- Ajuste para o nome do seu main se necessário -->
+              <mainClass>com.gestaoloteria.loteria.Main</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
@@ -106,5 +106,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
