@@ -1,74 +1,81 @@
 package com.gestaoloteria.loteria.dao;
 
 import com.gestaoloteria.loteria.model.Loteria;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoteriaDAO {
 
-    public List<Loteria> listarLoterias() throws Exception {
-        String sql = "SELECT id, nome FROM loteria";
-        List<Loteria> loterias = new ArrayList<>();
+    public void salvarLoteriaComFaixas(Loteria loteria) throws Exception {
+        String sql = "INSERT INTO loteria (nome, descricao, quantidade_numeros_aposta_min, quantidade_numeros_aposta_max, quantidade_numeros_sorteados) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ResultSet rs = ps.executeQuery();
+            ps.setString(1, loteria.getNome());
+            ps.setString(2, loteria.getDescricao());
+            ps.setInt(3, loteria.getQtdMin());
+            ps.setInt(4, loteria.getQtdMax());
+            ps.setInt(5, loteria.getQtdSorteados());
+            ps.executeUpdate();
+        }
+        // Aqui você faria a lógica para salvar as faixas, se necessário
+    }
+
+    public void atualizarLoteriaComFaixas(Loteria loteria) throws Exception {
+        String sql = "UPDATE loteria SET nome = ?, descricao = ?, quantidade_numeros_aposta_min = ?, quantidade_numeros_aposta_max = ?, quantidade_numeros_sorteados = ? WHERE id = ?";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, loteria.getNome());
+            ps.setString(2, loteria.getDescricao());
+            ps.setInt(3, loteria.getQtdMin());
+            ps.setInt(4, loteria.getQtdMax());
+            ps.setInt(5, loteria.getQtdSorteados());
+            ps.setInt(6, loteria.getId());
+            ps.executeUpdate();
+        }
+        // Aqui você faria a lógica para atualizar as faixas, se necessário
+    }
+
+    public List<Loteria> listarLoterias() throws Exception {
+        List<Loteria> lista = new ArrayList<>();
+        String sql = "SELECT id, nome, descricao, quantidade_numeros_aposta_min, quantidade_numeros_aposta_max, quantidade_numeros_sorteados FROM loteria";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Loteria loteria = new Loteria();
                 loteria.setId(rs.getInt("id"));
                 loteria.setNome(rs.getString("nome"));
-                loterias.add(loteria);
+                loteria.setDescricao(rs.getString("descricao"));
+                loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
+                loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
+                loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
+                // Aqui você pode carregar as faixas, se necessário
+                lista.add(loteria);
             }
         }
-        return loterias;
+        return lista;
     }
 
     public Loteria obterLoteriaPorId(int id) throws Exception {
-        String sql = "SELECT id, nome FROM loteria WHERE id = ?";
+        String sql = "SELECT id, nome, descricao, quantidade_numeros_aposta_min, quantidade_numeros_aposta_max, quantidade_numeros_sorteados FROM loteria WHERE id = ?";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                Loteria loteria = new Loteria();
-                loteria.setId(rs.getInt("id"));
-                loteria.setNome(rs.getString("nome"));
-                return loteria;
-            } else {
-                return null;
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Loteria loteria = new Loteria();
+                    loteria.setId(rs.getInt("id"));
+                    loteria.setNome(rs.getString("nome"));
+                    loteria.setDescricao(rs.getString("descricao"));
+                    loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
+                    loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
+                    loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
+                    // Aqui você pode carregar as faixas, se necessário
+                    return loteria;
+                }
             }
         }
-    }
-
-    public void excluirLoteria(int id) throws Exception {
-        String sql = "DELETE FROM loteria WHERE id = ?";
-        try (Connection conn = ConexaoBanco.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        }
-    }
-
-    public void salvarLoteriaComFaixas(Loteria loteria) throws Exception {
-        // Exemplo de inserção simples. Adapte para faixas se necessário.
-        String sql = "INSERT INTO loteria (nome) VALUES (?)";
-        try (Connection conn = ConexaoBanco.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, loteria.getNome());
-            ps.executeUpdate();
-        }
-    }
-
-    public void atualizarLoteriaComFaixas(Loteria loteria) throws Exception {
-        // Exemplo de update simples. Adapte para faixas se necessário.
-        String sql = "UPDATE loteria SET nome = ? WHERE id = ?";
-        try (Connection conn = ConexaoBanco.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, loteria.getNome());
-            ps.setInt(3, loteria.getId());
-            ps.executeUpdate();
-        }
+        return null;
     }
 }
