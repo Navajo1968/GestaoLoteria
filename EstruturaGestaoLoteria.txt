@@ -3,42 +3,43 @@
 
  Pasta de C:\Users\rodri\GestaoLoteria
 
-06/06/2025  21:43    <DIR>          .
-03/06/2025  22:43    <DIR>          ..
+16/06/2025  00:19    <DIR>          .
+06/06/2025  22:16    <DIR>          ..
 03/06/2025  23:20             1.608 .classpath
 03/06/2025  21:31                68 .gitattributes
 03/06/2025  22:59                 9 .gitignore
 03/06/2025  21:31    <DIR>          .mvn
 03/06/2025  22:59               565 .project
 03/06/2025  23:20    <DIR>          .settings
-03/06/2025  22:17            11.577 EstruturaDiretorio_GestaoLoteria.txt
-06/06/2025  21:43                 0 EstruturaGestaoLoteria.txt
+08/06/2025  21:02    <DIR>          arquivos_historicos
+16/06/2025  10:38                 0 EstruturaGestaoLoteria.txt
+15/06/2025  21:08                 0 gestaoloteria.db
 03/06/2025  22:02               624 gitignore
 03/06/2025  21:31            10.379 mvnw
 03/06/2025  21:31             6.789 mvnw.cmd
-04/06/2025  00:27             2.586 pom.xml
-03/06/2025  22:01               696 README.md
+15/06/2025  21:27             3.521 pom.xml
+08/06/2025  20:52             4.211 README.md
 03/06/2025  22:42            26.074 schema_loterias.sql
 03/06/2025  22:59    <DIR>          src
-06/06/2025  21:39    <DIR>          target
-              12 arquivo(s)         60.975 bytes
+16/06/2025  00:19    <DIR>          target
+              12 arquivo(s)         53.848 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git
 
-06/06/2025  21:43    <DIR>          ..
-06/06/2025  21:40                15 COMMIT_EDITMSG
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:13                11 COMMIT_EDITMSG
 03/06/2025  21:44               341 config
 03/06/2025  21:31                73 description
-06/06/2025  21:40               103 FETCH_HEAD
+16/06/2025  10:36               103 FETCH_HEAD
 03/06/2025  21:36                21 HEAD
 03/06/2025  21:31    <DIR>          hooks
-06/06/2025  21:40             2.083 index
+16/06/2025  00:13             5.143 index
 03/06/2025  21:31    <DIR>          info
 03/06/2025  21:31    <DIR>          logs
-06/06/2025  21:40    <DIR>          objects
+16/06/2025  10:36    <DIR>          objects
 03/06/2025  21:31               112 packed-refs
 03/06/2025  21:31    <DIR>          refs
-               7 arquivo(s)          2.748 bytes
+               7 arquivo(s)          5.804 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\hooks
 
@@ -68,9 +69,9 @@
  Pasta de C:\Users\rodri\GestaoLoteria\.git\logs
 
 03/06/2025  21:31    <DIR>          .
-06/06/2025  21:40             2.562 HEAD
+16/06/2025  00:13             9.715 HEAD
 03/06/2025  21:31    <DIR>          refs
-               1 arquivo(s)          2.562 bytes
+               1 arquivo(s)          9.715 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs
 
@@ -84,8 +85,8 @@
 
 03/06/2025  21:31    <DIR>          .
 03/06/2025  21:31    <DIR>          ..
-06/06/2025  21:40             2.214 main
-               1 arquivo(s)          2.214 bytes
+16/06/2025  00:13             9.367 main
+               1 arquivo(s)          9.367 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\logs\refs\remotes
 
@@ -98,353 +99,2037 @@
 
 03/06/2025  21:48    <DIR>          .
 03/06/2025  21:31    <DIR>          ..
-06/06/2025  21:40             3.144 HEAD
-06/06/2025  21:40             1.860 main
-               2 arquivo(s)          5.004 bytes
+16/06/2025  10:36            18.489 HEAD
+16/06/2025  00:13             8.525 main
+               2 arquivo(s)         27.014 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects
 
-06/06/2025  21:40    <DIR>          .
-03/06/2025  21:57    <DIR>          02
-03/06/2025  22:13    <DIR>          04
-03/06/2025  23:14    <DIR>          19
-03/06/2025  23:14    <DIR>          1a
-03/06/2025  23:14    <DIR>          22
-04/06/2025  00:18    <DIR>          2b
-03/06/2025  23:02    <DIR>          2f
-03/06/2025  23:02    <DIR>          3a
-03/06/2025  23:14    <DIR>          3c
-03/06/2025  23:14    <DIR>          3f
-03/06/2025  22:13    <DIR>          42
-03/06/2025  23:14    <DIR>          4a
-03/06/2025  22:17    <DIR>          4b
-03/06/2025  23:14    <DIR>          5e
-06/06/2025  21:40    <DIR>          69
-03/06/2025  22:02    <DIR>          6d
-03/06/2025  22:13    <DIR>          6f
-04/06/2025  00:26    <DIR>          70
-06/06/2025  21:40    <DIR>          72
-03/06/2025  22:43    <DIR>          75
-04/06/2025  00:18    <DIR>          7a
+16/06/2025  10:36    <DIR>          .
+08/06/2025  21:19    <DIR>          01
+15/06/2025  21:40    <DIR>          02
+15/06/2025  23:45    <DIR>          03
+15/06/2025  22:38    <DIR>          04
+15/06/2025  20:56    <DIR>          05
+08/06/2025  22:37    <DIR>          06
+15/06/2025  20:56    <DIR>          07
+15/06/2025  21:40    <DIR>          08
+16/06/2025  00:10    <DIR>          0a
+08/06/2025  22:37    <DIR>          0b
+15/06/2025  20:56    <DIR>          0c
+15/06/2025  23:04    <DIR>          0d
+15/06/2025  21:45    <DIR>          0e
+15/06/2025  23:26    <DIR>          0f
+15/06/2025  22:34    <DIR>          10
+15/06/2025  21:37    <DIR>          11
+15/06/2025  21:40    <DIR>          12
+15/06/2025  20:56    <DIR>          14
+15/06/2025  22:38    <DIR>          17
+08/06/2025  21:44    <DIR>          18
+15/06/2025  20:41    <DIR>          19
+15/06/2025  22:49    <DIR>          1a
+15/06/2025  23:45    <DIR>          1b
+08/06/2025  21:19    <DIR>          1c
+08/06/2025  21:40    <DIR>          1e
+15/06/2025  20:04    <DIR>          1f
+16/06/2025  00:03    <DIR>          20
+15/06/2025  20:41    <DIR>          22
+16/06/2025  00:03    <DIR>          23
+08/06/2025  22:13    <DIR>          24
+15/06/2025  20:56    <DIR>          25
+06/06/2025  23:04    <DIR>          27
+16/06/2025  00:13    <DIR>          28
+15/06/2025  20:15    <DIR>          29
+15/06/2025  21:45    <DIR>          2a
+16/06/2025  00:10    <DIR>          2b
+15/06/2025  21:30    <DIR>          2c
+15/06/2025  22:34    <DIR>          2d
+15/06/2025  21:30    <DIR>          2e
+15/06/2025  22:24    <DIR>          2f
+15/06/2025  23:16    <DIR>          30
+16/06/2025  00:10    <DIR>          31
+15/06/2025  22:38    <DIR>          33
+15/06/2025  21:37    <DIR>          34
+15/06/2025  21:37    <DIR>          35
+15/06/2025  22:24    <DIR>          36
+15/06/2025  23:16    <DIR>          37
+15/06/2025  22:32    <DIR>          38
+15/06/2025  20:04    <DIR>          39
+06/06/2025  22:47    <DIR>          3a
+15/06/2025  21:06    <DIR>          3b
+15/06/2025  20:15    <DIR>          3c
+08/06/2025  21:44    <DIR>          3d
+16/06/2025  00:10    <DIR>          3e
+15/06/2025  22:49    <DIR>          3f
+15/06/2025  21:06    <DIR>          40
+15/06/2025  22:34    <DIR>          42
+15/06/2025  20:11    <DIR>          43
+08/06/2025  21:02    <DIR>          44
+06/06/2025  23:01    <DIR>          45
+15/06/2025  20:50    <DIR>          46
+15/06/2025  23:26    <DIR>          47
+15/06/2025  21:40    <DIR>          48
+15/06/2025  20:22    <DIR>          49
+15/06/2025  21:45    <DIR>          4a
+08/06/2025  21:02    <DIR>          4b
+16/06/2025  00:10    <DIR>          4c
+08/06/2025  22:37    <DIR>          4d
+15/06/2025  22:49    <DIR>          4e
+15/06/2025  20:35    <DIR>          4f
+15/06/2025  22:38    <DIR>          50
+16/06/2025  00:03    <DIR>          51
+15/06/2025  23:26    <DIR>          52
+15/06/2025  21:45    <DIR>          53
+06/06/2025  22:10    <DIR>          54
+15/06/2025  21:37    <DIR>          55
+15/06/2025  21:30    <DIR>          56
+08/06/2025  21:02    <DIR>          57
+15/06/2025  20:11    <DIR>          58
+15/06/2025  22:38    <DIR>          59
+16/06/2025  00:03    <DIR>          5b
+15/06/2025  20:15    <DIR>          5c
+15/06/2025  22:28    <DIR>          5d
+16/06/2025  00:13    <DIR>          5e
+15/06/2025  22:24    <DIR>          5f
+15/06/2025  23:04    <DIR>          61
+15/06/2025  20:50    <DIR>          63
+15/06/2025  22:38    <DIR>          64
+08/06/2025  22:13    <DIR>          65
+15/06/2025  23:45    <DIR>          66
+15/06/2025  23:26    <DIR>          67
+15/06/2025  23:26    <DIR>          68
+15/06/2025  22:49    <DIR>          69
+15/06/2025  20:41    <DIR>          6b
+15/06/2025  20:56    <DIR>          6c
+15/06/2025  22:49    <DIR>          6d
+15/06/2025  22:32    <DIR>          6e
+15/06/2025  20:11    <DIR>          6f
+15/06/2025  20:41    <DIR>          70
+15/06/2025  22:49    <DIR>          71
+15/06/2025  20:56    <DIR>          72
+15/06/2025  23:04    <DIR>          73
+08/06/2025  21:19    <DIR>          74
+15/06/2025  21:40    <DIR>          75
+15/06/2025  22:38    <DIR>          76
+15/06/2025  23:16    <DIR>          77
+15/06/2025  23:45    <DIR>          78
+16/06/2025  00:10    <DIR>          79
+15/06/2025  21:06    <DIR>          7a
+15/06/2025  23:26    <DIR>          7b
+15/06/2025  22:28    <DIR>          7c
+16/06/2025  00:13    <DIR>          7d
+08/06/2025  22:37    <DIR>          7e
 03/06/2025  21:44    <DIR>          7f
-03/06/2025  23:02    <DIR>          81
-03/06/2025  22:02    <DIR>          92
-06/06/2025  21:40    <DIR>          95
-03/06/2025  21:44    <DIR>          9b
-03/06/2025  23:02    <DIR>          b5
-03/06/2025  23:14    <DIR>          b8
+15/06/2025  22:49    <DIR>          80
+15/06/2025  20:35    <DIR>          81
+15/06/2025  20:04    <DIR>          82
+15/06/2025  20:15    <DIR>          83
+15/06/2025  23:45    <DIR>          84
+15/06/2025  22:32    <DIR>          85
+15/06/2025  21:37    <DIR>          87
+15/06/2025  23:45    <DIR>          88
+08/06/2025  21:19    <DIR>          8a
+08/06/2025  21:40    <DIR>          8c
+16/06/2025  00:10    <DIR>          8d
+15/06/2025  22:28    <DIR>          8e
+06/06/2025  23:04    <DIR>          8f
+15/06/2025  22:34    <DIR>          90
+08/06/2025  21:19    <DIR>          91
+15/06/2025  22:49    <DIR>          92
+15/06/2025  21:30    <DIR>          93
+15/06/2025  22:28    <DIR>          94
+15/06/2025  20:04    <DIR>          95
+16/06/2025  00:03    <DIR>          96
+08/06/2025  21:02    <DIR>          97
+16/06/2025  00:13    <DIR>          99
+16/06/2025  00:13    <DIR>          9a
+08/06/2025  21:02    <DIR>          9b
+16/06/2025  00:13    <DIR>          9c
+08/06/2025  21:40    <DIR>          9e
+16/06/2025  00:10    <DIR>          9f
+16/06/2025  00:10    <DIR>          a0
+15/06/2025  21:06    <DIR>          a2
+08/06/2025  21:40    <DIR>          a3
+15/06/2025  22:34    <DIR>          a4
+15/06/2025  23:16    <DIR>          a5
+15/06/2025  22:32    <DIR>          a6
+15/06/2025  23:45    <DIR>          a7
+15/06/2025  23:26    <DIR>          a8
+15/06/2025  21:45    <DIR>          a9
+06/06/2025  21:55    <DIR>          aa
+15/06/2025  23:16    <DIR>          ab
+15/06/2025  21:45    <DIR>          ac
+15/06/2025  22:49    <DIR>          ad
+15/06/2025  23:04    <DIR>          af
+15/06/2025  22:38    <DIR>          b0
+15/06/2025  20:22    <DIR>          b1
+15/06/2025  22:32    <DIR>          b2
+15/06/2025  21:06    <DIR>          b3
+15/06/2025  23:26    <DIR>          b4
+15/06/2025  22:28    <DIR>          b5
+16/06/2025  00:13    <DIR>          b6
+15/06/2025  22:34    <DIR>          b7
+15/06/2025  22:38    <DIR>          b8
+16/06/2025  00:03    <DIR>          b9
 03/06/2025  21:56    <DIR>          bb
-04/06/2025  00:18    <DIR>          c3
-03/06/2025  21:47    <DIR>          c4
-04/06/2025  00:18    <DIR>          c5
-03/06/2025  23:14    <DIR>          cb
-04/06/2025  00:18    <DIR>          ce
-04/06/2025  00:18    <DIR>          cf
-04/06/2025  00:26    <DIR>          d1
-03/06/2025  22:17    <DIR>          d5
-04/06/2025  00:26    <DIR>          d9
-03/06/2025  23:02    <DIR>          dc
+15/06/2025  20:11    <DIR>          bc
+16/06/2025  00:03    <DIR>          bd
+15/06/2025  20:22    <DIR>          be
+15/06/2025  20:44    <DIR>          bf
+15/06/2025  21:30    <DIR>          c0
+15/06/2025  22:24    <DIR>          c1
+06/06/2025  22:18    <DIR>          c2
+15/06/2025  23:26    <DIR>          c3
+15/06/2025  20:50    <DIR>          c4
+15/06/2025  20:35    <DIR>          c5
+15/06/2025  20:56    <DIR>          c7
+15/06/2025  21:45    <DIR>          c9
+15/06/2025  23:04    <DIR>          cb
+15/06/2025  21:40    <DIR>          cc
+16/06/2025  00:13    <DIR>          cd
+15/06/2025  20:04    <DIR>          ce
+15/06/2025  21:40    <DIR>          cf
+15/06/2025  20:22    <DIR>          d0
+15/06/2025  20:11    <DIR>          d1
+15/06/2025  21:40    <DIR>          d2
+15/06/2025  21:40    <DIR>          d3
+15/06/2025  20:15    <DIR>          d4
+08/06/2025  22:37    <DIR>          d5
+15/06/2025  21:30    <DIR>          d6
+15/06/2025  22:38    <DIR>          d8
+15/06/2025  21:06    <DIR>          d9
+16/06/2025  00:03    <DIR>          da
+15/06/2025  23:16    <DIR>          dc
+16/06/2025  00:13    <DIR>          dd
+15/06/2025  20:11    <DIR>          de
+08/06/2025  22:37    <DIR>          df
+15/06/2025  20:22    <DIR>          e0
+16/06/2025  00:10    <DIR>          e1
+15/06/2025  23:16    <DIR>          e2
 03/06/2025  21:44    <DIR>          e3
+15/06/2025  22:28    <DIR>          e4
+15/06/2025  22:28    <DIR>          e6
+15/06/2025  22:32    <DIR>          e7
+15/06/2025  20:04    <DIR>          e8
+15/06/2025  21:45    <DIR>          e9
+06/06/2025  22:39    <DIR>          ec
+15/06/2025  23:04    <DIR>          ed
+15/06/2025  20:04    <DIR>          ee
+15/06/2025  23:04    <DIR>          ef
+15/06/2025  23:04    <DIR>          f0
+15/06/2025  22:28    <DIR>          f1
+15/06/2025  23:45    <DIR>          f4
+15/06/2025  20:35    <DIR>          f5
+06/06/2025  22:39    <DIR>          f6
 03/06/2025  23:02    <DIR>          f7
 03/06/2025  23:02    <DIR>          f8
-03/06/2025  23:14    <DIR>          fc
-03/06/2025  23:14    <DIR>          ff
+15/06/2025  23:26    <DIR>          f9
+15/06/2025  20:35    <DIR>          fa
+15/06/2025  20:44    <DIR>          fb
+15/06/2025  22:24    <DIR>          fc
+15/06/2025  23:26    <DIR>          fd
+08/06/2025  21:19    <DIR>          fe
+15/06/2025  23:45    <DIR>          ff
 03/06/2025  21:31    <DIR>          info
 03/06/2025  21:31    <DIR>          pack
                0 arquivo(s)              0 bytes
 
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\01
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19                89 bebbf6335cd58326c4a0241779ec3a6c079828
+               1 arquivo(s)             89 bytes
+
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\02
 
-03/06/2025  21:57    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:44               296 a15f82e298f9f9f323a2cca95af3d34083863c
 03/06/2025  21:57               191 acb7f89e5ed4f1b0199554bf2494a1e3ba9af7
-               1 arquivo(s)            191 bytes
+15/06/2025  21:40                45 ff9937613aab45d908f80d82277b5034992fc9
+               3 arquivo(s)            532 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\03
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:55                55 3a4575490f928cb9c02b6bb56ab7d0a3fe671f
+08/06/2025  21:19                50 3c55fe33d2d35884f3a573935349ef3919b9d0
+15/06/2025  23:45                55 3e9a9fa172bb6c8350f54d905ae2b36c941166
+15/06/2025  23:26               608 673b905482d2b553dbc15db1c4a5fcfde41ee3
+15/06/2025  23:45                49 824ac16b5500fcf0260830e2b61b2c315e5a7a
+               5 arquivo(s)            817 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\04
 
-03/06/2025  22:13    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:57               237 0da63a2f236703ad20aad6d61c479dbc92ddf5
 03/06/2025  22:13               178 50418531117638f518167c37201a7dbe4681dd
-               2 arquivo(s)            415 bytes
+15/06/2025  22:38             1.527 5a2613ffbc8d78ac5c5bff4fdf112e9b17472d
+15/06/2025  20:22               332 6b8118b956bfde8b5eb26d1df7e1b9c8d4df6c
+15/06/2025  20:44                49 7f8219eaa0695cd4ff09288851dd28d16e04eb
+06/06/2025  22:10                49 8a80366c9da8c41f408de4773722e943ebe550
+               6 arquivo(s)          2.372 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\05
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:56               195 eff38a2e8d245517dd59b7ad44532d98d28de7
+               1 arquivo(s)            195 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\06
+
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:37               184 deccb069274e036bc2b403f31aff692f671535
+               1 arquivo(s)            184 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\07
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:15               171 7dd8f6694ccd335b04cacb67632dd3c832dca0
+15/06/2025  20:56                49 d3cd24ad65b40e5fefb6d813af98bf68aa4573
+               2 arquivo(s)            220 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\08
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19                46 08e225103d41bd82d3a4a4ad9c717e934c23a2
+15/06/2025  21:37                49 d49acc25ab9e5859e061a048fcf3aecf2d5541
+06/06/2025  23:01               914 e53d2b94da9b467e43ae2b53746e0f562aaa2b
+15/06/2025  21:40               195 fee83a32d34bebbedd690517654669857e058d
+               4 arquivo(s)          1.204 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0a
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:10               173 a948142232bd64a7bd62052830432946c051d1
+15/06/2025  23:16               332 f8c0a1af40b872f8e199c0686ef46fe71f866f
+               2 arquivo(s)            505 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0b
+
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:37               418 247fd2876dedf950507a9ed2f6e0407e8cde82
+07/06/2025  20:39                98 a797fa7816c1608ae6d0a3e88bede2fec96cda
+08/06/2025  21:19               892 b2ef947bc3d4d9dfff133fa5bd8574f48ea6c4
+08/06/2025  21:19               369 ce90807053a8b52ea2723bd032a32417cae8c9
+               4 arquivo(s)          1.777 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0c
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:56               290 3739d6c05b26aee459bb1ea9392c376310ba7c
+15/06/2025  20:15                46 4de7e11572683acdf0e402451757451722fa04
+               2 arquivo(s)            336 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0d
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               184 03e6b6a43d9067b68da9b261c7d612af47034e
+15/06/2025  20:56               332 7353dfe7535cd12f580b6bf19a916e26175e5c
+15/06/2025  23:04                49 89fe0dd1643bc117e4cb57bdacba707e508d3c
+08/06/2025  21:40               343 ad9de1a947ef77ce47b99e17ec5d8033001b88
+               4 arquivo(s)            908 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0e
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45                55 289c9413266362a83ec695ed4eac6deb1e291c
+               1 arquivo(s)             55 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\0f
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39                60 023b78e6285752cd1c96ac51263bcc823559cd
+15/06/2025  20:50               302 203ccf1f783fb2949ac6e5eaa9fb2f1d14c31e
+15/06/2025  23:26                45 72c178510bb36e3105cb7955bc9782c24859c5
+15/06/2025  22:24               470 f48fd9d0f50538a8bb030384cc250ceec0a03a
+               4 arquivo(s)            877 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\10
+
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:34               332 269efb3624cca69d320dbb86802d113c2ae340
+06/06/2025  22:39                49 54cc20d0d389636d0c46b03dc948d10b29a209
+               2 arquivo(s)            381 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\11
+
+15/06/2025  21:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11               321 0f18fffcea7d211cea52eb985a4e8a6fffddc3
+15/06/2025  21:37                79 9332b998e17c77dc731886ee6ed03163744ad5
+               2 arquivo(s)            400 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\12
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:47                79 3ac40a9a429a119e2d8f6ede069a14161bad22
+15/06/2025  21:40                46 6693c7ae6b2f6222cb0649e76c739ff8793007
+               2 arquivo(s)            125 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\14
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22               232 9018a4d86b2a4b3e1165c74bbf6047ca1b9a3b
+08/06/2025  21:02                79 b4e9d0a35d2ed20439ac40f11a38b21f1f15a4
+15/06/2025  20:56                45 c6c006b77b174f9145b2366d7a72453260a061
+               3 arquivo(s)            356 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\17
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45               332 2fe301e2f6a9862bce5467415af57785ffb4bf
+15/06/2025  22:38                46 5aa955cef872d39607d6ecbb3de9a45c6e2ba1
+07/06/2025  20:39                58 beb6714d1da19f991f7be65642cf77cfd88a73
+               3 arquivo(s)            436 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\18
+
+08/06/2025  21:44    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:10                46 544925d6c3b0e355948bdf0b0af4fd154370c9
+08/06/2025  21:44               566 a19807e4aa20da33bbb24fb59511a0cd989653
+               2 arquivo(s)            612 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\19
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:41    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:37                50 783d25ab3438fb7552e996bca93ef606166169
 03/06/2025  23:14                47 c137edbc99eab9061f7a24edd060c4da36fb05
-               1 arquivo(s)             47 bytes
+15/06/2025  20:41                79 da4a5ba2c0986fc297825776beec3fcef361d3
+               3 arquivo(s)            176 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\1a
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:14               491 4603be0017199e83a403dcb994b0b7d7529ac0
-               1 arquivo(s)            491 bytes
+15/06/2025  22:32                46 4b070e10c664cdfb5b9ec85b221c339e259fd5
+15/06/2025  22:49               195 c083891cfafd82f359144d5014376a7c139ab1
+               3 arquivo(s)            732 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\1b
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22                47 1383ee3eface8b0e1eb0676b86ab68e33a9bf8
+16/06/2025  00:13               115 39622ebb0c3d6e360bf07adfcfd9807efcc6bc
+15/06/2025  21:45                46 90f37a23d7e096b8d2059aeb580cf5ec0fd4be
+               3 arquivo(s)            208 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\1c
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02             1.714 ba7edcf408242ee06261efca366a24e4a2c708
+08/06/2025  21:19                68 e8f566790ea7a8f0c42d1edf4b539ae80cb451
+               2 arquivo(s)          1.782 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\1e
+
+08/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02                46 4650cb2565a59e70358eb20cae679dc7a01771
+08/06/2025  21:40               183 f616e2aa57f417669405249c045e43c0dd0c8a
+               2 arquivo(s)            229 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\1f
+
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04               173 e32780f4a0ff717d1edb9cff21744452166641
+               1 arquivo(s)            173 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\20
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03               180 d235438cb09cb9445db3d16c07c361c473579b
+               1 arquivo(s)            180 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\22
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:41    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:14                98 dfe6072b9a94b067b3c8077159e9703388652a
-               1 arquivo(s)             98 bytes
+15/06/2025  20:41               195 e33fb8b30584a9ff6fc29e83eb5d9f94b00962
+               2 arquivo(s)            293 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\23
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:13             1.884 6299f65d78fb6335aeea10ed8c4a146d93f9cc
+16/06/2025  00:03               556 aadfd632e87ec85f3a1310d846c660e47b5752
+15/06/2025  21:37               326 b7112fc17df43a8e402eae473d6062722921e7
+               3 arquivo(s)          2.766 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\24
+
+08/06/2025  22:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:13             2.993 3657a212d27ce2c78b9a7d6cd20f2caa2a7887
+               1 arquivo(s)          2.993 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\25
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:41               333 21d3da7c12b6ba47d22d9f38b4536e75a8d457
+15/06/2025  20:35               258 261afa2122d6387217ab2d1c8f0318483e36e5
+15/06/2025  20:56                56 d34d63a31a585302bb0929721746edd4b409aa
+               3 arquivo(s)            647 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\27
+
+06/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:04                46 b274a90d96bd240482344429da5af118e8a371
+               1 arquivo(s)             46 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\28
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:06               332 2fe52e5596793b7b4acda8ebe5613066a65ee6
+16/06/2025  00:13                79 effc9969b5081a66a60962d2c67cc81b0b1506
+               2 arquivo(s)            411 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\29
+
+15/06/2025  20:15    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:15                80 f4f1e7b2353efb26414b7301024b0a9688a69e
+               1 arquivo(s)             80 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2a
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04             2.500 6f347511763ce10dfe7eb451ea5ed41778cf61
+15/06/2025  21:45                49 f65cd2234da18ebccfec17c19c7b28d4bd0806
+               2 arquivo(s)          2.549 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2b
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:10                80 02e04e5d36333859d168886a05b45a37f69d68
 04/06/2025  00:18               171 c800f073f1b387c90011a6747d20ecce3edb0d
-               1 arquivo(s)            171 bytes
+               2 arquivo(s)            251 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2c
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:30               195 1ec084392ba277592a30f4d649bffeb794b321
+               1 arquivo(s)            195 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2d
+
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:34               556 35c6f00e06a38fb0eeda0a6785a163bf24a3d7
+               1 arquivo(s)            556 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2e
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04               585 0802a70a333ead0afe61a722d4da4459f45181
+15/06/2025  21:30                45 a61f82a99357f2a910895321a3568d2a5fa637
+               2 arquivo(s)            630 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\2f
 
-03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:24    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:24                79 55ea6008d4e2cc1ad23fcfd0a03284ea9efa32
 03/06/2025  23:02               170 5cc74c3a8577df9faafd82992b0c62e56352be
-               1 arquivo(s)            170 bytes
+               2 arquivo(s)            249 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\30
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:34                46 202645e2f5d4680bbba206a8ff1abb2ef7849a
+15/06/2025  23:16               787 4384b2d13d0b384eb540928e3d4072ee511f58
+               2 arquivo(s)            833 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\31
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:44               332 4899377c52a05e096e9cd68c231d5d576bd052
+15/06/2025  20:11               160 86a12f03975407277d21dfa64798af929195f3
+06/06/2025  23:01               481 a67713e1a0cb0e33b70602d15a0e23a59b295a
+16/06/2025  00:10             1.923 b72313f75575d82d0dc85d266f66de50e9bf41
+               4 arquivo(s)          2.896 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\33
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:43               162 04d458e474861de807635e2f361525254ad2ef
+15/06/2025  22:38                79 9d5e9e8df72ccc1e0ad980eef75110b8a2d24c
+               2 arquivo(s)            241 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\34
+
+15/06/2025  21:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02           340.344 1e52c191d835d6daabe17619925e2c2a03346e
+15/06/2025  21:37                56 217bbf08e20924b6f5b8702f2d210a42944e47
+08/06/2025  22:13                50 5b0967968e85b6c559a50ae03342e0d626335e
+08/06/2025  21:40                79 76ea5d098aa1ba3357a63f84d435dd93bff1fb
+               4 arquivo(s)        340.529 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\35
+
+15/06/2025  21:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:37                79 12e1cc8f470e56837e88a04556a977601da283
+15/06/2025  21:37               177 44043e6d3911ae51f210606f384b18f356bb58
+15/06/2025  20:11               260 54b05ee2fb01f63b7634b81571ab514e7db176
+06/06/2025  22:18               178 f01746cd906ec003b5980abf95ddd3d0ac3582
+               4 arquivo(s)            694 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\36
+
+15/06/2025  22:24    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:24               195 4ecfecadbb0046f47752011c85a2271c229070
+               1 arquivo(s)            195 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\37
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:16                56 b4699d1cfc4a1027e8490458ce52d584a5e00f
+               1 arquivo(s)             56 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\38
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:55               481 2c89bdd6add53ede2a9713d4dfdf6f9890ab3c
+15/06/2025  22:32                55 3dd081bcbe4e145a7273e4f413dff2f16a2b1d
+06/06/2025  23:01                96 943fdc347544eeecaaa5caad0823c4fc1e0544
+15/06/2025  20:41                49 9a32e4227f2b699ba4b25416cc8c7d33c4f797
+               4 arquivo(s)            681 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\39
+
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04               819 ffd6c7df4c533fcfb538f136c28edb7d040f6b
+               1 arquivo(s)            819 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3a
 
-03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+06/06/2025  22:47    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:02               227 464c5e88c2fea0e3f72822515bc0ae19191b03
-               1 arquivo(s)            227 bytes
+06/06/2025  22:47                56 65016dbef4f150cb3520ad95ee6a5032c74164
+               2 arquivo(s)            283 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3b
+
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:06               261 c249f641ba702d36a210115703d459a0ea4c6b
+               1 arquivo(s)            261 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3c
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:15    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:14                55 090b2f7d875b3f79a041b7ada401f9402f2dce
-               1 arquivo(s)             55 bytes
+15/06/2025  20:15                49 1f49178dd57d20821036855c92e54cce729d40
+               2 arquivo(s)            104 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3d
+
+08/06/2025  21:44    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:44                45 1acedc7dcd91a6a41f728c0459424fdce7bc95
+06/06/2025  22:18               481 613066f2266fd39937022726d04076b1b04dcc
+               2 arquivo(s)            526 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3e
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11                49 8a98686b4e360f6eeb416e6310bf2effd2a8a5
+16/06/2025  00:10             4.070 df86c2d4b7b9e8482952c0372d42910aa7513c
+               2 arquivo(s)          4.119 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\3f
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:14                49 2d8b88f7209370b29f5f4eb63014e9096a243c
-               1 arquivo(s)             49 bytes
+15/06/2025  21:30                55 a7be3c7bf313365da8a9e12d7f5dd716538aaa
+15/06/2025  22:49               195 c4f65eb073235e6bbd58109d22c582f137086e
+08/06/2025  21:44               183 dc79175ee66104ce206c57fb15b4d951f6911e
+               4 arquivo(s)            482 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\40
+
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:10                79 0f3500cf3b46366a071567a4bfad6469f9d344
+15/06/2025  21:06               171 9ad18d3e3fa0fb2c29845b4d927313d73f2be5
+               2 arquivo(s)            250 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\42
 
-03/06/2025  22:13    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  22:13             3.323 2a0b704c1dcecd807d6b242e4e0803af77fd4b
-               1 arquivo(s)          3.323 bytes
+15/06/2025  22:34                80 8203c0c1140aa161333c92a8af24e214524b79
+15/06/2025  20:04                45 e4b039fe815587a693f937aa3e1d757c65b698
+               3 arquivo(s)          3.448 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\43
+
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11               584 e5af5f47925a96958e0c1d898b023d1e508324
+08/06/2025  21:19             2.044 fe41b95030ec9ef04914c52f932ff9470064f7
+               2 arquivo(s)          2.628 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\44
+
+08/06/2025  21:02    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02           482.433 17a01e37ed342a70c3661be111ede6f40ea92d
+06/06/2025  21:55                90 2fb4ef2422ff7b7c7b4777bc1cfa4cea1449f3
+               2 arquivo(s)        482.523 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\45
+
+06/06/2025  23:01    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:01               387 cbbcb4352367f301993fff5a746a819e0a2cb8
+               1 arquivo(s)            387 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\46
+
+15/06/2025  20:50    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:13                80 12fcda3af4946684f238d8d8740d52f34b40d1
+15/06/2025  20:50               485 b777e29e296fcfee815e3689ffbc847c816135
+               2 arquivo(s)            565 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\47
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26                79 57275955d4e9eccbf43e3cd9d8d1cc368b7acf
+15/06/2025  20:44               196 5b45536815f2f71817cec072f755f4689b687e
+               2 arquivo(s)            275 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\48
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:40               329 4f1dceed5fb397d40a2bb31ea178fea0f33780
+               1 arquivo(s)            329 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\49
+
+15/06/2025  20:22    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22               497 6a5c72b48a4f8ed2c7843eb7a438fccfed111d
+               1 arquivo(s)            497 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4a
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:37               556 2e2c43276679e891597b188b4dcb718ecf1b70
+15/06/2025  21:45               175 4c690363c6097c78929dec903090cad26670a9
+08/06/2025  21:40                49 5a7c0ed8be35a13053c29f68ef0ac900ea0cde
 03/06/2025  23:14                62 72e14ba9e44db91f936815177226db2354093e
 03/06/2025  22:43             2.678 76a5da8a0d77ed8520653494b7a0c8d2149c03
-               2 arquivo(s)          2.740 bytes
+06/06/2025  22:39               223 fc1e802a0889e24cf537e4f5599b5d9f661b88
+               6 arquivo(s)          3.743 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4b
 
-03/06/2025  22:17    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+08/06/2025  21:02    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  22:17             2.275 01480381c0b6d22182c273e3914864f16b92c3
 03/06/2025  22:02               437 424ceea45b9ed63d3de9a9402f10c6c5ede3d7
 03/06/2025  22:02               303 52111b9925014beb589d902a0fa1cd68995dcf
-               3 arquivo(s)          3.015 bytes
+08/06/2025  21:02                59 d173defd81073149ef366af35b37e67c5932f1
+               4 arquivo(s)          3.074 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4c
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02               182 a1781fae8fce37de1feff2cbe0edda94005c69
+15/06/2025  21:06               195 d43b883567811d1401f4a88c43986334d10598
+16/06/2025  00:10               555 f448270d8fcedbf98a45bb570d3e3c962ba5cd
+               3 arquivo(s)            932 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4d
+
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:37               524 741d84641e76d99c6440a52a28266d08371ef1
+               1 arquivo(s)            524 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4e
+
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:49                79 bb7cba4433e6c7e4073bcf15ae5a47c1aeb20d
+               1 arquivo(s)             79 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\4f
+
+15/06/2025  20:35    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:35               195 1633dbcd56b2de2576a341fe6a9b8ca5bccf92
+06/06/2025  22:39               167 bad5b114a163a013f73683875c725af4dc5c21
+               2 arquivo(s)            362 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\50
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:38               195 e524ef979e68e3c34bc00faa19cbaf9dd58b5c
+               1 arquivo(s)            195 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\51
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03                49 133b44a7ad5211248766a4c6b7b8e0d2db4c78
+16/06/2025  00:03                47 a1d01e9dff69c0f06950deaa1b82a003f94829
+               2 arquivo(s)             96 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\52
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:01                46 e4578c4a56fb5c6ddaf76adabab55e7e366dc2
+15/06/2025  23:26               195 fa3e766b346816136c3f1971ded0cc7570ff49
+               2 arquivo(s)            241 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\53
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45                45 58378311288aecb9cf38d1001c311085b4249d
+               1 arquivo(s)             45 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\54
+
+06/06/2025  22:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:10               121 4fca568bf7bff33fe147569d96246b83468110
+               1 arquivo(s)            121 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\55
+
+15/06/2025  21:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:15               332 07a788a5f1801937cdb56f4d8777d15ee1771f
+15/06/2025  21:37               195 2a14d712d5eb3b096cb527a1d10a443027e221
+               2 arquivo(s)            527 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\56
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:30               174 be082b65000405f062302a87ccdc27cec748d4
+06/06/2025  23:04                55 f408a7dbbd682073f8db767ca6f27a5bc4d4c1
+               2 arquivo(s)            229 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\57
+
+08/06/2025  21:02    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02               278 e4add6efb8a54de766fe18c6088fdb5a2c32df
+               1 arquivo(s)            278 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\58
+
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11               370 319b833cdade26cad2941760bd2b74cf0d1c42
+08/06/2025  21:40             2.152 c9e58af87547de5e71ae6a014c44e061643787
+               2 arquivo(s)          2.522 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\59
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:13                55 3842292f1f4f401048a38aa166232933556e0f
+15/06/2025  22:38                56 5e4f5bddbeebbe3ab00a61e827d9af5480f0f3
+06/06/2025  21:55                49 9fc0147ce84e743b3c3997123f0d627c661d6c
+               3 arquivo(s)            160 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\5b
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03               332 975d3be0ff0412f3d0209293bebce93a196c22
+               1 arquivo(s)            332 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\5c
+
+15/06/2025  20:15    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:15                45 92a43aa890370aa6d4bd566513bdca4597b897
+08/06/2025  21:40                46 9dde625f1256171a25b1a8aa14b7f3d127448c
+               2 arquivo(s)             91 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\5d
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:28               175 0a7845b3d972217fa9ffc8bd5df1245feb8c34
+15/06/2025  21:30                79 1f465738b69e79850e9a09a72263aa8740fb3f
+06/06/2025  21:55               904 26bdd026ff622841a57d2300d84555fd24711a
+08/06/2025  21:40               370 7aca5db59439d774df923a491d60c6e93fbd52
+15/06/2025  20:56                46 ecfad843b1c7f7ef8ac71dd077b4bd263a28f0
+               5 arquivo(s)          1.574 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\5e
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:13                50 0800313028c9c4c6dee58f65ad7f486a2ac95e
+08/06/2025  22:37               369 a139d2faf5e2c6d091b7b95905c427724ff2e2
 03/06/2025  23:14               170 d556cd14e9ab12e01a682fe14e7c4f4c35947e
-               1 arquivo(s)            170 bytes
+               3 arquivo(s)            589 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\5f
+
+15/06/2025  22:24    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:40               314 0bcee9372f6f554b0eb949f049e9ba9f0cb42d
+15/06/2025  22:24                46 5fc0e664f2a8dd249c425977179894278ac3ab
+               2 arquivo(s)            360 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\61
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:04               179 049f3baf44679aec593cb4c28a92d8987b7046
+15/06/2025  22:28               332 d09ffb47d35da75279610eae435d446748a72a
+               2 arquivo(s)            511 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\63
+
+15/06/2025  20:50    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:50               171 1a6d2d350181dfd1b7fc5c093ae0f4e4883521
+08/06/2025  21:02             1.881 797af5311dd398574121a83f75556b05d7d9f8
+15/06/2025  20:35                47 90644a169193284a87794f2b11ee8e8fdf217b
+               3 arquivo(s)          2.099 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\64
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:06             1.053 50d01f0e3f06d250f2630166d3081a230fd785
+15/06/2025  22:38                45 ea2deeee57f9163490efb30e010b5c3867e574
+               2 arquivo(s)          1.098 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\65
+
+08/06/2025  22:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  22:13                44 5e99f87992ac99909e15ccddf1d91b6dd4c1f8
+               1 arquivo(s)             44 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\66
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11               195 1aa0c8a8c64da942d6bbf665113d2ce1e19fea
+15/06/2025  23:04               556 71ff19c26a827525446ab224cc3f8982a28873
+15/06/2025  23:45               556 d604cc0696ab9cb3d9e764ac780f9d92e1e0b1
+08/06/2025  21:40               160 eef0fa5a0d330ab2e1c6e0c5b3da70d5af3de0
+               4 arquivo(s)          1.467 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\67
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:47               267 2339608f34986c837124aa5f651fe4cf124fa0
+15/06/2025  20:22               173 713536403a43461f4367b7b06a1c0d4d898a1a
+15/06/2025  23:26               332 abc1591f94753b5e65c402746cde7be371cd77
+               3 arquivo(s)            772 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\68
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:50                79 8636c258cec4df717ae7b4cb8766d9ffafc14a
+15/06/2025  23:26                55 d519913b6d6e7acfa0061a8d41816034de0052
+               2 arquivo(s)            134 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\69
 
-06/06/2025  21:40    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:35                79 22c16d0ddbbb7ca1f3e6a9b98712b9e6830cc9
+08/06/2025  21:40                45 7615a2820ea8cb0179b1b2722b33cfb14b6665
+15/06/2025  22:49             1.433 78218180fb300df1d9fb639673655bb4637ab0
 06/06/2025  21:40               491 c7c7f5b608fd44b9e56a312e6088de9e317a39
-               1 arquivo(s)            491 bytes
+               4 arquivo(s)          2.048 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\6b
+
+15/06/2025  20:41    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:41                47 2166e6d201793db3ae7e0b211345c977bbb17f
+06/06/2025  23:01               166 a4ed45130a5f768d87b09b2389903c5d959791
+               2 arquivo(s)            213 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\6c
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:56               525 2246e931326826273a93689775dc38d392d4f0
+15/06/2025  20:35               209 3b9d21313403973edbb6dc89c77fec64ac5118
+06/06/2025  22:47                45 915ae175482ef348410679fa511253ebfe6329
+               3 arquivo(s)            779 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\6d
 
-03/06/2025  22:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:41               576 14a02fa428e3c3635ad0094d364fe8124b8a53
 03/06/2025  22:43               422 16f4779cc6384af8b2e0055127d5a94a8bb487
-               1 arquivo(s)            422 bytes
+15/06/2025  22:49                45 1a14b4d1f1ca124e8c5b5daf43bb43d46dc0bb
+               3 arquivo(s)          1.043 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\6e
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:32               177 acd912c3f0ffb2eb1ebaf397401a20c64b5685
+               1 arquivo(s)            177 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\6f
 
-03/06/2025  22:13    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  22:13               342 0aa30e8912144969cf806277a68b2abc37a3b6
-               1 arquivo(s)            342 bytes
+15/06/2025  20:11               524 50abc524852c275f936fe11c66ab1d97b74d6f
+               2 arquivo(s)            866 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\70
 
-04/06/2025  00:26    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:41    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:04                79 045b342b667183527c01bbbc6f9cc759daff69
+15/06/2025  20:41                46 526e3b95e194a84d9dc78b7ae359ef73e81278
 04/06/2025  00:26               161 563afddf16ffdfc570e1145346e46c793d9e75
-               1 arquivo(s)            161 bytes
+               3 arquivo(s)            286 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\71
+
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:49                55 77b161b7bb671157f63848e3cea0e90034cdf8
+06/06/2025  22:39             1.419 9f505e423f162ea930f39c09a4882e15b1afa8
+15/06/2025  21:25               175 b87b0933b024c2f5b7586f9e1a8ac6f2dcd719
+               3 arquivo(s)          1.649 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\72
 
-06/06/2025  21:40    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:56               165 6b3a78e4e1dadfbc2668ed28dcaa5ad41506f5
 06/06/2025  21:40               876 6f8bacac5b8b59a3c0c495fb89c7d04d3807c8
-               1 arquivo(s)            876 bytes
+08/06/2025  22:13               184 95672e76e3f9835d2fbe157646f250ab6061de
+               3 arquivo(s)          1.225 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\73
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:44                79 f12759a81271e9df0e43da094c58655dd39307
+15/06/2025  23:04                55 fd1533214d4e2291066fdbd1765bcd60f28437
+               2 arquivo(s)            134 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\74
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19             1.036 a49612817835e3c4002c87c506f8eb76656e90
+               1 arquivo(s)          1.036 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\75
 
-03/06/2025  22:43    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:40                79 4f0ce576c9cc53707746c4587aeb56367ac2cb
 03/06/2025  22:43               341 978c09636104a6cea8a2c45956084fd4612af1
-               1 arquivo(s)            341 bytes
+               2 arquivo(s)            420 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\76
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:38               332 0667a1d328f4497eccc9785333abea1f5f8724
+06/06/2025  23:01                55 88c2a9e73d1eb45eac9b579de23d07bc3df28b
+               2 arquivo(s)            387 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\77
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:50               195 21ad93a22dc9c705e10c3888b8af22f1928fd6
+15/06/2025  23:16                79 b3b4aa9b5a2e70f437f2b39c8115b6114c2e24
+               2 arquivo(s)            274 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\78
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:45               163 68973aa489591fa1ca775328ed869d2edb1dc0
+15/06/2025  20:04               525 dfabc090b454b6ed012dbc742c526b12e2b0dd
+               2 arquivo(s)            688 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\79
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:16                46 1cb5c742b811f8f8128d82dfcdd6dd23cefcbd
+15/06/2025  20:04               115 5b0048df00cc591c53eac806671f41e8d33381
+16/06/2025  00:10                46 db9d1144cfc653b4d8c0319dfaf4b5a0429f18
+               3 arquivo(s)            207 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7a
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02               524 6207bab4ab1e17be0be0fca13329d342dfeb79
+08/06/2025  21:02                56 6697fe4b6dddf782d522384c73892eab4016e7
 04/06/2025  00:18               376 9a1057fc6d7c8f44b29dd0a3d30e81dcf16397
-               1 arquivo(s)            376 bytes
+15/06/2025  21:06                79 ea0adb81c6116e8ba55e0321b46325ac8a38ba
+               4 arquivo(s)          1.035 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7b
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26                49 7e5b3b007885ce471f8eba9a1bdca569a19433
+15/06/2025  22:24                55 d761f1f9f28f56cf9893705ccb2ed194af4080
+15/06/2025  20:41                55 fcb144bdd94ef37b91edbbb0471c5092fbdce3
+               3 arquivo(s)            159 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7c
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:28                46 2030ea73f232363a303c2d6592dd9853c7f309
+15/06/2025  20:11               174 a7611802062a9d59ad677f065ed67f7834a370
+               2 arquivo(s)            220 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7d
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:04               480 20e36ba9e3f6a28a96162bd549a4379adc17c8
+08/06/2025  21:44                46 2b128178116e29e6a9dd32e6910f0731fb0063
+16/06/2025  00:13               164 4abe54626bfbb7c6365d51f2cd2aec9da02a5d
+               3 arquivo(s)            690 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7e
+
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:44                49 097a2e65ac2ab6dd0ad4c7d8ea4299473f7d6b
+07/06/2025  20:39                79 1f6694335d317aeb8b862c1cc7e6477bd610fa
+08/06/2025  21:02                45 2fc4848c744a2f0a489e40256997a888732e0f
+08/06/2025  22:37                46 63d549b3da8b019e7bb7fead48d42c1ae813c4
+08/06/2025  22:13               525 f003121005f7d3b19049f3864b45695b0a6882
+               5 arquivo(s)            744 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\7f
 
 03/06/2025  21:44    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:47             2.028 719457acb0f5d85b75c14af7649686f3950b34
                1 arquivo(s)          2.028 bytes
 
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\80
+
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02               179 6a924c54674aab3c2971e6bc6bdb84d8ce99cd
+08/06/2025  21:40               621 c53e99eccfc07c0ac61e79676c2d8439cf65d4
+15/06/2025  22:49               556 d006ccabd77c5d5e4d1a153e05f61e8d3f821e
+               3 arquivo(s)          1.356 bytes
+
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\81
 
-03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:35    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:47               395 1c70cc224c419100538cc0fcfad167b3bbe8de
 03/06/2025  23:02               245 aed20179df1f3bf0eaf92af7070c0648185c68
-               2 arquivo(s)            640 bytes
+15/06/2025  20:35               609 f382e1b5b4fbe2d0ef3e55c4c0aa8d95e92fa4
+               3 arquivo(s)          1.249 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\82
+
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:18               120 3946879989a102e847e2bd0dc1ccd432602346
+15/06/2025  20:04                79 882b252111baac5cfdc11022c8f0b8d68cc152
+               2 arquivo(s)            199 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\83
+
+15/06/2025  20:15    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:55               182 f3485e8355d527f117a04508c222a3cd7e51d2
+15/06/2025  20:15                55 fdd2f0bfd41d39c09d51df50eb7e8703b44d16
+               2 arquivo(s)            237 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\84
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:44                55 09373ec4b934dca999077fa6ca4a8a6f7df4e0
+08/06/2025  21:40                61 af8df7eeeb8b149c01ab3f2c12be12d208fc17
+15/06/2025  22:49               163 c69339db19916c7768ffe76ec57b69bad1300f
+15/06/2025  23:45                79 f24283493b3a81ed5fd1163197a2cc0e988f89
+               4 arquivo(s)            358 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\85
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:32                79 344e93c68c23d95f10a52ad70a760807b9e627
+               1 arquivo(s)             79 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\87
+
+15/06/2025  21:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11                46 22c7239c359c85761f6169673aac38fcb56c2a
+06/06/2025  23:04               267 8e43d9ea61c63c2ae73fed09bd5dedf8dc4b7b
+07/06/2025  20:39                46 9808cef3251cf2712484330d8e31ee25982918
+15/06/2025  21:37                46 da42cc45303fbac2ea0155a46da1ab82f5bcb2
+               4 arquivo(s)            405 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\88
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:45               332 8553aceb4a618e9592abff124e7024fbf9ab24
+               1 arquivo(s)            332 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\8a
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               524 0254ca1e8a68bb4d4ff761bc702a66d24f0251
+               1 arquivo(s)            524 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\8c
+
+08/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:40               196 03687e49b456af0a3c24a5bec357b6cd56672a
+               1 arquivo(s)            196 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\8d
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:18                55 201b43ec7b0a7ce01f40301a77fc846dae3d77
+15/06/2025  22:32               333 593bfb9e6f44b2c8bc3cf23897ed589f26c43c
+15/06/2025  20:22                49 d35e7b5601eb7a709d44eafd0bfab3f83e0132
+16/06/2025  00:10                55 f042e7f6e99819bd8370a49253a5be5564958a
+06/06/2025  22:10                55 fd75ff83d26494d1f7ddeb3d643f7de38c5d63
+               5 arquivo(s)            547 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\8e
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:28                45 2c0a8e914924745d7f3b3887c92ab5a9e0a7da
+               1 arquivo(s)             45 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\8f
+
+06/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:04                49 2e1050c6ee363dcab9e52156fa684be8c52b61
+               1 arquivo(s)             49 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\90
+
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19                46 4089fe1b8f268e9d81f5e70076c57ef1e21aca
+15/06/2025  22:34               936 8eee98144fd6e9c9a92276404b7ad782c84e2a
+15/06/2025  20:35               524 af8f12f2c7fb94ab0505651d8e915518f2c69d
+               3 arquivo(s)          1.506 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\91
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               344 d2b2f16b43b101416f7f2a9688c8c7fbd6dbd8
+               1 arquivo(s)            344 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\92
 
-03/06/2025  22:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:40               556 13944b84c6548f812b76596d322c1398b66dc3
+15/06/2025  22:34               195 52746459093ccfc47348a7bfde26ee26f0b0cf
+15/06/2025  22:49               256 9914e1847a4bf5e4fe2fad8e0883930b2bdb20
 03/06/2025  22:02               170 e6f1519d8684c70d7c263b5435755dc0539f2a
-               1 arquivo(s)            170 bytes
+               4 arquivo(s)          1.177 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\93
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:30               332 1c0d235802fe3cb7c970d458791736f49b56a2
+06/06/2025  22:18               854 dc6277682d8042b1fb5c7e605b170ba0fadeaf
+               2 arquivo(s)          1.186 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\94
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:28                49 0deeee967bd1f16d771e8982937026d9870c1e
+08/06/2025  21:02             1.478 735433dfda2b4776dc8863536cefa718048537
+               2 arquivo(s)          1.527 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\95
 
-06/06/2025  21:40    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 06/06/2025  21:40               169 bbc7a57c1211a169db1d8d793ec34ebeb8d8f7
-               1 arquivo(s)            169 bytes
+15/06/2025  20:04                46 e1c581e6a2cb40b6ce9b80d309fdf28faad165
+               2 arquivo(s)            215 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\96
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03                79 bd67d0444fe04563dd478aecf6f286c99948b6
+               1 arquivo(s)             79 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\97
+
+08/06/2025  21:02    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02           208.876 9699dcb1884b79bfbc1a51c8db1b0ea2564766
+               1 arquivo(s)        208.876 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\99
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:49                46 7a021a8b0c94b290cad6ca4363f5e2c5fb3ad6
+16/06/2025  00:13               556 91ad460436fc46441dc2d745c4bb18be64d649
+06/06/2025  22:39                46 b5eae37d11deafb1d81ccaff93360eec3eae8d
+               3 arquivo(s)            648 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\9a
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:13                45 ba443ead772d7d5a3167fcd025f093fd79997c
+               1 arquivo(s)             45 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\9b
 
-03/06/2025  21:44    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+08/06/2025  21:02    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:47               211 2cb1ff9a3dfb2281940fd3cdace0c3a66662bb
-               1 arquivo(s)            211 bytes
+08/06/2025  21:02               848 599c8579b0d7643e2038813b2d33aa7992e330
+08/06/2025  21:02               429 64f2b8ccb032ba51320b09a1a55f1b1374d53a
+06/06/2025  22:18                49 c72c881186897ce160e45f8d56219fa23777a6
+               4 arquivo(s)          1.537 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\9c
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:13                55 d36e1bb060e0d7a4fd327a81109960b2a50e2d
+15/06/2025  22:49               332 f8fdcce62b5ac57d484f1dad6a5e706acf5eeb
+               2 arquivo(s)            387 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\9e
+
+08/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:40             1.002 0b8202cba87a88de4744119e7acac40f140af9
+08/06/2025  21:40               668 9b1c8cd93c602b693935f36d5977b1438f74d0
+               2 arquivo(s)          1.670 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\9f
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11                79 18d2873e63fdd07052d8fd63eb3b62afcb2dc8
+15/06/2025  23:16               178 d3a0936a9075a98362d5afebccf4e6c5dcf371
+16/06/2025  00:10               332 e488f6ff005548a7651cec17d635506e85b35c
+15/06/2025  20:50                45 ea6e37b0bd49ff366e122c2a783e656dfd7bda
+               4 arquivo(s)            634 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a0
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:10                49 6b60102714b331df268d5b375f9a45bcb0c140
+15/06/2025  21:37                45 7e27789936c35d69df0729a4049c9f863b9f49
+               2 arquivo(s)             94 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a2
+
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:10               481 2479189b9425332bd11df8d4b8c615d5967eee
+15/06/2025  21:06                49 a6848960e2e78934c81d0a4107709351d6f3a6
+               2 arquivo(s)            530 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a3
+
+08/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:40               294 0d4cf8f76e95085e6a8db03018ab9eb9fac079
+06/06/2025  21:55                45 d19c5bd2d253dad55f9b8831c0e4606377d4f6
+               2 arquivo(s)            339 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a4
+
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:34                45 3c937798fef4e853f200f7da8b47d12b39d90b
+               1 arquivo(s)             45 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a5
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:44                45 26a7fb992d254ce10c8147c556307dd1a6d16c
+15/06/2025  22:28                79 2cc0d1e931e16e922f5199791520e1aa8deb72
+15/06/2025  22:32                45 758d236797b72bbba208117a1b70ff8aed7b91
+15/06/2025  23:16               194 b8661f4cbe910975f96ddf51ac0a967b48ca62
+15/06/2025  20:35               164 f1bd9e8fbc31d5cac83b51f3528ccadba1979a
+               5 arquivo(s)            527 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a6
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:30             1.049 6bde633b555bb11a60fdfde2dfa642a16471c2
+08/06/2025  21:40               115 8fedfc60aa8fd089e9000487a5428f1a2687bc
+08/06/2025  22:37                46 c3c3fc32bc612d85e97c51773a63a0bcd50714
+15/06/2025  22:32               556 fd1e08e414f3bca281d3c00adb4c4699257f09
+               4 arquivo(s)          1.766 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a7
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:45             3.478 75e29603094b3581ced985687a3f78b78023c8
+15/06/2025  20:44               174 a65014693cc012ed6d1c0e53e11ff0daa53fcb
+06/06/2025  22:47               480 aa13a869d1221646406a9a282f2623b5e9e69c
+15/06/2025  20:41               234 d1bf76ec5b8193330e39897f3c0e7ad73dec1e
+               4 arquivo(s)          4.366 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a8
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26                46 1c54d314814046263a820dfc6b433ef1d3d2f4
+07/06/2025  20:39               174 5619dc4477abe3631ce69f672fea784dde4651
+               2 arquivo(s)            220 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\a9
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45               556 48d08dd7bb8977fecc9a8c3f952d335bd49be8
+06/06/2025  22:10               308 739ff62d6836468d043be128c02b7195b0461d
+               2 arquivo(s)            864 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\aa
+
+06/06/2025  21:55    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:55                46 63c25492480a8f7afcd4c9f0a31de2d3d46fcb
+               1 arquivo(s)             46 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ab
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:24               169 6177b3240648a8d497dcd241ac15f180ce720a
+15/06/2025  23:16                50 77feacb0ac0a02ddd8c52b99e3a4b52bf68546
+15/06/2025  20:22               540 c3503e4d3bab99ae22414e1748aa5131d2f5a5
+06/06/2025  23:04                46 c44ca382310b57fe057e03b2fd2e8d8e3c515e
+               4 arquivo(s)            805 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ac
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45               195 030746ee4c98785b02ccde38033459639a88a7
+15/06/2025  20:11                61 0c9ad3bc50832bbda8a03f6784c1adcd0df2af
+06/06/2025  23:04               161 3a09a9f15e7eb170b5f214bd1aa4201cc9fd11
+               3 arquivo(s)            417 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ad
+
+15/06/2025  22:49    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:49                49 6750af980088dc811a5bdcce10ed9d7788fb79
+15/06/2025  21:06                46 c22e0d2e1680c77bc7d36c6b858a107fa55506
+15/06/2025  20:41               523 d7d0bb584c392c5fb306913fff800cc39b0eb3
+               3 arquivo(s)            618 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\af
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04               272 8105032e78643c9be3fc00ecbd8fa6d537acac
+15/06/2025  23:04                45 9e4bf249428768b9ba9eedf5638c3e83b9a2d2
+               2 arquivo(s)            317 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b0
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19                79 84aa2d5cb1283445956e4940ff540ca1d406d0
+15/06/2025  22:38                49 e137b2eb54e2d7ead59b09513809b4293fe6d8
+               2 arquivo(s)            128 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b1
+
+15/06/2025  20:22    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22               194 09bef00d73cd26091a0a4da54d6a3ba8f98bf8
+               1 arquivo(s)            194 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b2
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:32               196 cc3821a7dfea97b2e222dc67ad71bcf8f09def
+               1 arquivo(s)            196 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b3
+
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:06               523 0ce97d5de210327dea884023c10f40be0b2d49
+08/06/2025  21:19                55 49b81487cbb66348afddc9fc4039ebd5fba969
+               2 arquivo(s)            578 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b4
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26             1.890 1b6262424fcd050032f66cf88a160f5982000c
+15/06/2025  20:50                50 8ca8afc3d5a7820964aad8723fa4bc267ad9de
+06/06/2025  22:10               168 a52acf611e48bfce0d1e54237f1259adfae18c
+               3 arquivo(s)          2.108 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b5
 
-03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:28               694 1b9218f6900a1dfb9c2f94cc1c0e16ad602951
 03/06/2025  23:02               170 233d0de2b69428010a1e7ac3f53da0218407ab
-               1 arquivo(s)            170 bytes
+15/06/2025  20:50               333 c0eafe1f7873e9b979fbeeb760ebc05ab65a7f
+               3 arquivo(s)          1.197 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b6
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39                79 2870a54a706068edb3bbcf2d269d73e45b98b3
+16/06/2025  00:13             4.069 911506f82200c1a47b08a854d3ef801e5028eb
+               2 arquivo(s)          4.148 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b7
+
+15/06/2025  22:34    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:34               179 0346d8311b0fa92d40c4c9e5e9096181f6879e
+15/06/2025  20:50                47 3e5fb8644e67ed17c1188bcb40ddf415e4fc05
+06/06/2025  22:47               184 51ede604ce60ce2e84ac173084e21b04e85de1
+15/06/2025  20:35               195 b5ea374354dcd82ecffa57d54ce54bbbb43710
+               4 arquivo(s)            605 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b8
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:38               556 0884d3d2983e6934da39600df51d2c8277b1ab
 03/06/2025  23:02                24 3d22266ac8aa2f8df2edef68082c789727841d
 03/06/2025  23:14                58 e77366102a240449761ae8729e4285b9c3c94b
-               2 arquivo(s)             82 bytes
+               3 arquivo(s)            638 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\b9
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03             4.065 f228000d209c2a60c42f003e637adb83189d53
+               1 arquivo(s)          4.065 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\bb
 
 03/06/2025  21:56    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:56               237 a576f7c9d9991d81f8fb1286a7115cb60f6f98
                1 arquivo(s)            237 bytes
 
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\bc
+
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11                55 84a693e6244102271e8b4ace90fff9e405bcc3
+               1 arquivo(s)             55 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\bd
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:25               555 00a9e663c79f8030c2a5973db9f93690e444cf
+16/06/2025  00:03                45 cf221f9a53efeffdc37a41ce67d0f5590c011a
+06/06/2025  23:01               363 fad570fec7eb8da50ee4d9da73ee4f5219f336
+               3 arquivo(s)            963 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\be
+
+15/06/2025  20:22    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22                45 524cb8e153c0dd94a7e8e0d1f2d5a0ef3cc829
+               1 arquivo(s)             45 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\bf
+
+15/06/2025  20:44    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04                55 32949d6298441a5a27b3d736818bd3c4848c16
+15/06/2025  20:44               524 8dd580d88317d27e6895f8102a7d70e9634043
+               2 arquivo(s)            579 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c0
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:18                46 00e776d682f7116baf42a553417afa5d5b8092
+15/06/2025  21:30                49 3e87a3b6f060670bb46a500b2066cfd72dafac
+               2 arquivo(s)             95 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c1
+
+15/06/2025  22:24    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               125 0f1a0cc517108ba7f9611895ef3ecfec37bdf7
+15/06/2025  22:24               556 172ca03cd323114f83722fc098daa25c9b7166
+15/06/2025  20:56               455 7b59831986723455f4bbe216dd8ca76913346b
+08/06/2025  21:02                50 c554ef4fe3ecdc8c0c967fe2ea02da200fdc37
+               4 arquivo(s)          1.186 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c2
+
+06/06/2025  22:18    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:18                45 4002797a6b8b2f53757213246878c1b16702b0
+06/06/2025  21:43               481 f51938b8d889d9d6bd10732b3c8b94a007c384
+               2 arquivo(s)            526 bytes
+
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c3
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 04/06/2025  00:18               138 9909f20790be12034d3e793f3288767c153472
-               1 arquivo(s)            138 bytes
+15/06/2025  23:26               556 f26b675194b328c3009449b40c90701358389d
+               2 arquivo(s)            694 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c4
 
-03/06/2025  21:47    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:50    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:47               171 89c6d906ca000079207069cf0d4d90b6955fec
-               1 arquivo(s)            171 bytes
+15/06/2025  20:50                56 c39a398593b72ba0871fd0812cb0c17303f085
+               2 arquivo(s)            227 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c5
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:35    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 04/06/2025  00:18               746 59cd58dc8a5ee9853564733910edcd1d8edaf4
-               1 arquivo(s)            746 bytes
+15/06/2025  20:35                56 85666749faeabcb302347012c4d98c74e3d354
+               2 arquivo(s)            802 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c7
+
+15/06/2025  20:56    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:56                79 90d20d8d260c34560220cdb2eec97404dfaf11
+               1 arquivo(s)             79 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\c9
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:01                79 7a798ff9c1ab3b871c8a54f722db5f50f4aac1
+15/06/2025  21:45                79 bbd90733c3a715b1288bedde80b402bf0f4b24
+06/06/2025  22:47               495 c70a9844492fe07845dc3a1eaf66a572567537
+               3 arquivo(s)            653 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\cb
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:14                79 19fd17aefbfafe9712c695d10d9b8da23817b8
-               1 arquivo(s)             79 bytes
+15/06/2025  22:34                56 4a82d6cdedf7e85206a90ba91cca78d0723427
+15/06/2025  23:04             2.697 d3a6c4bf67511556712836b4ac7445ea37d1a7
+               3 arquivo(s)          2.832 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\cc
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:40               332 205b06d29e50d809c93700875404fa8f4f4dd6
+06/06/2025  22:39                45 8ec982cc10464967bc46b606063ee678b7890a
+               2 arquivo(s)            377 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\cd
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:44                55 0ffa116368675b31fd3acad723a0b9553e9644
+16/06/2025  00:13                46 7e4abc67e055f1aa4f5833f2d2f274b9ec6d86
+15/06/2025  22:32               884 d1ba9826e9a57767124edcd1ad951c5fc769e6
+15/06/2025  21:30                46 ff53e1b7b7ceac768ff27b87be3fce3b1b7183
+               4 arquivo(s)          1.031 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ce
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04                49 481650dafb4d2610768a02fa8286ee1a04f94c
+06/06/2025  22:18                78 c6f43005559ca1bf523f504f9f2e94aa075bd8
 04/06/2025  00:18               491 ccacb7b01413277d9e93b725c922bf92e55d96
-               1 arquivo(s)            491 bytes
+               3 arquivo(s)            618 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\cf
 
-04/06/2025  00:18    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 04/06/2025  00:18               170 2cd4590a7b37a700141633a3f00c030130be1e
+15/06/2025  20:04             1.834 3a8d1af6c630652b9cb3429892c31184d42598
+15/06/2025  21:40               177 68c8a312a8ca6f9685c6ad90de0cc5e294b537
 03/06/2025  21:56               160 8b47f1a561660cdd45ea73b125563bc1cc8ea7
-               2 arquivo(s)            330 bytes
+               4 arquivo(s)          2.341 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d0
+
+15/06/2025  20:22    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22               524 81cdeacdd76d8062f96e7ac2ce277fb976e93a
+15/06/2025  20:11                46 c537269324036f5e9aab91746b7d7e846c5f7f
+               2 arquivo(s)            570 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d1
 
-04/06/2025  00:26    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 04/06/2025  00:26               796 b5d2e39619f82c1aa04b51b6ef221a6bfc591e
-               1 arquivo(s)            796 bytes
+15/06/2025  20:11               776 c7a3aa17cca64b03961cbfce4c7e19abb64816
+               2 arquivo(s)          1.572 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d2
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:40                49 994f5ea382f771d1599d9575fd4f400615e30f
+               1 arquivo(s)             49 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d3
+
+15/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39               296 09087e1801aa0ab2f9711b37c5d58bff2b59c7
+08/06/2025  22:13             1.714 10516d556e68b7bc48a5d517fa60d2e37de6b8
+15/06/2025  20:44                79 4196ba7dc8108d7088e130a6474b38820c7eed
+15/06/2025  21:40                55 4e799704efd5723c83fd2559e778896eaedd67
+               4 arquivo(s)          2.144 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d4
+
+15/06/2025  20:15    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               652 15129ef686e5416a35ec2551d232563fddd830
+15/06/2025  20:15               524 219be9f99dfeecce5da99c62bc0100cd50e7b8
+               2 arquivo(s)          1.176 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d5
 
-03/06/2025  22:17    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  22:17               191 55925b593eb638144421f35f1a08baa4792a93
+08/06/2025  22:37               196 d9c3e5624ca01b2138d1f9df3747e0e14f2dd4
+08/06/2025  21:40               524 db10c3a29e2162c3ce1cce2c1e864452922a47
 03/06/2025  21:57             1.748 f5d9fc2724190c619de558cf197525651b1456
-               2 arquivo(s)          1.939 bytes
+               4 arquivo(s)          2.659 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d6
+
+15/06/2025  21:30    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:30               556 6a801275927d25a3704259947d3ab051f27869
+07/06/2025  20:39               480 ef75db8c093dddd8bd201364a959bf1ac2eea2
+               2 arquivo(s)          1.036 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d8
+
+15/06/2025  22:38    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:38               178 9ce5a32f493350f303df24480ffeb5c257890a
+               1 arquivo(s)            178 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\d9
 
-04/06/2025  00:26    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  21:06    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:06                55 090177bc62dbf1010cd1c06445102931df07b8
 04/06/2025  00:26               491 37416c9ec205884b9f491c8645c549ee408666
-               1 arquivo(s)            491 bytes
+08/06/2025  21:44               523 a90020e74431b80fb6615603178de5ea371607
+06/06/2025  21:43             5.157 c7e4e1a43177e1eb45e64d3f0151f7fd7c9f84
+15/06/2025  20:41               411 ce0cff665e8445b1ba0d2fc498d5e7abdc39d7
+08/06/2025  22:13                46 d1b79904a5eee807f0a13bbdfc5ffb5b3e248b
+               6 arquivo(s)          6.683 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\da
+
+16/06/2025  00:03    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:03                55 40d6c8c36b2bcccbd825f0be14634649fd357f
+               1 arquivo(s)             55 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\dc
 
-03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:47                46 42dc265455127b25a44132471f596335208d40
+06/06/2025  23:01               267 6843da8d61cfb62bfffa5a61f42ffb6622a83b
 03/06/2025  23:02               464 aeba1f8c39dd80bc3f9c04e3230fee33f01124
-               1 arquivo(s)            464 bytes
+15/06/2025  23:16               556 de4b97b0c1cec59dcd7605361ea1a5971fe989
+15/06/2025  21:06                45 f6377520be57d61afea841708381353444beb0
+               5 arquivo(s)          1.378 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\dd
+
+16/06/2025  00:13    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:13               332 31a059b294c87c32d26d11f230fba10b88a3ed
+08/06/2025  21:40                55 7729db8e367959f93011a1bb5eed406ffe602d
+15/06/2025  20:35                50 df963f09eff67ced5fdada1ca753c0fd3cc8b2
+               3 arquivo(s)            437 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\de
+
+15/06/2025  20:11    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:11               339 74be28f3d5707ecb43faeb9390377d6e094419
+               1 arquivo(s)            339 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\df
+
+08/06/2025  22:37    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:44               369 5da66f2729f62f07bff8137ffd5e7d73741e3b
+08/06/2025  22:37                55 be00d864c1ae3665637ac6a1a3acb2cdcb8bcd
+               2 arquivo(s)            424 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e0
+
+15/06/2025  20:22    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22                55 0883ae52de14e08ed8a2a3f55cf21b1141742f
+15/06/2025  20:04               160 db6d247d8eb19faa7f64564adb704467f32595
+               2 arquivo(s)            215 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e1
+
+16/06/2025  00:10    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+16/06/2025  00:10                46 30267de06033e434b76f246e0f14d2106f8d84
+16/06/2025  00:10               115 46c2f69fa5dcdd31469374a31186ecc340274b
+06/06/2025  22:10                45 bf71224c1b02c2054c763bfb9b4f3007bc1aa4
+               3 arquivo(s)            206 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e2
+
+15/06/2025  23:16    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:24                49 01b96f546b5860a5f5da5258970b668aa627d8
+15/06/2025  23:16                45 5fa099dd325915a01780781a09fdad65cab65a
+08/06/2025  22:13               369 94b13603434ad1bcf615dd2bb6b58ccef08db2
+               3 arquivo(s)            463 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e3
 
 03/06/2025  21:44    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:47               161 7f33eef625d13a74d20383403d8c7bb2bc4937
                1 arquivo(s)            161 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e4
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  21:55               160 9022bb1d906ad1baeedcb2b293f8345506a4e6
+15/06/2025  22:28               195 9094a92b38a6e7f88da24335c9d3c84f1565ab
+               2 arquivo(s)            355 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e6
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:22                80 b1c5d6f4de02cd8cfd17571fb94d6d233a99ba
+15/06/2025  22:28               556 be1a3e8c397a255552bb9e6e3d184ac70a5a4a
+               2 arquivo(s)            636 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e7
+
+15/06/2025  22:32    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               694 1df4f1b543142f36fcfa8e0e28ff5484ad58c0
+06/06/2025  21:55                79 22fb782260b502d03848dccdd288f37d2b40f6
+15/06/2025  22:32                49 2d05d0ded05e3d3f51326aab31fc92dc3a3112
+               3 arquivo(s)            822 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e8
+
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:02               324 7fefc609aec8bb9b6ca6a365a46ddd511fad4f
+06/06/2025  23:01             4.213 97b502711837e3e77b0dc784f4bcfe700a4b2e
+15/06/2025  20:04               196 c6d79ac471df00b3cc27444751fc1800869fc2
+               3 arquivo(s)          4.733 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\e9
+
+15/06/2025  21:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  21:45               328 66c22782c9fb917c3e1146dae910dea7600018
+08/06/2025  21:02           196.867 b49a6b4ab8b8bab93bbe82216beef9010e04a0
+06/06/2025  22:10             1.009 ddd6267d6bb9818ea0f957b7266a8672d77743
+               3 arquivo(s)        198.204 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ec
+
+06/06/2025  22:39    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39                55 f53838dbce605450f631a23bc933e04f79a69b
+               1 arquivo(s)             55 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ed
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:04               332 53e81308d03d795edfa74e2e513d733cffa7fc
+08/06/2025  21:02             2.992 77d8e4ab1132dd5c42063ecac0b5f5de6f93fd
+               2 arquivo(s)          3.324 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ee
+
+15/06/2025  20:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:04               369 62957e01763a35cccb491489cc27f8d1da2232
+               1 arquivo(s)            369 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ef
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:04                46 0fad412fa2a150b8a5f3480ec13bb93840efc1
+15/06/2025  20:35               731 23ce9cefbb92f62d787b1af494641074585547
+06/06/2025  22:39               481 a2906e673964768ec7f2f81e0a59be0d2bb591
+15/06/2025  22:34                49 a301914991b95cd3112f0de799e65122eeea8c
+               4 arquivo(s)          1.307 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f0
+
+15/06/2025  23:04    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:04                80 22daed6afd6f249c3570138bc1ebd222341fa8
+15/06/2025  20:50               524 753d6a95839ad3106d5db9bf0624be10fcdaad
+               2 arquivo(s)            604 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f1
+
+15/06/2025  22:28    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:01                49 775cacc9f4a9635f53ac056b5e2b5d90b79a72
+15/06/2025  22:28                55 d622ad3f3d04292247d39c4505fca03477a354
+               2 arquivo(s)            104 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f4
+
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  23:04               403 615b6feee8d773206323f876da6526e9819948
+15/06/2025  20:15               195 7156dffc8342b3374881e29cde62796dca6677
+15/06/2025  23:45                45 c676a88120990a4a98451cec21e87853e0d509
+               3 arquivo(s)            643 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f5
+
+15/06/2025  20:35    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:47                49 80b7f45aea07de4d9f7f238cdc2dc0c9f2d8ea
+15/06/2025  20:35                45 ff89bf5719f5f929e8e09f8949188d28d0eb74
+               2 arquivo(s)             94 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f6
+
+06/06/2025  22:39    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39                96 8b4b341253f8e423d2dfb0e4bac0d867f9d89b
+               1 arquivo(s)             96 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f7
 
 03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  22:43               165 9ce99293da7ca9cc26da783c4dfc89c757d6d5
 03/06/2025  23:02               376 e4a1dd50effb44b0d03d6b4363973a6b4c9b14
                2 arquivo(s)            541 bytes
@@ -452,69 +2137,112 @@
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f8
 
 03/06/2025  23:02    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:02                87 97a7f1cb2389f85fe6381425d29f0a9866fb65
                1 arquivo(s)             87 bytes
 
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\f9
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26               114 7aef13f6b3008f94236b8deb98205d8c1e7bd4
+               1 arquivo(s)            114 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\fa
+
+15/06/2025  20:35    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+06/06/2025  22:39             2.862 8597c8fbefabf8b6347513455745bd79815332
+15/06/2025  20:35               333 c15664a6cb02fec9cbab2aae6def65136ae5ff
+               2 arquivo(s)          3.195 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\fb
+
+15/06/2025  20:44    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  20:44                46 42e0927a6ecd82d114135166c8cab59d677d4f
+15/06/2025  20:41               170 c4051ba514f4dad0360386fd7424f87b69a132
+               2 arquivo(s)            216 bytes
+
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\fc
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
-03/06/2025  23:14               326 ea5e80163fb2badaefafb09d8d7a6a202a5cf9
+15/06/2025  22:24    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  22:24                47 7f283ddc0ce8ea99b6afc80ceb794e9e63ad74
+15/06/2025  21:37               332 c3e66787451cd417772cae0bb85a29d5b52614
+15/06/2025  21:30               326 ea5e80163fb2badaefafb09d8d7a6a202a5cf9
 03/06/2025  22:17               342 f22edd8f20256dc6dd775a1fe8f8fe9ec5b509
-               2 arquivo(s)            668 bytes
+               4 arquivo(s)          1.047 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\fd
+
+15/06/2025  23:26    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+15/06/2025  23:26               165 bda6d16b270cbfa560cc9f512883729158b9cd
+               1 arquivo(s)            165 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\fe
+
+08/06/2025  21:19    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
+08/06/2025  21:19               382 8683a9c968ca041ca2077cc81f0440e7967508
+               1 arquivo(s)            382 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\ff
 
-03/06/2025  23:14    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+15/06/2025  23:45    <DIR>          .
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  23:02               100 179abdc1cc8a5dcc09d0c9c91723a34380ba6b
+15/06/2025  23:45                46 290da65566a6565fc396894b5ff39a3e39f648
+15/06/2025  22:24               332 69cfb8ef2d0bd352e3e57f33d0768a845d7262
+06/06/2025  23:01                45 6a4de5e89d51c8477b233f5c2b3984cfbfa473
+15/06/2025  20:15               228 9933ee96365420dfe020ae9ad00418fc56c00c
 03/06/2025  23:14                45 d02fc7e29e398faf666afa0607399538bd5849
-               2 arquivo(s)            145 bytes
+               6 arquivo(s)            796 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\info
 
 03/06/2025  21:31    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\objects\pack
 
 03/06/2025  21:31    <DIR>          .
-06/06/2025  21:40    <DIR>          ..
+16/06/2025  10:36    <DIR>          ..
 03/06/2025  21:31             6.308 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.idx
-04/06/2025  00:18        71.557.588 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.pack
+15/06/2025  21:25        71.557.588 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.pack
 03/06/2025  21:31               800 pack-6ec1465bc16eb2b4575083cb9a873f00f88d64f3.rev
                3 arquivo(s)     71.564.696 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\refs
 
 03/06/2025  21:31    <DIR>          .
-06/06/2025  21:40    <DIR>          heads
+16/06/2025  00:13    <DIR>          heads
 03/06/2025  21:31    <DIR>          remotes
 03/06/2025  21:31    <DIR>          tags
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\heads
 
-06/06/2025  21:40    <DIR>          .
+16/06/2025  00:13    <DIR>          .
 03/06/2025  21:31    <DIR>          ..
-06/06/2025  21:40                41 main
+16/06/2025  00:13                41 main
                1 arquivo(s)             41 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\remotes
 
 03/06/2025  21:31    <DIR>          .
 03/06/2025  21:31    <DIR>          ..
-06/06/2025  21:40    <DIR>          origin
+16/06/2025  10:36    <DIR>          origin
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\remotes\origin
 
-06/06/2025  21:40    <DIR>          .
+16/06/2025  10:36    <DIR>          .
 03/06/2025  21:31    <DIR>          ..
-06/06/2025  21:40                30 HEAD
-06/06/2025  21:40                41 main
+16/06/2025  10:36                30 HEAD
+16/06/2025  00:13                41 main
                2 arquivo(s)             71 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\.git\refs\tags
@@ -526,7 +2254,7 @@
  Pasta de C:\Users\rodri\GestaoLoteria\.mvn
 
 03/06/2025  21:31    <DIR>          .
-06/06/2025  21:43    <DIR>          ..
+16/06/2025  00:19    <DIR>          ..
 03/06/2025  21:31    <DIR>          wrapper
                0 arquivo(s)              0 bytes
 
@@ -542,16 +2270,27 @@
  Pasta de C:\Users\rodri\GestaoLoteria\.settings
 
 03/06/2025  23:20    <DIR>          .
-06/06/2025  21:43    <DIR>          ..
+16/06/2025  00:19    <DIR>          ..
 03/06/2025  23:20               191 org.eclipse.core.resources.prefs
 03/06/2025  23:20               426 org.eclipse.jdt.core.prefs
 03/06/2025  22:59                90 org.eclipse.m2e.core.prefs
                3 arquivo(s)            707 bytes
 
+ Pasta de C:\Users\rodri\GestaoLoteria\arquivos_historicos
+
+08/06/2025  21:02    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+03/06/2025  20:15           349.201 Lotof cil.xlsx
+03/06/2025  20:23           346.792 Lotomania.xlsx
+03/06/2025  20:21           215.351 Mega-Sena.xlsx
+03/06/2025  20:23           489.021 Quina.xlsx
+03/06/2025  20:25           203.386 Timemania.xlsx
+               5 arquivo(s)      1.603.751 bytes
+
  Pasta de C:\Users\rodri\GestaoLoteria\src
 
 03/06/2025  22:59    <DIR>          .
-06/06/2025  21:43    <DIR>          ..
+16/06/2025  00:19    <DIR>          ..
 03/06/2025  22:59    <DIR>          main
 03/06/2025  22:59    <DIR>          test
                0 arquivo(s)              0 bytes
@@ -582,22 +2321,68 @@
 
 03/06/2025  23:05    <DIR>          .
 03/06/2025  23:05    <DIR>          ..
-03/06/2025  23:05    <DIR>          loteria
+15/06/2025  20:14    <DIR>          loteria
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\src\main\java\com\gestaoloteria\loteria
 
-03/06/2025  23:05    <DIR>          .
+15/06/2025  20:14    <DIR>          .
 03/06/2025  23:05    <DIR>          ..
-03/06/2025  23:03               671 ConexaoBanco.java
-               1 arquivo(s)            671 bytes
+15/06/2025  20:14    <DIR>          dao
+08/06/2025  22:06            10.345 LoteriaCadastroView.java
+08/06/2025  22:11             5.186 LoteriaListaView.java
+07/06/2025  20:52               771 LoteriaRow.java
+08/06/2025  21:43             1.637 Main.java
+08/06/2025  21:16             1.491 MainMenu.java
+08/06/2025  21:24    <DIR>          model
+16/06/2025  00:18            14.567 ProcessosView.java
+08/06/2025  21:38    <DIR>          ui
+08/06/2025  21:38    <DIR>          util
+               6 arquivo(s)         33.997 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\src\main\java\com\gestaoloteria\loteria\dao
+
+15/06/2025  20:14    <DIR>          .
+15/06/2025  20:14    <DIR>          ..
+15/06/2025  23:16             2.565 ConcursoDAO.java
+15/06/2025  23:49             1.778 ConcursoNumeroSorteadoDAO.java
+15/06/2025  21:42               696 ConexaoBanco.java
+15/06/2025  20:34             2.080 JogoDAO.java
+15/06/2025  22:48             7.006 LoteriaDAO.java
+               5 arquivo(s)         14.125 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\src\main\java\com\gestaoloteria\loteria\model
+
+08/06/2025  21:24    <DIR>          .
+15/06/2025  20:14    <DIR>          ..
+15/06/2025  20:08               684 Concurso.java
+15/06/2025  23:49               853 ConcursoNumeroSorteado.java
+15/06/2025  22:46               645 FaixaPremiacao.java
+15/06/2025  20:40             1.621 Jogo.java
+15/06/2025  22:23             1.378 Loteria.java
+               5 arquivo(s)          5.181 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\src\main\java\com\gestaoloteria\loteria\ui
+
+08/06/2025  21:38    <DIR>          .
+15/06/2025  20:14    <DIR>          ..
+15/06/2025  20:08               958 ConcursoRow.java
+               1 arquivo(s)            958 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\src\main\java\com\gestaoloteria\loteria\util
+
+08/06/2025  21:38    <DIR>          .
+15/06/2025  20:14    <DIR>          ..
+16/06/2025  00:17             5.517 ImportadorHistoricoLoteria.java
+08/06/2025  21:15             1.755 JogoImportacaoUtil.java
+               2 arquivo(s)          7.272 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\src\main\resources
 
 03/06/2025  23:13    <DIR>          .
 03/06/2025  22:59    <DIR>          ..
-03/06/2025  23:12                97 db.properties
-               1 arquivo(s)             97 bytes
+07/06/2025  20:39                98 db.properties
+               1 arquivo(s)             98 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\src\test
 
@@ -621,138 +2406,137 @@
 
  Pasta de C:\Users\rodri\GestaoLoteria\target
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:43    <DIR>          ..
-06/06/2025  21:39    <DIR>          archive-tmp
-06/06/2025  21:39    <DIR>          classes
-06/06/2025  21:39    <DIR>          generated-sources
-06/06/2025  21:39    <DIR>          generated-test-sources
-06/06/2025  21:39         1.304.105 gestaoloteria-0.0.1-SNAPSHOT-jar-with-dependencies.jar
-06/06/2025  21:39             3.425 gestaoloteria-0.0.1-SNAPSHOT.jar
-06/06/2025  21:39    <DIR>          maven-archiver
-06/06/2025  21:39    <DIR>          maven-status
-06/06/2025  21:39    <DIR>          test-classes
-               2 arquivo(s)      1.307.530 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\archive-tmp
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          classes
+16/06/2025  00:19    <DIR>          generated-sources
+16/06/2025  00:19    <DIR>          maven-status
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\classes
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          com
-03/06/2025  23:12                97 db.properties
-               1 arquivo(s)             97 bytes
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          com
+07/06/2025  20:39                98 db.properties
+               1 arquivo(s)             98 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          seuprojeto
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          gestaoloteria
                0 arquivo(s)              0 bytes
 
- Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\seuprojeto
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          loteria
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          loteria
                0 arquivo(s)              0 bytes
 
- Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\seuprojeto\loteria
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria\loteria
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39             1.416 ConexaoBanco.class
-               1 arquivo(s)          1.416 bytes
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          dao
+16/06/2025  00:19             2.969 LoteriaCadastroView$1.class
+16/06/2025  00:19               928 LoteriaCadastroView$FaixaPremiacaoRow.class
+16/06/2025  00:19            12.761 LoteriaCadastroView.class
+16/06/2025  00:19             3.181 LoteriaListaView$1.class
+16/06/2025  00:19             8.967 LoteriaListaView.class
+16/06/2025  00:19             1.211 LoteriaRow.class
+16/06/2025  00:19             1.924 Main.class
+16/06/2025  00:19             3.405 MainMenu.class
+16/06/2025  00:19    <DIR>          model
+16/06/2025  00:19             1.283 ProcessosView$1.class
+16/06/2025  00:19             1.283 ProcessosView$2.class
+16/06/2025  00:19             8.160 ProcessosView$3.class
+16/06/2025  00:19            15.776 ProcessosView.class
+16/06/2025  00:19    <DIR>          ui
+16/06/2025  00:19    <DIR>          util
+              12 arquivo(s)         61.848 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria\loteria\dao
+
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19             4.469 ConcursoDAO.class
+16/06/2025  00:19             3.241 ConcursoNumeroSorteadoDAO.class
+16/06/2025  00:19             1.430 ConexaoBanco.class
+16/06/2025  00:19             3.957 JogoDAO.class
+16/06/2025  00:19             8.979 LoteriaDAO.class
+               5 arquivo(s)         22.076 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria\loteria\model
+
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19             1.188 Concurso.class
+16/06/2025  00:19             1.236 ConcursoNumeroSorteado.class
+16/06/2025  00:19             1.205 FaixaPremiacao.class
+16/06/2025  00:19             2.414 Jogo.class
+16/06/2025  00:19             2.250 Loteria.class
+               5 arquivo(s)          8.293 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria\loteria\ui
+
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19             1.604 ConcursoRow.class
+               1 arquivo(s)          1.604 bytes
+
+ Pasta de C:\Users\rodri\GestaoLoteria\target\classes\com\gestaoloteria\loteria\util
+
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19               870 ImportadorHistoricoLoteria$1.class
+16/06/2025  00:19             7.052 ImportadorHistoricoLoteria.class
+16/06/2025  00:19             3.554 JogoImportacaoUtil.class
+               3 arquivo(s)         11.476 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\generated-sources
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          annotations
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          annotations
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\generated-sources\annotations
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
                0 arquivo(s)              0 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\generated-test-sources
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          test-annotations
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\generated-test-sources\test-annotations
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\maven-archiver
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39                77 pom.properties
-               1 arquivo(s)             77 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          maven-compiler-plugin
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          maven-compiler-plugin
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          compile
-06/06/2025  21:39    <DIR>          testCompile
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          compile
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\compile
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          default-compile
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19    <DIR>          default-compile
                0 arquivo(s)              0 bytes
 
  Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\compile\default-compile
 
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39                42 createdFiles.lst
-06/06/2025  21:39                87 inputFiles.lst
-               2 arquivo(s)            129 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\testCompile
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39    <DIR>          default-testCompile
-               0 arquivo(s)              0 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\maven-status\maven-compiler-plugin\testCompile\default-testCompile
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-06/06/2025  21:39                 0 createdFiles.lst
-06/06/2025  21:39                 0 inputFiles.lst
-               2 arquivo(s)              0 bytes
-
- Pasta de C:\Users\rodri\GestaoLoteria\target\test-classes
-
-06/06/2025  21:39    <DIR>          .
-06/06/2025  21:39    <DIR>          ..
-               0 arquivo(s)              0 bytes
+16/06/2025  00:19    <DIR>          .
+16/06/2025  00:19    <DIR>          ..
+16/06/2025  00:19             1.320 createdFiles.lst
+16/06/2025  00:19             1.733 inputFiles.lst
+               2 arquivo(s)          3.053 bytes
 
      Total de Arquivos na Lista:
-             116 arquivo(s)     73.056.215 bytes
-             268 pasta(s)   406.324.391.936 bytes dispon¡veis
+             626 arquivo(s)     74.937.995 bytes
+             814 pasta(s)   404.904.693.760 bytes dispon¡veis
