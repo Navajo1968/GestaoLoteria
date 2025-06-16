@@ -38,7 +38,12 @@
       <artifactId>javafx-fxml</artifactId>
       <version>21.0.2</version>
     </dependency>
-
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.2.4</version>
+  </dependency>
+  
     <!-- Driver PostgreSQL -->
     <dependency>
       <groupId>org.postgresql</groupId>
