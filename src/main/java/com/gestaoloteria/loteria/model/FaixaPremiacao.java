@@ -3,7 +3,6 @@ package com.gestaoloteria.loteria.model;
 public class FaixaPremiacao {
     private Integer id;
     private String nome;
-    private String descricao;
     private int ordem;
     private int acertos;
 
@@ -14,9 +13,6 @@ public class FaixaPremiacao {
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
-
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
 
     public int getOrdem() { return ordem; }
     public void setOrdem(int ordem) { this.ordem = ordem; }

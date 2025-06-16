@@ -19,14 +19,12 @@ public class LoteriaDAO {
             ps.setInt(5, loteria.getQtdSorteados());
             ps.executeUpdate();
 
-            // Recupera o ID gerado
             int loteriaId = -1;
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     loteriaId = rs.getInt(1);
                 }
             }
-            // Salva as faixas de premiação
             if (loteria.getFaixas() != null && loteriaId > 0) {
                 salvarFaixasPremiacao(loteriaId, loteria.getFaixas());
             }
@@ -45,7 +43,6 @@ public class LoteriaDAO {
             ps.setInt(6, loteria.getId());
             ps.executeUpdate();
         }
-        // Remove as faixas antigas e salva as novas (pode ser otimizado)
         excluirFaixasPremiacao(loteria.getId());
         if (loteria.getFaixas() != null) {
             salvarFaixasPremiacao(loteria.getId(), loteria.getFaixas());
@@ -66,7 +63,6 @@ public class LoteriaDAO {
                 loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
                 loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
                 loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
-                // Carrega as faixas de premiação
                 loteria.setFaixas(listarFaixasPremiacao(loteria.getId()));
                 lista.add(loteria);
             }
@@ -88,7 +84,6 @@ public class LoteriaDAO {
                     loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
                     loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
                     loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
-                    // Carrega as faixas de premiação
                     loteria.setFaixas(listarFaixasPremiacao(loteria.getId()));
                     return loteria;
                 }
@@ -107,18 +102,17 @@ public class LoteriaDAO {
         }
     }
 
-    // ------ Métodos para Faixas de Premiação ------
+    // ------ Métodos para Faixas de Premiação sem o campo descricao ------
 
     private void salvarFaixasPremiacao(int loteriaId, List<FaixaPremiacao> faixas) throws Exception {
-        String sql = "INSERT INTO faixa_premiacao (loteria_id, nome, descricao, ordem, acertos) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO faixa_premiacao (loteria_id, nome, ordem, acertos) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             for (FaixaPremiacao faixa : faixas) {
                 ps.setInt(1, loteriaId);
                 ps.setString(2, faixa.getNome());
-                ps.setString(3, faixa.getDescricao());
-                ps.setInt(4, faixa.getOrdem());
-                ps.setInt(5, faixa.getAcertos());
+                ps.setInt(3, faixa.getOrdem());
+                ps.setInt(4, faixa.getAcertos());
                 ps.addBatch();
             }
             ps.executeBatch();
@@ -136,7 +130,7 @@ public class LoteriaDAO {
 
     private List<FaixaPremiacao> listarFaixasPremiacao(int loteriaId) throws Exception {
         List<FaixaPremiacao> faixas = new ArrayList<>();
-        String sql = "SELECT id, nome, descricao, ordem, acertos FROM faixa_premiacao WHERE loteria_id = ? ORDER BY ordem";
+        String sql = "SELECT id, nome, ordem, acertos FROM faixa_premiacao WHERE loteria_id = ? ORDER BY ordem";
         try (Connection conn = ConexaoBanco.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, loteriaId);
@@ -145,7 +139,6 @@ public class LoteriaDAO {
                     FaixaPremiacao faixa = new FaixaPremiacao();
                     faixa.setId(rs.getInt("id"));
                     faixa.setNome(rs.getString("nome"));
-                    faixa.setDescricao(rs.getString("descricao"));
                     faixa.setOrdem(rs.getInt("ordem"));
                     faixa.setAcertos(rs.getInt("acertos"));
                     faixas.add(faixa);
