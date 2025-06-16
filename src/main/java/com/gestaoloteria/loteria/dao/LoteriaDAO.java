@@ -18,7 +18,7 @@ public class LoteriaDAO {
             ps.setInt(5, loteria.getQtdSorteados());
             ps.executeUpdate();
         }
-        // Aqui você faria a lógica para salvar as faixas, se necessário
+        // Salvar faixas, se necessário
     }
 
     public void atualizarLoteriaComFaixas(Loteria loteria) throws Exception {
@@ -33,7 +33,7 @@ public class LoteriaDAO {
             ps.setInt(6, loteria.getId());
             ps.executeUpdate();
         }
-        // Aqui você faria a lógica para atualizar as faixas, se necessário
+        // Atualizar faixas, se necessário
     }
 
     public List<Loteria> listarLoterias() throws Exception {
@@ -50,7 +50,7 @@ public class LoteriaDAO {
                 loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
                 loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
                 loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
-                // Aqui você pode carregar as faixas, se necessário
+                // Carregar faixas, se necessário
                 lista.add(loteria);
             }
         }
@@ -71,11 +71,21 @@ public class LoteriaDAO {
                     loteria.setQtdMin(rs.getInt("quantidade_numeros_aposta_min"));
                     loteria.setQtdMax(rs.getInt("quantidade_numeros_aposta_max"));
                     loteria.setQtdSorteados(rs.getInt("quantidade_numeros_sorteados"));
-                    // Aqui você pode carregar as faixas, se necessário
+                    // Carregar faixas, se necessário
                     return loteria;
                 }
             }
         }
         return null;
+    }
+
+    public void excluirLoteria(int id) throws Exception {
+        String sql = "DELETE FROM loteria WHERE id = ?";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+        // Se houver dependências (faixas, concursos etc.), exclua antes aqui!
     }
 }
