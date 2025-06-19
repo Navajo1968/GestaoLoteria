@@ -8,7 +8,6 @@ import com.gestaoloteria.loteria.model.Concurso;
 import com.gestaoloteria.loteria.model.ConcursoNumeroSorteado;
 import com.gestaoloteria.loteria.model.Jogo;
 import com.gestaoloteria.loteria.model.Loteria;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -179,7 +178,6 @@ public class ConferirJogosView extends Stage {
         try {
             JogoDAO jogoDAO = new JogoDAO();
             for (JogoConferencia jc : jogosConferencia) {
-                // Só salva se realmente foi conferido
                 if (jc.foiConferido()) {
                     jc.getJogo().setAcertos(jc.getAcertos());
                     jogoDAO.atualizarAcertos(jc.getJogo());
@@ -215,7 +213,7 @@ public class ConferirJogosView extends Stage {
         public boolean foiConferido() { return conferido; }
 
         public void conferir(List<Integer> dezenasSorteadas) {
-            Set<Integer> apostadas = Arrays.stream(jogo.getDezenas().split(","))
+            Set<Integer> apostadas = Arrays.stream(jogo.getNumeros().split(","))
                     .map(String::trim)
                     .filter(s -> !s.isEmpty())
                     .map(Integer::parseInt)
@@ -228,7 +226,7 @@ public class ConferirJogosView extends Stage {
         }
 
         public String getDezenasString() {
-            return Arrays.stream(jogo.getDezenas().split(","))
+            return Arrays.stream(jogo.getNumeros().split(","))
                     .map(String::trim)
                     .filter(s -> !s.isEmpty())
                     .collect(Collectors.joining(" - "));
