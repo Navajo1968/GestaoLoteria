@@ -41,6 +41,14 @@ public class Main extends Application {
         stagePrincipal.setScene(new Scene(view.getRoot(), 800, 500));
     }
 
+    public static void showGerarJogosView() {
+        new GerarJogosView().show();
+    }
+
+    public static void showCorrecaoResultadosView() {
+        new CorrecaoResultadosView().show();
+    }
+    
     public static Stage getStagePrincipal() {
         return stagePrincipal;
     }
@@ -48,4 +56,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

@@ -1,4 +1,4 @@
-package com.gestaoloteria.loteria.view;
+package com.gestaoloteria.loteria;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

@@ -104,7 +104,7 @@ public class AnaliseResultadosView extends Stage {
 
             TextArea sugestaoArea = new TextArea(sugestoes.toString());
             sugestaoArea.setEditable(false);
-            rootProperty().addListener((obs, oldRoot, newRoot) -> {
+            getRoot().addListener((obs, oldRoot, newRoot) -> {
                 if (newRoot != null && !newRoot.getChildrenUnmodifiable().contains(sugestaoArea)) {
                     ((VBox)newRoot).getChildren().add(sugestaoArea);
                 }
@@ -117,5 +117,8 @@ public class AnaliseResultadosView extends Stage {
     private void showAlert(String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, msg, ButtonType.OK);
         alert.showAndWait();
+    }
+    public Parent getRoot() {
+        return this.root; // substitua por seu painel raiz real
     }
 }
