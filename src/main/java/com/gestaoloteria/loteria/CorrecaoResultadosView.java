@@ -1,26 +1,24 @@
 package com.gestaoloteria.loteria.view;
 
-import javax.swing.*;
-import java.awt.*;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-/**
- * Tela para correção/conferência dos jogos após sorteio.
- * (Estrutura inicial para integração com análise e banco)
- */
-public class CorrecaoResultadosView extends JFrame {
-    public CorrecaoResultadosView() {
-        setTitle("Correção dos Jogos");
-        setSize(600, 400);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+public class CorrecaoResultadosView {
 
-        // TODO: Implementar layout, lógica de conferência, integração com JogoDAO
-        JLabel label = new JLabel("Tela de Correção dos Jogos (em construção)");
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        add(label, BorderLayout.CENTER);
-    }
+    public void show() {
+        Stage stage = new Stage();
+        stage.setTitle("Correção dos Jogos");
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CorrecaoResultadosView().setVisible(true));
+        BorderPane pane = new BorderPane();
+        Label label = new Label("Tela de Correção dos Jogos (em construção)");
+        pane.setCenter(label);
+        BorderPane.setAlignment(label, Pos.CENTER);
+
+        Scene scene = new Scene(pane, 600, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 }
