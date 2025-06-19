@@ -39,12 +39,10 @@ public class GerarJogosView extends Stage {
         qtdJogosField = new TextField();
         concursoPrevistoField = new TextField();
 
-        // Carrega todas as loterias
         List<Loteria> loterias = carregarLoterias();
         loteriaCombo.setItems(FXCollections.observableArrayList(loterias));
         if (!loterias.isEmpty()) loteriaCombo.getSelectionModel().selectFirst();
 
-        // Ajuste para exibir o nome na ComboBox
         loteriaCombo.setConverter(new StringConverter<Loteria>() {
             @Override
             public String toString(Loteria object) {
@@ -121,8 +119,19 @@ public class GerarJogosView extends Stage {
             showAlert("Selecione a loteria");
             return;
         }
+        Set<String> jogosGerados = new HashSet<>();
         for (int i = 0; i < qtd; i++) {
-            jogosSugeridos.add(gerarJogoAvancado());
+            int tentativas = 0;
+            List<Integer> jogo;
+            String chave;
+            do {
+                jogo = gerarJogoAvancado(jogosGerados);
+                chave = jogo.stream().map(Object::toString).collect(Collectors.joining(","));
+                tentativas++;
+            } while (jogosGerados.contains(chave) && tentativas < 200);
+            // Se não conseguiu diferente, aceita o último gerado
+            jogosSugeridos.add(jogo);
+            jogosGerados.add(chave);
         }
         jogosTable.setItems(FXCollections.observableArrayList(jogosSugeridos));
         salvarBtn.setDisable(false);
@@ -133,14 +142,14 @@ public class GerarJogosView extends Stage {
      * - Frequência e atraso das dezenas baseado no histórico de concursos (tabelas concurso e concurso_numero_sorteado)
      * - Balanceamento par/ímpar, baixo/alto, e distribuição no volante
      * - Evita sequências longas e repetições recentes
+     * - Garante diversidade entre os jogos gerados na mesma leva
      */
-    private List<Integer> gerarJogoAvancado() {
+    private List<Integer> gerarJogoAvancado(Set<String> jogosGeradosNoMomento) {
         try {
             Loteria loteria = loteriaCombo.getValue();
             int totalDezenas = 25;
             int dezenasPorJogo = 15;
 
-            // 1. Buscar últimos X concursos para análise estatística (ex: 100 últimos)
             List<HistoricoConcurso> historico = getHistoricoUltimosConcursos(loteria.getId(), 100);
 
             Map<Integer, Integer> frequencia = new HashMap<>();
@@ -152,27 +161,22 @@ public class GerarJogosView extends Stage {
                 atraso.put(i, 0);
             }
 
-            int ordem = 0;
             for (HistoricoConcurso hc : historico) {
                 List<Integer> dezenas = hc.dezenas;
                 for (int d : dezenas) {
                     frequencia.put(d, frequencia.get(d) + 1);
                     atraso.put(d, 0);
                 }
-                // Armazena para evitar repetições exatas
                 String jogoKey = dezenas.stream().sorted().map(Object::toString).collect(Collectors.joining(","));
                 jogosRecentes.add(jogoKey);
 
-                // Atualiza atraso das dezenas que não saíram nesse concurso
                 for (int i = 1; i <= totalDezenas; i++) {
                     if (!dezenas.contains(i)) {
                         atraso.put(i, atraso.get(i) + 1);
                     }
                 }
-                ordem++;
             }
 
-            // 3. Ordenar dezenas por score (frequência + atraso, normalizado)
             List<Integer> todasDezenas = new ArrayList<>();
             for (int i = 1; i <= totalDezenas; i++) todasDezenas.add(i);
 
@@ -180,28 +184,25 @@ public class GerarJogosView extends Stage {
                     frequencia.get(d) * 2 + atraso.get(d)
             ).reversed());
 
-            // 4. Balancear par/ímpar e alto/baixo segundo padrões históricos
             int minPares = 6, maxPares = 9;
             int minBaixos = 6, maxBaixos = 9;
 
-            // 5. Evitar sequências longas (>=4) e repetições exatas
             Random rand = new Random();
-            for (int tentativa = 0; tentativa < 100; tentativa++) {
-                // Seleciona dezenas mais prováveis (top 20) mas mistura com outras para diversidade
-                List<Integer> provaveis = todasDezenas.subList(0, 20);
-                List<Integer> outras = todasDezenas.subList(20, todasDezenas.size());
+            for (int tentativa = 0; tentativa < 200; tentativa++) {
+                // Mistura a ordem das dezenas para diversidade a cada geração
+                List<Integer> provaveis = new ArrayList<>(todasDezenas.subList(0, 20));
+                List<Integer> outras = new ArrayList<>(todasDezenas.subList(20, todasDezenas.size()));
+                Collections.shuffle(provaveis, new Random(rand.nextLong()));
+                Collections.shuffle(outras, new Random(rand.nextLong()));
                 List<Integer> jogo = new ArrayList<>();
                 jogo.addAll(provaveis.subList(0, dezenasPorJogo - 3));
-                Collections.shuffle(outras, rand);
                 jogo.addAll(outras.subList(0, 3));
-                Collections.shuffle(jogo, rand);
+                Collections.shuffle(jogo, new Random(rand.nextLong() + tentativa));
                 List<Integer> ordenado = jogo.stream().sorted().collect(Collectors.toList());
 
-                // Checar par/ímpar
                 long qtdPares = ordenado.stream().filter(n -> n % 2 == 0).count();
                 long qtdBaixos = ordenado.stream().filter(n -> n <= 13).count();
 
-                // Checar sequências
                 boolean temSequenciaLonga = false;
                 int seq = 1;
                 for (int i = 1; i < ordenado.size(); i++) {
@@ -216,13 +217,13 @@ public class GerarJogosView extends Stage {
                     }
                 }
 
-                // Checar se já existe igual
                 String chaveJogo = ordenado.stream().map(Object::toString).collect(Collectors.joining(","));
 
                 if (qtdPares >= minPares && qtdPares <= maxPares
                         && qtdBaixos >= minBaixos && qtdBaixos <= maxBaixos
                         && !temSequenciaLonga
-                        && !jogosRecentes.contains(chaveJogo)) {
+                        && !jogosRecentes.contains(chaveJogo)
+                        && !jogosGeradosNoMomento.contains(chaveJogo)) {
                     return ordenado;
                 }
             }
@@ -231,7 +232,18 @@ public class GerarJogosView extends Stage {
             List<Integer> todas = new ArrayList<>();
             for (int i = 1; i <= totalDezenas; i++) todas.add(i);
             Collections.shuffle(todas, new Random());
-            return todas.subList(0, dezenasPorJogo).stream().sorted().collect(Collectors.toList());
+            List<Integer> resultado = todas.subList(0, dezenasPorJogo).stream().sorted().collect(Collectors.toList());
+
+            // Garante que não é idêntico a nenhum já gerado no momento
+            String chaveResultado = resultado.stream().map(Object::toString).collect(Collectors.joining(","));
+            int tentativas = 0;
+            while (jogosGeradosNoMomento.contains(chaveResultado) && tentativas < 100) {
+                Collections.shuffle(todas, new Random());
+                resultado = todas.subList(0, dezenasPorJogo).stream().sorted().collect(Collectors.toList());
+                chaveResultado = resultado.stream().map(Object::toString).collect(Collectors.joining(","));
+                tentativas++;
+            }
+            return resultado;
         } catch (Exception ex) {
             ex.printStackTrace();
             List<Integer> todas = new ArrayList<>();
@@ -241,14 +253,10 @@ public class GerarJogosView extends Stage {
         }
     }
 
-    /**
-     * Recupera os últimos N concursos de uma loteria já com a lista de dezenas sorteadas.
-     */
     private List<HistoricoConcurso> getHistoricoUltimosConcursos(int loteriaId, int quantidade) throws Exception {
         ConcursoDAO concursoDAO = new ConcursoDAO();
         ConcursoNumeroSorteadoDAO numeroDAO = new ConcursoNumeroSorteadoDAO();
 
-        // Recupera últimos N concursos (ordenados do mais recente para o mais antigo)
         List<Concurso> concursos = concursoDAO.listarConcursosPorLoteria(loteriaId);
         concursos.sort(Comparator.comparing(Concurso::getNumero).reversed());
         List<HistoricoConcurso> historico = new ArrayList<>();
@@ -286,7 +294,7 @@ public class GerarJogosView extends Stage {
             String nums = lista.stream().map(n -> String.format("%02d", n)).collect(Collectors.joining(","));
             jogos.add(new Jogo(
                     loteria.getId(),
-                    null, // concursoId, ainda não existe
+                    null,
                     numeroConcursoPrevisto,
                     nums,
                     LocalDateTime.now(),
@@ -309,9 +317,6 @@ public class GerarJogosView extends Stage {
         alert.showAndWait();
     }
 
-    /**
-     * Classe interna para guardar concurso + dezenas sorteadas.
-     */
     private static class HistoricoConcurso {
         public final Concurso concurso;
         public final List<Integer> dezenas;
