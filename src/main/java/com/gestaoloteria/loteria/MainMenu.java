@@ -1,10 +1,11 @@
 package com.gestaoloteria.loteria;
 
-import javafx.geometry.*;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.*;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -23,16 +24,22 @@ public class MainMenu {
         btnProcessos.setOnAction(e -> Main.showProcessosView());
 
         Button btnGerarJogos = createMenuButton("Gerar Jogos");
-        btnGerarJogos.setOnAction(e -> {
-            // Abre a tela de geração de jogos sugeridos
-            GerarJogosView gerarJogosView = new GerarJogosView();
-            gerarJogosView.show();
-        });
+        btnGerarJogos.setOnAction(e -> Main.showGerarJogosView());
+
+        // NOVO BOTÃO: Correção Jogos
+        Button btnCorrecaoJogos = createMenuButton("Correção Jogos");
+        btnCorrecaoJogos.setOnAction(e -> Main.showCorrecaoResultadosView());
 
         Button btnSair = createMenuButton("Sair");
         btnSair.setOnAction(e -> System.exit(0));
 
-        root.getChildren().addAll(btnCadastros, btnProcessos, btnGerarJogos, btnSair);
+        root.getChildren().addAll(
+            btnCadastros,
+            btnProcessos,
+            btnGerarJogos,
+            btnCorrecaoJogos, // novo botão aqui!
+            btnSair
+        );
 
         return new Scene(root, 510, 400);
     }
