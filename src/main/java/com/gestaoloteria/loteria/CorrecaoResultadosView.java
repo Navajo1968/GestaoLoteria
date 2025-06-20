@@ -14,6 +14,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CorrecaoResultadosView extends Stage {
@@ -100,8 +101,9 @@ public class CorrecaoResultadosView extends Stage {
             return;
         }
         List<Jogo> jogos = jogosTable.getItems();
+        List<Integer> numerosSorteados = parseNumeros(concurso.getDezenas()); // ajuste aqui para o campo certo!
         for (Jogo jogo : jogos) {
-            int acertos = calcularAcertos(jogo, concurso);
+            int acertos = calcularAcertos(jogo, numerosSorteados);
             jogo.setAcertos(acertos);
         }
         jogosTable.refresh();
@@ -111,7 +113,7 @@ public class CorrecaoResultadosView extends Stage {
         try {
             List<Jogo> jogos = jogosTable.getItems();
             for (Jogo jogo : jogos) {
-                new JogoDAO().atualizarAcertos(jogo.getId(), jogo.getAcertos());
+                new JogoDAO().atualizarAcertos(jogo); // Corrigido!
             }
             showAlert("Resultados salvos com sucesso!");
         } catch (Exception e) {
@@ -119,10 +121,8 @@ public class CorrecaoResultadosView extends Stage {
         }
     }
 
-    private int calcularAcertos(Jogo jogo, Concurso concurso) {
-        // Supondo que ambos possuem List<Integer> numeros
+    private int calcularAcertos(Jogo jogo, List<Integer> numerosSorteados) {
         List<Integer> numerosJogo = jogo.getNumeros();
-        List<Integer> numerosSorteados = concurso.getNumeros();
         int acertos = 0;
         for (Integer n : numerosJogo) {
             if (numerosSorteados.contains(n)) acertos++;
@@ -130,16 +130,28 @@ public class CorrecaoResultadosView extends Stage {
         return acertos;
     }
 
+    private List<Integer> parseNumeros(String dezenasStr) {
+        List<Integer> numeros = new ArrayList<>();
+        if (dezenasStr != null && !dezenasStr.isEmpty()) {
+            for (String s : dezenasStr.split("[,;\\s]+")) {
+                try {
+                    numeros.add(Integer.parseInt(s.trim()));
+                } catch (NumberFormatException ignored) {}
+            }
+        }
+        return numeros;
+    }
+
     private void configurarTabela() {
         TableColumn<Jogo, String> numerosCol = new TableColumn<>("Números do Jogo");
-        numerosCol.setCellValueFactory(data -> 
+        numerosCol.setCellValueFactory(data ->
             new javafx.beans.property.SimpleStringProperty(
                 data.getValue().getNumeros().toString()
             )
         );
 
         TableColumn<Jogo, Integer> acertosCol = new TableColumn<>("Acertos");
-        acertosCol.setCellValueFactory(data -> 
+        acertosCol.setCellValueFactory(data ->
             new javafx.beans.property.SimpleIntegerProperty(
                 data.getValue().getAcertos() != null ? data.getValue().getAcertos() : 0
             ).asObject()
