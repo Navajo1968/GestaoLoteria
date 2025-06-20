@@ -8,6 +8,7 @@ import com.gestaoloteria.loteria.model.Jogo;
 import com.gestaoloteria.loteria.model.Loteria;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -25,10 +26,11 @@ public class AnaliseResultadosView extends Stage {
 
     private ComboBox<Loteria> loteriaCombo;
     private BarChart<String, Number> barChart;
+    private VBox root; // Painel raiz como campo
 
     public AnaliseResultadosView() {
         setTitle("Análise Estatística dos Jogos Sugeridos");
-        VBox root = new VBox(10);
+        root = new VBox(10);
         root.setPadding(new Insets(15));
 
         loteriaCombo = new ComboBox<>();
@@ -102,13 +104,14 @@ public class AnaliseResultadosView extends Stage {
             sugestoes.append(String.format("Total de jogos conferidos: %d\n", total));
             sugestoes.append(String.format("Jogos premiados (>=11): %d (%.2f%%)\n", premiados, total == 0 ? 0.0 : 100.0 * premiados / total));
 
+            // Remove qualquer área de sugestão antiga
+            root.getChildren().removeIf(node -> node instanceof TextArea && "sugestaoArea".equals(node.getId()));
+
             TextArea sugestaoArea = new TextArea(sugestoes.toString());
             sugestaoArea.setEditable(false);
-            getRoot().addListener((obs, oldRoot, newRoot) -> {
-                if (newRoot != null && !newRoot.getChildrenUnmodifiable().contains(sugestaoArea)) {
-                    ((VBox)newRoot).getChildren().add(sugestaoArea);
-                }
-            });
+            sugestaoArea.setId("sugestaoArea");
+
+            root.getChildren().add(sugestaoArea);
         } catch (Exception e) {
             showAlert("Erro ao carregar análise: " + e.getMessage());
         }
@@ -118,7 +121,8 @@ public class AnaliseResultadosView extends Stage {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, msg, ButtonType.OK);
         alert.showAndWait();
     }
+
     public Parent getRoot() {
-        return this.root; // substitua por seu painel raiz real
+        return this.root;
     }
 }
