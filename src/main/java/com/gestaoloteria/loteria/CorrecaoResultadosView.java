@@ -101,7 +101,13 @@ public class CorrecaoResultadosView extends Stage {
             return;
         }
         List<Jogo> jogos = jogosTable.getItems();
-        List<Integer> numerosSorteados = parseNumeros(concurso.getDezenas()); // ajuste aqui para o campo certo!
+        List<Integer> numerosSorteados;
+        try {
+            numerosSorteados = new ConcursoDAO().buscarNumerosSorteadosDoConcurso(concurso.getId());
+        } catch (Exception e) {
+            showAlert("Erro ao buscar os números sorteados: " + e.getMessage());
+            return;
+        }
         for (Jogo jogo : jogos) {
             int acertos = calcularAcertos(jogo, numerosSorteados);
             jogo.setAcertos(acertos);
@@ -113,7 +119,7 @@ public class CorrecaoResultadosView extends Stage {
         try {
             List<Jogo> jogos = jogosTable.getItems();
             for (Jogo jogo : jogos) {
-                new JogoDAO().atualizarAcertos(jogo); // Corrigido!
+                new JogoDAO().atualizarAcertos(jogo);
             }
             showAlert("Resultados salvos com sucesso!");
         } catch (Exception e) {
@@ -128,18 +134,6 @@ public class CorrecaoResultadosView extends Stage {
             if (numerosSorteados.contains(n)) acertos++;
         }
         return acertos;
-    }
-
-    private List<Integer> parseNumeros(String dezenasStr) {
-        List<Integer> numeros = new ArrayList<>();
-        if (dezenasStr != null && !dezenasStr.isEmpty()) {
-            for (String s : dezenasStr.split("[,;\\s]+")) {
-                try {
-                    numeros.add(Integer.parseInt(s.trim()));
-                } catch (NumberFormatException ignored) {}
-            }
-        }
-        return numeros;
     }
 
     private void configurarTabela() {

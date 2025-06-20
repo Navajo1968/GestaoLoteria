@@ -96,4 +96,19 @@ public class ConcursoDAO {
         }
         return null;
     }
+
+    // NOVO MÉTODO: retorna os números sorteados do concurso em ordem
+    public List<Integer> buscarNumerosSorteadosDoConcurso(int concursoId) throws Exception {
+        List<Integer> numeros = new ArrayList<>();
+        String sql = "SELECT numero FROM concurso_numero_sorteado WHERE concurso_id = ? ORDER BY ordem";
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, concursoId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                numeros.add(rs.getInt("numero"));
+            }
+        }
+        return numeros;
+    }
 }

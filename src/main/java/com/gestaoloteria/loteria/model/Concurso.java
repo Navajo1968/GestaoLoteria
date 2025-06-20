@@ -17,6 +17,8 @@ public class Concurso {
     private String observacao;
     private String timeCoracao;
 
+    // Não precisa de dezenasSorteadas ou métodos get/set relacionados
+
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getLoteriaId() { return loteriaId; }
