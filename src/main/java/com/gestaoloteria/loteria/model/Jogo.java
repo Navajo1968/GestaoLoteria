@@ -1,6 +1,9 @@
 package com.gestaoloteria.loteria.model;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Jogo {
     private Integer id;
@@ -47,4 +50,13 @@ public class Jogo {
 
     public String getObservacao() { return observacao; }
     public void setObservacao(String observacao) { this.observacao = observacao; }
+
+    // NOVO MÉTODO CORRETO!
+    public List<Integer> getNumerosList() {
+        if (numeros == null || numeros.isEmpty()) return java.util.Collections.emptyList();
+        return Arrays.stream(numeros.split(","))
+                .map(String::trim)
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+    }
 }

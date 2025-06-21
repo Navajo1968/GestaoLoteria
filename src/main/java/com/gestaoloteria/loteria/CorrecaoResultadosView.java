@@ -13,7 +13,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
+import javafx.scene.control.ListCell;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class CorrecaoResultadosView extends Stage {
@@ -40,6 +43,50 @@ public class CorrecaoResultadosView extends Stage {
 
         loteriaCombo.setPromptText("Selecione a Loteria");
         concursoCombo.setPromptText("Selecione o Concurso");
+
+        // Configurações da Combo de Loteria
+        loteriaCombo.setConverter(new StringConverter<Loteria>() {
+            @Override
+            public String toString(Loteria object) {
+                return (object != null) ? object.getNome() : "";
+            }
+            @Override
+            public Loteria fromString(String string) {
+                for (Loteria l : loteriaCombo.getItems()) {
+                    if (l.getNome().equals(string)) return l;
+                }
+                return null;
+            }
+        });
+        loteriaCombo.setCellFactory(listView -> new ListCell<Loteria>() {
+            @Override
+            protected void updateItem(Loteria item, boolean empty) {
+                super.updateItem(item, empty);
+                setText((item == null || empty) ? "" : item.getNome());
+            }
+        });
+
+        // Configurações da Combo de Concurso - ordem decrescente por número
+        concursoCombo.setConverter(new StringConverter<Concurso>() {
+            @Override
+            public String toString(Concurso object) {
+                return (object != null) ? "Nº " + object.getNumero() : "";
+            }
+            @Override
+            public Concurso fromString(String string) {
+                for (Concurso c : concursoCombo.getItems()) {
+                    if (("Nº " + c.getNumero()).equals(string)) return c;
+                }
+                return null;
+            }
+        });
+        concursoCombo.setCellFactory(listView -> new ListCell<Concurso>() {
+            @Override
+            protected void updateItem(Concurso item, boolean empty) {
+                super.updateItem(item, empty);
+                setText((item == null || empty) ? "" : "Nº " + item.getNumero());
+            }
+        });
 
         carregarLoterias();
 
@@ -74,7 +121,10 @@ public class CorrecaoResultadosView extends Stage {
             Loteria loteria = loteriaCombo.getValue();
             if (loteria != null) {
                 List<Concurso> concursos = new ConcursoDAO().listarConcursosPorLoteria(loteria.getId());
+                concursos.sort(Comparator.comparing(Concurso::getNumero).reversed()); // Ordem decrescente
                 concursoCombo.setItems(FXCollections.observableArrayList(concursos));
+            } else {
+                concursoCombo.getItems().clear();
             }
         } catch (Exception e) {
             showAlert("Erro ao carregar concursos: " + e.getMessage());
@@ -84,9 +134,12 @@ public class CorrecaoResultadosView extends Stage {
     private void carregarJogos() {
         try {
             Concurso concurso = concursoCombo.getValue();
-            if (concurso != null) {
-                List<Jogo> jogos = new JogoDAO().buscarJogosPorConcurso(concurso.getId());
+            Loteria loteria = loteriaCombo.getValue();
+            if (concurso != null && loteria != null) {
+                List<Jogo> jogos = new JogoDAO().buscarJogosPorNumeroConcursoPrevisto(loteria.getId(), concurso.getNumero());
                 jogosTable.setItems(FXCollections.observableArrayList(jogos));
+            } else {
+                jogosTable.getItems().clear();
             }
         } catch (Exception e) {
             showAlert("Erro ao carregar jogos: " + e.getMessage());
@@ -127,7 +180,7 @@ public class CorrecaoResultadosView extends Stage {
     }
 
     private int calcularAcertos(Jogo jogo, List<Integer> numerosSorteados) {
-        List<Integer> numerosJogo = jogo.getNumeros();
+        List<Integer> numerosJogo = jogo.getNumerosList(); // Certifique-se que Jogo tem esse método!
         int acertos = 0;
         for (Integer n : numerosJogo) {
             if (numerosSorteados.contains(n)) acertos++;
@@ -139,7 +192,7 @@ public class CorrecaoResultadosView extends Stage {
         TableColumn<Jogo, String> numerosCol = new TableColumn<>("Números do Jogo");
         numerosCol.setCellValueFactory(data ->
             new javafx.beans.property.SimpleStringProperty(
-                data.getValue().getNumeros().toString()
+                data.getValue().getNumeros()
             )
         );
 

@@ -13,6 +13,7 @@ public class ConcursoDAO {
             return existeConcurso(loteriaId, numeroConcurso, conn);
         }
     }
+
     public boolean existeConcurso(int loteriaId, int numeroConcurso, Connection conn) throws Exception {
         String sql = "SELECT 1 FROM concurso WHERE loteria_id = ? AND numero_concurso = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -28,6 +29,7 @@ public class ConcursoDAO {
             return inserirConcurso(concurso, conn);
         }
     }
+
     public int inserirConcurso(Concurso concurso, Connection conn) throws Exception {
         String sql = "INSERT INTO concurso " +
                 "(loteria_id, numero_concurso, data_concurso, arrecadacao_total, acumulado, valor_acumulado, estimativa_premio, acumulado_especial, observacao, time_coracao) " +
@@ -57,13 +59,17 @@ public class ConcursoDAO {
         throw new Exception("Falha ao inserir concurso.");
     }
 
+    /**
+     * Lista todos os concursos de uma loteria em ordem decrescente do número do concurso, trazendo também o ID.
+     */
     public List<Concurso> listarConcursosPorLoteria(int loteriaId) throws Exception {
         try (Connection conn = ConexaoBanco.getConnection()) {
             return listarConcursosPorLoteria(loteriaId, conn);
         }
     }
+
     public List<Concurso> listarConcursosPorLoteria(int loteriaId, Connection conn) throws Exception {
-        String sql = "SELECT id, numero_concurso FROM concurso WHERE loteria_id = ?";
+        String sql = "SELECT id, numero_concurso, data_concurso FROM concurso WHERE loteria_id = ? ORDER BY numero_concurso DESC";
         List<Concurso> lista = new ArrayList<>();
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, loteriaId);
@@ -72,6 +78,10 @@ public class ConcursoDAO {
                 Concurso c = new Concurso();
                 c.setId(rs.getInt("id"));
                 c.setNumero(rs.getInt("numero_concurso"));
+                // Se precisar da data, set também:
+                Date dataSql = rs.getDate("data_concurso");
+                if (dataSql != null) c.setData(dataSql.toLocalDate());
+                c.setLoteriaId(loteriaId);
                 lista.add(c);
             }
         }
