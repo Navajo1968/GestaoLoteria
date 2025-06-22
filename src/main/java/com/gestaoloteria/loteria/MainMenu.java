@@ -30,6 +30,15 @@ public class MainMenu {
         Button btnCorrecaoJogos = createMenuButton("Correção Jogos");
         btnCorrecaoJogos.setOnAction(e -> Main.showCorrecaoResultadosView());
 
+        // ===============================
+        // ALTERAÇÃO em 22/06/2025:
+        // Adicionado botão "Gerar Jogos Inteligentes" no menu principal,
+        // para abrir futura tela de geração inteligente de jogos.
+        // ===============================
+        Button btnGerarJogosInteligentes = createMenuButton("Gerar Jogos Inteligentes");
+        btnGerarJogosInteligentes.setOnAction(e -> Main.showGerarJogosInteligentesView());
+        // ===============================
+
         Button btnSair = createMenuButton("Sair");
         btnSair.setOnAction(e -> System.exit(0));
 
@@ -37,7 +46,8 @@ public class MainMenu {
             btnCadastros,
             btnProcessos,
             btnGerarJogos,
-            btnCorrecaoJogos, // novo botão aqui!
+            btnCorrecaoJogos,
+            btnGerarJogosInteligentes, // novo botão aqui!
             btnSair
         );
 

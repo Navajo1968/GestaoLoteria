@@ -108,6 +108,25 @@ public class JogoDAO {
         return jogos;
     }
 
+    /**
+     * Busca jogos pelo loteria_id e numero_concurso_previsto.
+     * ATENÇÃO: ESSE É O MÉTODO QUE SUA TELA DE CORREÇÃO DEVE USAR!
+     */
+    public List<Jogo> buscarJogosPorNumeroConcursoPrevisto(int loteriaId, int numeroConcursoPrevisto) throws Exception {
+        String sql = "SELECT * FROM jogo WHERE loteria_id = ? AND numero_concurso_previsto = ?";
+        List<Jogo> jogos = new ArrayList<>();
+        try (Connection conn = ConexaoBanco.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, loteriaId);
+            ps.setInt(2, numeroConcursoPrevisto);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                jogos.add(mapResultSetToJogo(rs));
+            }
+        }
+        return jogos;
+    }
+
     public List<Jogo> buscarJogosPorAcertos(int minAcertos, int maxAcertos) throws Exception {
         String sql = "SELECT * FROM jogo WHERE acertos BETWEEN ? AND ?";
         List<Jogo> jogos = new ArrayList<>();

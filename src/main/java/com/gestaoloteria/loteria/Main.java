@@ -48,7 +48,16 @@ public class Main extends Application {
     public static void showCorrecaoResultadosView() {
         new CorrecaoResultadosView().show();
     }
-    
+
+    // ========================================================
+    // Adicionado em 22/06/2025:
+    // Novo método para exibir a tela GerarJogosInteligentesView
+    // ========================================================
+    public static void showGerarJogosInteligentesView() {
+        new GerarJogosInteligentesView().show();
+    }
+    // ========================================================
+
     public static Stage getStagePrincipal() {
         return stagePrincipal;
     }
