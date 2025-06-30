@@ -6,8 +6,6 @@ import com.gestaoloteria.loteria.dao.LoteriaDAO;
 import com.gestaoloteria.loteria.dao.JogoDAO;
 
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
@@ -34,6 +32,7 @@ public class GerarJogosInteligentesView extends Stage {
     private TextField qtdJogosField;
     private TableView<List<Integer>> jogosTable;
     private Button gerarBtn, salvarBtn, voltarBtn, trazerDezenasHistoricasBtn;
+    private Label simulacaoLabel;
 
     private List<List<Integer>> jogosGerados = new ArrayList<>();
 
@@ -141,15 +140,17 @@ public class GerarJogosInteligentesView extends Stage {
             jogosTable.getColumns().add(col);
         }
 
+        simulacaoLabel = new Label("Cobertura: ");
+
         gerarBtn.setOnAction(e -> gerarJogos());
         salvarBtn.setOnAction(e -> salvarJogos());
         voltarBtn.setOnAction(e -> this.close());
 
         trazerDezenasHistoricasBtn.setOnAction(e -> trazerDezenasHistoricas());
 
-        root.getChildren().addAll(linha1, linha2, dezenasGrid, linhaBotoes, jogosTable);
+        root.getChildren().addAll(linha1, linha2, dezenasGrid, linhaBotoes, simulacaoLabel, jogosTable);
 
-        setScene(new Scene(root, 760, 520));
+        setScene(new Scene(root, 760, 540));
         initModality(Modality.APPLICATION_MODAL);
 
         atualizarSelecaoDezenas();
@@ -294,7 +295,6 @@ public class GerarJogosInteligentesView extends Stage {
                         .collect(Collectors.joining(","));
                 jogo.setNumeros(numerosStr);
                 jogo.setDataHora(LocalDateTime.now());
-                // Outros campos opcionais, se quiser:
                 jogo.setObservacao("Gerado automaticamente");
                 jogosParaSalvar.add(jogo);
             }
@@ -313,16 +313,27 @@ public class GerarJogosInteligentesView extends Stage {
 
     private void trazerDezenasHistoricas() {
         int numDezenas = rb18.isSelected() ? 18 : rb19.isSelected() ? 19 : 20;
+        List<String> opcoes = Arrays.asList(
+                "Mais frequentes (histórico completo)",
+                "Mais frequentes (últimos 50 concursos)",
+                "Estratégia mista (clássico + recentes + atrasados)"
+        );
+        ChoiceDialog<String> dialog = new ChoiceDialog<>(opcoes.get(0), opcoes);
+        dialog.setTitle("Opção de Estratégia");
+        dialog.setHeaderText("Escolha como os números serão selecionados:");
+        dialog.setContentText("Estratégia:");
+        Optional<String> result = dialog.showAndWait();
+        if (!result.isPresent()) return;
+        String estrategia = result.get();
 
-        // Barra de progresso (ver observação: em alguns ambientes Task/ProgressBar pode não atualizar corretamente)
         Stage progressoStage = new Stage();
         progressoStage.initOwner(this);
         progressoStage.initModality(Modality.APPLICATION_MODAL);
-        progressoStage.setTitle("Analisando resultados históricos...");
+        progressoStage.setTitle("Processando histórico...");
         VBox vbox = new VBox(18);
         vbox.setPadding(new Insets(24));
         vbox.setAlignment(Pos.CENTER);
-        Label lbl = new Label("Lendo histórico e selecionando as dezenas mais frequentes...");
+        Label lbl = new Label("Analisando histórico e selecionando dezenas...");
         ProgressBar progressBar = new ProgressBar(0);
         progressBar.setPrefWidth(320);
         Label lblPercent = new Label("0%");
@@ -332,30 +343,28 @@ public class GerarJogosInteligentesView extends Stage {
         Task<List<Integer>> task = new Task<List<Integer>>() {
             @Override
             protected List<Integer> call() throws Exception {
-                Map<Integer, Integer> freq = new HashMap<>();
-                for (int i = 1; i <= 25; i++) freq.put(i, 0);
-
                 File csvFile = new File("Lotofácil.csv");
-                if (!csvFile.exists()) {
+                if (!csvFile.exists())
                     throw new FileNotFoundException("Arquivo Lotofácil.csv não encontrado na pasta do projeto.");
-                }
+
+                List<List<Integer>> historico = new ArrayList<>();
                 int totalLinhas = contarLinhas(csvFile);
                 int linhaAtual = 0;
                 try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(csvFile), StandardCharsets.UTF_8))) {
                     String linha;
-                    br.readLine(); // pula cabeçalho
+                    br.readLine(); // cabeçalho
                     while ((linha = br.readLine()) != null) {
                         String[] campos = linha.split(";");
+                        List<Integer> bolas = new ArrayList<>();
                         for (int i = 2; i <= 16; i++) {
                             if (i < campos.length) {
                                 try {
                                     int dez = Integer.parseInt(campos[i].trim());
-                                    if (dez >= 1 && dez <= 25) {
-                                        freq.put(dez, freq.get(dez) + 1);
-                                    }
+                                    if (dez >= 1 && dez <= 25) bolas.add(dez);
                                 } catch (NumberFormatException ignored) {}
                             }
                         }
+                        if (bolas.size() == 15) historico.add(bolas);
                         linhaAtual++;
                         if (linhaAtual % 200 == 0) {
                             updateProgress(linhaAtual, totalLinhas);
@@ -366,12 +375,49 @@ public class GerarJogosInteligentesView extends Stage {
                 updateProgress(totalLinhas, totalLinhas);
                 updateMessage("100%");
 
-                return freq.entrySet().stream()
-                        .sorted((a, b) -> b.getValue().compareTo(a.getValue()))
-                        .limit(numDezenas)
-                        .map(Map.Entry::getKey)
-                        .sorted()
-                        .collect(Collectors.toList());
+                List<Integer> dezenasEscolhidas;
+                if (estrategia.contains("histórico completo")) {
+                    dezenasEscolhidas = maisFrequentes(historico, numDezenas, historico.size());
+                } else if (estrategia.contains("últimos 50")) {
+                    dezenasEscolhidas = maisFrequentes(historico, numDezenas, 50);
+                } else {
+                    // Estratégia mista: 10 mais frequentes do histórico + 5 dos últimos 50 (sem repetir) + 5 menos sorteados dos últimos 50 (sem repetir)
+                    Set<Integer> topHist = new HashSet<>(maisFrequentes(historico, Math.min(10, numDezenas), historico.size()));
+                    Set<Integer> top50 = new HashSet<>(maisFrequentes(historico, Math.min(5, numDezenas - topHist.size()), 50));
+                    top50.removeAll(topHist);
+                    Set<Integer> menos50 = new HashSet<>(menosFrequentes(historico, Math.min(5, numDezenas - topHist.size() - top50.size()), 50));
+                    menos50.removeAll(topHist);
+                    menos50.removeAll(top50);
+                    List<Integer> total = new ArrayList<>();
+                    total.addAll(topHist); total.addAll(top50); total.addAll(menos50);
+                    while (total.size() < numDezenas) {
+                        for (int i = 1; i <= 25 && total.size() < numDezenas; i++)
+                            if (!total.contains(i)) total.add(i);
+                    }
+                    total.sort(Comparator.naturalOrder());
+                    dezenasEscolhidas = total;
+                }
+                // Simulação retroativa
+                int concursosSim = 100;
+                int inicioSim = Math.max(0, historico.size() - concursosSim);
+                List<List<Integer>> ultimos = historico.subList(inicioSim, historico.size());
+                List<Integer> acertosPorConcurso = new ArrayList<>();
+                for (List<Integer> bolas : ultimos) {
+                    int acertos = 0;
+                    for (Integer dez : bolas) if (dezenasEscolhidas.contains(dez)) acertos++;
+                    acertosPorConcurso.add(acertos);
+                }
+                int min = acertosPorConcurso.stream().min(Integer::compareTo).orElse(0);
+                int max = acertosPorConcurso.stream().max(Integer::compareTo).orElse(0);
+                double media = acertosPorConcurso.stream().mapToInt(Integer::intValue).average().orElse(0);
+                StringBuilder sb = new StringBuilder();
+                sb.append("Cobertura nos últimos ").append(concursosSim).append(" concursos: ")
+                  .append("mín. ").append(min)
+                  .append(", máx. ").append(max)
+                  .append(", média ").append(String.format("%.2f", media));
+                Platform.runLater(() -> simulacaoLabel.setText(sb.toString()));
+
+                return dezenasEscolhidas;
             }
         };
 
@@ -385,7 +431,7 @@ public class GerarJogosInteligentesView extends Stage {
                 dezenasCheckboxes[i].setSelected(dezenasParaMarcar.contains(i + 1));
             }
             atualizarSelecaoDezenas();
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION, "Dezenas históricas carregadas: " + dezenasParaMarcar.stream().map(Object::toString).collect(Collectors.joining(", ")), ButtonType.OK);
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION, "Dezenas carregadas: " + dezenasParaMarcar.stream().map(Object::toString).collect(Collectors.joining(", ")), ButtonType.OK);
             alerta.setHeaderText("Seleção automática concluída");
             alerta.showAndWait();
         });
@@ -402,6 +448,35 @@ public class GerarJogosInteligentesView extends Stage {
         thread.setDaemon(true);
         thread.start();
         progressoStage.showAndWait();
+    }
+
+    private List<Integer> maisFrequentes(List<List<Integer>> historico, int qtd, int ultimosConcursos) {
+        int ini = Math.max(0, historico.size() - ultimosConcursos);
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int i = 1; i <= 25; i++) freq.put(i, 0);
+        for (int i = ini; i < historico.size(); i++) {
+            for (Integer dez : historico.get(i)) freq.put(dez, freq.get(dez) + 1);
+        }
+        return freq.entrySet().stream()
+                .sorted((a, b) -> b.getValue().compareTo(a.getValue()))
+                .limit(qtd)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .collect(Collectors.toList());
+    }
+    private List<Integer> menosFrequentes(List<List<Integer>> historico, int qtd, int ultimosConcursos) {
+        int ini = Math.max(0, historico.size() - ultimosConcursos);
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int i = 1; i <= 25; i++) freq.put(i, 0);
+        for (int i = ini; i < historico.size(); i++) {
+            for (Integer dez : historico.get(i)) freq.put(dez, freq.get(dez) + 1);
+        }
+        return freq.entrySet().stream()
+                .sorted(Comparator.comparingInt(Map.Entry::getValue))
+                .limit(qtd)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .collect(Collectors.toList());
     }
 
     private int contarLinhas(File file) throws IOException {
